@@ -8,14 +8,17 @@ Design Discussion
 ![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Design-Team/design1.jpg)
 
 Author: Katja Krivoruchko
+
 This design contains all the necessary classes to create the Tourney Manager app, including Tournament Manager, Tournament, House, Player, PlayerList, Match, and Matchlist. It shows relationships between classes, multiplicity for many of the relationships, as well as utility classes.
 
 The pros of the design are:
+
 1. All the required classes for the given set of Requirements are defined with attributes and names.
 2. The dependency, aggregation and association relationships are well  represented between the classes 
 3. Creative design of the Round utility.
 
 The cons of the design are:
+
 1. Database integration is not outlined.
 2. TourneyCalc class from assignment 4 is not part of the diagram.
 3. Functionality that is used by both Manager and Player could be part of one common class.
@@ -26,13 +29,16 @@ The cons of the design are:
 ![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Design-Team/design2.jpg)
 
 Author: Sabih Fawad
+
 This intuitive design addresses all the requirements of the application, and contains all the classes listed in Design 2, as well as the Database class for writing the results to a database.
 
 The pros of the design are:
+
 1. All the required classes for the given set of Requirements are defined with attributes and names, and multiplicity is clearly outlined.
 2. Database class clearly shows how the tournament and player data is persisted between tournaments.
 
 The cons of the design are:
+
 1. All the relationships are set as association relationship; Match and MatchList could be aggregation relationships. 
 2. Some of the classes (Tournament_Player,  Tournament _Manager) do not have any attributes, only methods.
 3. Some functions in the Tournament class should be in Tournament_Manager class, such as add/remove player, start/end tournament.
@@ -43,14 +49,17 @@ The cons of the design are:
 ![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Design-Team/design3.jpg)
 
 Author: Vidya Kizhakke Veetil
+
 This comprehensive design also meets all the Requirements of the assignment. 
 
 The pros of the design are:
+
 1. Clean layout and easy to follow.
 2. Good use of labels/functions that are performing the operations.
 3. Good use of utility classes, although they could have been connected to show their accurate relation.
 
 The cons of the design are:
+
 1.  Missing database integration.
 2.  Missing link between Match and Manager.
 3.  Deck could have been a separate class.
@@ -62,14 +71,17 @@ The cons of the design are:
 ![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Design-Team/design4.jpg)
 
 Author: Xiaolu Jiang
+
 This comprehensive design is the one the team selected as the base of our team design.
 
 The pros of the design are:
+
 1. Clear, easy-to-read comprehensive design includes all classes, relationships, and multiplicity.
 2. Good use of utility classes.
 3. Good segregation of methods between classes.
 
 The cons of the design are:
+
 1. No database integration is shown.
 2. TourneyCalc class from Assignment 4 could have been useful.
 3. Class “Prize” should be connected to class “Ongoing Tournament” for ease of retrieval by both Player and Manager.
