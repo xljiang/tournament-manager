@@ -99,6 +99,13 @@ The main differences revolve around 1) persistence of the tournament info (in a 
 
 These design decisions were made in order to 1) explicitly meet the requirement of persisting tournament data between application runs and 2) make the design cleaner.
 
+Here is the outline of major changes:
+
+1. Merged the OngoingTournament class into the Tournament class, and change relations accordingly.
+2. Added MatchRound enumeration suggested in Design 1, added `matchRound` attribute to the Match class.
+3. Learning from Design 1, 2 and 3, for the Tournament class, the new team design will support maintaining first, second, and third place player. So the attribute `prizes:List<Prize>` in the original Design 4 was modified to `prizes:Map<String, Prize>`, where String represent the username of the Player.
+4. cleaned up and modified several relations between classes according to team discussion.
+
 ###Summary
 
 The team members are all located in the United States and Canada but in different time zones (Eastern, Central, and Pacific).  This, along with a short timeframe for the assignment, presented some difficulty in regards to scheduling a time for conference calls. 
