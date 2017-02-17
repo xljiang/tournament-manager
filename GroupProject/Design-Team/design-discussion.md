@@ -1,4 +1,4 @@
-Design Discussion
+﻿Design Discussion
 ===================
 > **Note:**
 > Individual designs are listed alphabetically by author's gtID.
@@ -82,10 +82,9 @@ The pros of the design are:
 
 The cons of the design are:
 
-1. No database integration is shown.
-2. TourneyCalc class from Assignment 4 could have been useful.
-3. Class “Prize” should be connected to class “Ongoing Tournament” for ease of retrieval by both Player and Manager.
-  
+1. Database integration requires relationship between Tournament class and the database.
+2. Need relationship class between TourneyCal and Manager class.
+3. Record first, second, and third prize winner names in Tournament class.  
 
 ###Team Design
 
