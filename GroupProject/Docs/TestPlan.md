@@ -38,4 +38,22 @@ We will use a mixture of JUnit and manual testing. JUnit will be used to create 
 
 ## 2 Test Cases
 
-*This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
+All of the integration level and system level tests are shown below. Individual developers are responsible for unit testing of their own codes, such tests are not listed.
+
+- **Integration Tests**
+
+| Test No.    | Purpose      | Steps            | Expected Result  | Actual Result  | Pass/Fail Info | Tester's Initials | Additional Info |
+|:-----------:|:------------------:|:------------:|:------------------:|:---------------:|:------:|:----:|:----:|
+| I1          | Verify Manager can add a player to and remove a player from the system  | (1) add player (2) remove player| | | | | |
+| I2          | Verify Manager can manage matches  | | | | | | |
+| I3          | Verify Manager can manage tournaments  | (1) start a tournament (2) end a tournament (3) issue refund | | | | | |
+| I4          | Verify Manager can display current prizes | (1) access to database (2) display correct prizes | | | | | |
+| I5          | Verify Manager can display current profit  | | | | | | |
+| I6          | Verify Manager can view past house profits  | | | | | | |
+| I7          | Verify Manager and Player can view player lists sorted by total  | | | | | | |
+| I8          | Verify Manager and Player can view match lists  | | | | | | |
+| I9          | Verify Manager can view a single player's prizes  | | | | | | |
+| I10         | Verify Player can play for a tournament  | | | | | | |
+
+
+
