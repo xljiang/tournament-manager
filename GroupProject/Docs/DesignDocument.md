@@ -2,7 +2,7 @@
 
 *This is the template for your design document. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
 
-**Author**: \<person or team name\>
+**Author**: \Team 50\
 
 ## 1 Design Considerations
 
@@ -39,6 +39,8 @@
 ### 3.1 Class Diagram
 
 *In the case of an OO design, the internal structure of a software component would typically be expressed as a UML class diagram that represents the static class structure for the component and their relationships.*
+
+![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Design-Team/team.jpg)
 
 ### 3.2 Other Diagrams
 
