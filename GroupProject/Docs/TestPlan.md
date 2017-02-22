@@ -56,4 +56,21 @@ All of the integration level and system level tests are shown below. Individual 
 | I10         | Verify Player can play for a tournament  | | | | | | |
 
 
+- **System Tests**
+
+| Test No.    | Purpose      | Steps            | Expected Result  | Actual Result  | Pass/Fail Info | Tester's Initials | Additional Info |
+|:-----------:|:------------:|:----------------:|:----------------:|:--------------:|:---------:|:-----:|:-----:|
+| S1          | Verify UI has two modes | Manual test | UI has Manager and Player modes | | | | |
+| S2(2.1, 2.2)| Verify Manager UI has required functions | Manual test | (1) S2.1 when no ongoing tournament, Manager UI show options to view the list of past house profits in chronological order and the total, view totals for every player as a list sorted by total (Player list) (2) S2.2 when has ongoing tournament, Manager UI show a match list| | | |
+| S3(3.1, 3.2)| Verify Player UI has required functions | Manual test | (1) S3.1 when no ongoing tournament, Player UI show totals for every player in the system as a list sorted by total. (2) S3.2 when has ongoing tournament, Player UI show a match list | | | | |
+| S4          | Verify match list UI function in Manager mode, further test S2.2 | Manual test | Match list will be able to (1) start a match ready to be played by selecting it from the list (2) end an ongoing match and specify a result (3) S4.3 end the tournament.| | | | |
+| S5          | Verify match list UI function in Player mode, further test S3.2 | Manual test | Match list display a list of players paired with other players representing ongoing matches, matches ready to be played, and results from completed matches | | | | |
+| S6          | Verify player list UI function in Manager mode, further test S2.1| Manual test | From here, the manager can also view a list of the player's individual prized by selecting the player from the list | | | | |
+| S7          | Verify Input UI when starting a tournament | Manual test | has inputs for (1) house cut, (2) entry price, (3) player usernames (8 or 16) (4) S7.4| | | | |
+| S7.4        | Verify the system can correctly calculate prizes and profit | Test for several input combinations | correct calculation | | | | |
+| S7.5        | Verify input for house cut, entry price are in valid range| Manual Test | If not valid, show error message | | | | |
+| S8          | Verify early ending a tournament function, further testing S4.3| Test both end completed ongoing tournament and end not completed ongoing tournament | If the tournament is ended early, issue correct refund | | | | |
+| S9          | Verify prizes will be recored in the database after a tournament completed | Query database | database should has record for the username and prize amount for first, second and third player | | | | |
+| S10         | Verify the house prifit will be recored in the database after a tournament completed | Query database | database should record tournament id and related house profit | | | | |
+| S11         | Overall review of UI | Manual Test | UI must be responsive and no dead link | | | | |
 
