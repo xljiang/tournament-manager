@@ -10,13 +10,13 @@ version 1.0
 
 Our overall testing strategy is composed of four level tests: unit test, integration test, system test and regression test. 
 
-First of all, every developer will be responsible for creating unit tests for code that they develop. The quality of these tests will then be validated by one other developer. Unit tests will be automated as much as possible using JUnit.
+First of all, each developer will be responsible for creating unit tests for code that they develop. The quality of these tests will then be validated by one other developer. Unit tests will be automated as much as possible using JUnit.
 
 Secondly, once every module passed unit test, components will be integrated based on use cases. The developers who produced code that is essential to a particular integration will collaborate in developing tests and will also run those tests. Integration test will proceed until all individual use cases have been tested.
 
 Thirdly, full system level testing will take place after integration test have been passed. Each team member will simulate a full deployment of the app independently so that any high level or complex bugs are more likely to be uncovered by scrutiny from multiple individuals.
 
-Finally, as incremental changes are made, regression testing will take place. For example, if integration-testing unveils a bug and a fix is made, the automated unit tests will be repeated to ensure that no software regressions have occurred (or at least are corrected immediately). TO this end, as many tests as is practical will be automated on the integration and system level.
+Finally, as incremental changes are made, regression testing will take place. For example, if integration-testing unveils a bug and a fix is made, the automated unit tests will be repeated to ensure that no software regressions have occurred (or at least are corrected immediately). To this end, as many tests as is practical will be automated on the integration and system level.
 
 ### 1.2 Test Selection
 
