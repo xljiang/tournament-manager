@@ -12,13 +12,21 @@
 
 *Describe any assumption, background, or dependencies of the software, its use, the operational environment, or significant project issues.*
 
+  -  Database is premade and ready to use/integerate with the app
+  -  No authorization is needed to switch between Player & Manager. User of the apps can easily switch between the two without any security implementation
+
 ### 1.2 Constraints
 
 *Describe any constraints on the system that have a significant impact on the design of the system.*
 
+  - Database integration could have a significant impact on the design of the system
+  - No other constraints are present which may have a significant impact on the design of the system
+
 ### 1.3 System Environment
 
 *Describe the hardware and software that the system must operate in and interact with.*
+
+  - It is an android based app which means the user must have an android based device in order to use the Tourney Manager app
 
 ## 2 Architectural Design
 
