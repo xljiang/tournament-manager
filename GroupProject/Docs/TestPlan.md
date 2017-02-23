@@ -30,7 +30,7 @@ Overall, we intend for our system level tests to satisfy all requirement specifi
 
 ### 1.4 Bug Tracking
 
-Bugs and enhancement request will be tracked with a shared Google spreadsheet. In general, bugs at the unit level will be fixed independently by the developer of that code. Bugs at the integration level and above, as well as enhancements, will be aware of by all team members. Besides the spreadsheet, team members will also communicate bugs through instant chatting or e-mail, especially for high priority bugs. The QA manager will assign developers to fix these bugs either independently or collaboratively.
+Bugs and enhancement request will be tracked with github issue tracker. In general, bugs at the unit level will be fixed independently by the developer of that code. Bugs at the integration level and above, as well as enhancements, will be aware of by all team members. Besides the github issue tracker, team members will also communicate bugs through instant chatting or e-mail, especially for high priority bugs. The QA manager will assign developers to fix these bugs either independently or collaboratively.
 
 ### 1.5 Technology
 
@@ -68,8 +68,8 @@ All of the integration level and system level tests are shown below. Individual 
 | S5          | Verify match list UI function in Player mode, further test S3.2 | Manual test | Match list display a list of players paired with other players representing ongoing matches, matches ready to be played, and results from completed matches | | | | |
 | S6          | Verify player list UI function in Manager mode, further test S2.1| Manual test | From here, the manager can also view a list of the player's individual prized by selecting the player from the list | | | | |
 | S7          | Verify Input UI when starting a tournament | Manual test | has inputs for (1) house cut, (2) entry price, (3) player usernames (8 or 16) (4) S7.4| | | | |
-| S7.4        | Verify the system can correctly calculate prizes and profit | Test for several input combinations | correct calculation | | | | |
-| S7.5        | Verify input for house cut, entry price are in valid range| Manual Test | If not valid, show error message | | | | |
+| S7.4        | Verify the system can correctly calculate prizes and profit | JUnit Test | correct calculation | | | | |
+| S7.5        | Verify input for house cut, entry price are in valid range| JUnit test for valid range, Manual Test for error message layout | If not valid, show error message | | | | |
 | S8          | Verify early ending a tournament function, further testing S4.3| Test both end completed ongoing tournament and end not completed ongoing tournament | If the tournament is ended early, issue correct refund | | | | |
 | S9          | Verify prizes will be recored in the database after a tournament completed | Query database | database should has record for the username and prize amount for first, second and third player | | | | |
 | S10         | Verify the house prifit will be recored in the database after a tournament completed | Query database | database should record tournament id and related house profit | | | | |
