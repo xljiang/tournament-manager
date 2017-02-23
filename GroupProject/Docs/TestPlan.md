@@ -44,16 +44,17 @@ All of the integration level and system level tests are shown below. Individual 
 
 | Test No.    | Purpose      | Steps            | Expected Result  | Actual Result  | Pass/Fail Info | Tester's Initials | Additional Info |
 |:-----------:|:------------------:|:------------:|:------------------:|:---------------:|:------:|:----:|:----:|
-| I1          | Verify Manager can add a player to and remove a player from the system  | (1) add player (2) remove player| | | | | |
-| I2          | Verify Manager can manage matches  | | | | | | |
-| I3          | Verify Manager can manage tournaments  | (1) start a tournament (2) end a tournament (3) issue refund | | | | | |
+| I1          | Verify Manager can add a player to and remove a player from the system  | (1) add player (2) remove player by JUnit test| | | | | |
+| I2          | Verify Manager can manage matches  | JUnit test | | | | | |
+| I3.1        | Verify Manager can manage tournaments (1) start a tournament | JUnit test | return an ongoing tournament | | | | |
+| I3.2        | Verify Manager can manage tournaments (2) end a tournament | JUnit test | an ongoing tournament is terminated, also label this tournament is completed or not correctly | | | | |
+| I3.3        | Verify Manager can manage tournaments (3) issue refund | JUnit tests | give correct amount of money back to a not completed but already terminated tournament, also refund to this tournament players | | | | |
 | I4          | Verify Manager can display current prizes | (1) access to database (2) display correct prizes | | | | | |
-| I5          | Verify Manager can display current profit  | | | | | | |
-| I6          | Verify Manager can view past house profits  | | | | | | |
-| I7          | Verify Manager and Player can view player lists sorted by total  | | | | | | |
-| I8          | Verify Manager and Player can view match lists  | | | | | | |
-| I9          | Verify Manager can view a single player's prizes  | | | | | | |
-| I10         | Verify Player can play for a tournament  | | | | | | |
+| I5          | Verify Manager can display current profit  | JUnit test | calculate and display correct profit | | | | |
+| I6          | Verify Manager can view past house profits  | JUnit test | calculate and display correct house profit | | | | |
+| I7          | Verify Manager and Player can view player lists sorted by total  | JUnit test | return player list, the list should be listed sorted by total amount of money, from high to low | | | | |
+| I8          | Verify Manager and Player can view match lists  | JUnit test | return a match list | | | | |
+| I9          | Verify Manager can view a single player's prizes  | JUnit test, given the player's username | return prizes catagory and amount that the player has | | | | |
 
 
 - **System Tests**
