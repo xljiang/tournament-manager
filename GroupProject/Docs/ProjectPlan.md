@@ -45,23 +45,41 @@ Xiaolu Jiang
 The roles are*:
 
 **Business Process Analyst** - Discovers all business use cases.
+
 **Business Designer** - Details a single set of business use cases.
+
 **Systems Analyst** - Discovers all requirement use cases. 
+
 **Requirements Specifier** - Details a single set of requirement use cases.
+
 **Software Architect** - Determines on technologies for the whole solution.
+
 **Designer** - Details the analysis and design for a single set of use cases.
+
 **Integrator** - Owns the build plan that shows what classes will integrate with one another.	
+
 **Implementer** - Codes a single set of classes or a single set of class operations.
+
 **Test Manager** - Ensures that testing is complete and conducted for the right motivators.
+
 **Test Analyst** - Selects what to test based on the motivators.
+
 **Test Designer** - Decides what tests should be automated vs. manual and creates automations and implements automated portions of the test design for the iteration.
+
 **Tester** - Runs tests.
+
 **Deployment Manager** - Oversees deployment.
+
 **Technical Writer** - Create detailed documentation.
+
 **Project Manager** - Creates the business case and implementation plan.
+
 **Process Engineer** - Owns the process for the project.
+
 **Tool Specialist** - Creates guidelines for using a specific tool.
+
 **Configuration Manager** - Sets up the CM environment, policies, and plan. Creates a deployment unit, reports on configuration status, performs audits, and so forth. Reviews and manages change requests.
+
 **Change Control Manager** - Establishes a change control process.
 
 Role     | Katja| Sabih | Vidya | Xiaolu
