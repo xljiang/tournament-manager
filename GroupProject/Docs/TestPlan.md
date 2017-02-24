@@ -44,12 +44,12 @@ All of the integration level and system level tests are shown below. Individual 
 
 | Test No.    | Purpose      | Steps            | Expected Result  | Actual Result  | Pass/Fail Info | Tester's Initials | Additional Info |
 |:-----------:|:------------------:|:------------:|:------------------:|:---------------:|:------:|:----:|:----:|
-| I1          | Verify Manager can add a player to and remove a player from the system  | (1) add player (2) remove player by JUnit test| | | | | |
-| I2          | Verify Manager can manage matches  | JUnit test | | | | | |
+| I1          | Verify Manager can add a player to and remove a player from the system  | JUnit test| be able to add/remove a player from the system, by using the player's username | | | | |
+| I2          | Verify Manager can manage matches  | JUnit test | can (1) add match, return Match (2) end a match | | | | |
 | I3.1        | Verify Manager can manage tournaments (1) start a tournament | JUnit test | return an ongoing tournament | | | | |
 | I3.2        | Verify Manager can manage tournaments (2) end a tournament | JUnit test | an ongoing tournament is terminated, also label this tournament is completed or not correctly | | | | |
 | I3.3        | Verify Manager can manage tournaments (3) issue refund | JUnit tests | give correct amount of money back to a not completed but already terminated tournament, also refund to this tournament players | | | | |
-| I4          | Verify Manager can display current prizes | (1) access to database (2) display correct prizes | | | | | |
+| I4          | Verify Manager can display current prizes | JUnit test (query database) | (1) successfully access to the database (2) return correct prizes | | | | |
 | I5          | Verify Manager can display current profit  | JUnit test | calculate and display correct profit | | | | |
 | I6          | Verify Manager can view past house profits  | JUnit test | calculate and display correct house profit | | | | |
 | I7          | Verify Manager and Player can view player lists sorted by total  | JUnit test | return player list, the list should be listed sorted by total amount of money, from high to low | | | | |
