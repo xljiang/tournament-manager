@@ -6,7 +6,7 @@
 
 ## 1 Use Case Diagram
 
-![Image] ( usecasediagram_team50.png)
+![Image](usecasediagram_team50.png)
 
 
 *This section should contain a use case diagram with all the actors and use cases for the system, suitably connected.*
