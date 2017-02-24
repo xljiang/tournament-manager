@@ -1,14 +1,11 @@
 # Use Case Model
 
-*This is the template for your use case model. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
-
 **Author**: Team50
 
 ## 1 Use Case Diagram
 
 ![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/usecasediagram_team50%20.png)
 
-*This section should contain a use case diagram with all the actors and use cases for the system, suitably connected.*
 
 ## 2 Use Case Descriptions
 
