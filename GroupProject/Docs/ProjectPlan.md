@@ -1,8 +1,6 @@
 
 # Project Plan
 
-*This is the template for your project plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
-
 **Author**: Team 50
 
 ## 1 Introduction
@@ -33,8 +31,6 @@ Exit criteria include actual code implementing the design, including front end a
 
 ## 3 Team
 	
-
-*Describe the team and their roles (there may be more roles than there are team members)*
 
 The team members are:
 Katja Krivoruchko
