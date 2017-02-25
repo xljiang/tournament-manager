@@ -42,6 +42,8 @@
 
 *This section should describe how the different components will be deployed on actual hardware devices. Similar to the previous subsection, this diagram may be unnecessary for simple systems; in these cases, simply state so and concisely state why.*
 
+  - This diagram is unncessary for the purpose of this project because of the simplicity of the system. There is only one Node in play here which is the application node.
+
 ## 3 Low-Level Design
 
 *Describe the low-level design for each of the system components identified in the previous section. For each component, you should provide details in the following UML diagrams to show its internal structure.*
