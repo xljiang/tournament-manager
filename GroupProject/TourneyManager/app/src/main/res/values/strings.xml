@@ -1,0 +1,10 @@
+<resources>
+    <string-array name="deck_array">
+        <item>Engineer</item>
+        <item>Buzz</item>
+        <item>Sideways</item>
+        <item>Wreck</item>
+        <item>T</item>
+        <item>RAT</item>
+    </string-array>
+</resources>

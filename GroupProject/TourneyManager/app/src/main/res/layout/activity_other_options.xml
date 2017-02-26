@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonBack"
+        android:onClick="buttonReturn" />
+
+    <TextView
+        android:text=" "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView14"
+        android:layout_weight="0.08" />
+
+    <Button
+        android:text="Start Tournament"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonStartTourneyForm"
+        android:onClick="buttonStartManage" />
+
+    <TextView
+        android:text=" "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView15"
+        android:layout_weight="0.10" />
+
+    <Button
+        android:text="End Tournament"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonEndTourneyForm"
+        android:onClick="buttonEndManage" />
+
+    <TextView
+        android:text=" "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16"
+        android:layout_weight="0.10" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView20"
+        android:layout_weight="0.10" />
+
+</LinearLayout>
