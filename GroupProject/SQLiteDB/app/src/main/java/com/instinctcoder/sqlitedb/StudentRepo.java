@@ -22,8 +22,8 @@ public class StudentRepo {
         //Open connection to write data
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(Student.KEY_age, student.age);
-        values.put(Student.KEY_email,student.email);
+        values.put(Student.KEY_phone, student.phone);
+        values.put(Student.KEY_username,student.username);
         values.put(Student.KEY_name, student.name);
 
         // Inserting Row
@@ -45,8 +45,8 @@ public class StudentRepo {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(Student.KEY_age, student.age);
-        values.put(Student.KEY_email,student.email);
+        values.put(Student.KEY_phone, student.phone);
+        values.put(Student.KEY_username,student.username);
         values.put(Student.KEY_name, student.name);
 
         // It's a good practice to use parameter ?, instead of concatenate string
@@ -60,8 +60,8 @@ public class StudentRepo {
         String selectQuery =  "SELECT  " +
                 Student.KEY_ID + "," +
                 Student.KEY_name + "," +
-                Student.KEY_email + "," +
-                Student.KEY_age +
+                Student.KEY_username + "," +
+                Student.KEY_phone +
                 " FROM " + Student.TABLE;
 
         //Student student = new Student();
@@ -91,8 +91,8 @@ public class StudentRepo {
         String selectQuery =  "SELECT  " +
                 Student.KEY_ID + "," +
                 Student.KEY_name + "," +
-                Student.KEY_email + "," +
-                Student.KEY_age +
+                Student.KEY_username + "," +
+                Student.KEY_phone +
                 " FROM " + Student.TABLE
                 + " WHERE " +
                 Student.KEY_ID + "=?";// It's a good practice to use parameter ?, instead of concatenate string
@@ -106,8 +106,8 @@ public class StudentRepo {
             do {
                 student.student_ID =cursor.getInt(cursor.getColumnIndex(Student.KEY_ID));
                 student.name =cursor.getString(cursor.getColumnIndex(Student.KEY_name));
-                student.email  =cursor.getString(cursor.getColumnIndex(Student.KEY_email));
-                student.age =cursor.getInt(cursor.getColumnIndex(Student.KEY_age));
+                student.username  =cursor.getString(cursor.getColumnIndex(Student.KEY_username));
+                student.phone =cursor.getString(cursor.getColumnIndex(Student.KEY_phone));
 
             } while (cursor.moveToNext());
         }

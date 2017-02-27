@@ -1,4 +1,8 @@
-package com.instinctcoder.sqlitedb;
+package edu.gatech.seclass.tourneymanager;
+/**
+ * Code from instinctcoder.com
+ * Edited by Katja Krivoruchko for CS 6300 Spring 2017
+ */
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class StudentDetail extends AppCompatActivity implements android.view.View.OnClickListener{
+public class PlayerDetail extends AppCompatActivity implements android.view.View.OnClickListener{
 
     Button buttonRegister ,  buttonDelete;
     Button buttonClear;
@@ -38,40 +42,40 @@ public class StudentDetail extends AppCompatActivity implements android.view.Vie
 
         _Student_Id =0;
         Intent intent = getIntent();
-        _Student_Id =intent.getIntExtra("student_Id", 0);
-        StudentRepo repo = new StudentRepo(this);
-        Student student = new Student();
-        student = repo.getStudentById(_Student_Id);
+        _Student_Id =intent.getIntExtra("player_Id", 0);
+        PlayerRepo repo = new PlayerRepo(this);
+        Player player = new Player();
+        player = repo.getStudentById(_Student_Id);
 
-        editTextUsername.setText(String.valueOf(student.username));
-        editTextName.setText(student.name);
-        editTextPhone.setText(String.valueOf(student.phone));
+        editTextUsername.setText(String.valueOf(player.username));
+        editTextName.setText(player.name);
+        editTextPhone.setText(String.valueOf(player.phone));
     }
 
 
 
     public void onClick(View view) {
         if (view == findViewById(R.id.buttonRegister)){
-            StudentRepo repo = new StudentRepo(this);
-            Student student = new Student();
-            student.username=editTextUsername.getText().toString();
-            student.phone = editTextPhone.getText().toString();
-            student.name=editTextName.getText().toString();
-            student.student_ID=_Student_Id;
+            PlayerRepo repo = new PlayerRepo(this);
+            Player player = new Player();
+            player.username=editTextUsername.getText().toString();
+            player.phone = editTextPhone.getText().toString();
+            player.name=editTextName.getText().toString();
+            player.player_ID=_Student_Id;
 
             if (_Student_Id==0){
-                _Student_Id = repo.insert(student);
+                _Student_Id = repo.insert(player);
 
                 Toast.makeText(this,"New Player Added",Toast.LENGTH_SHORT).show();
             }else{
 
-                repo.update(student);
+                repo.update(player);
                 Toast.makeText(this,"Player Record updated",Toast.LENGTH_SHORT).show();
             }
         }
         else if (view== findViewById(R.id.buttonDelete)){
             Toast.makeText(this, "clicked delete", Toast.LENGTH_SHORT);
-            StudentRepo repo = new StudentRepo(this);
+            PlayerRepo repo = new PlayerRepo(this);
             repo.delete(_Student_Id);
             Toast.makeText(this, "Player Record Deleted", Toast.LENGTH_SHORT);
             finish();

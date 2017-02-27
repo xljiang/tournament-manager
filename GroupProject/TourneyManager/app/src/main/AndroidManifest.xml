@@ -29,16 +29,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="edu.gatech.seclass.tourneymanager.AddPlayer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:name="edu.gatech.seclass.tourneymanager.DeletePlayer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
         <activity android:name="edu.gatech.seclass.tourneymanager.ManageTournament">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,6 +45,11 @@
             </intent-filter>
         </activity>
         <activity android:name="edu.gatech.seclass.tourneymanager.MatchOptions">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="edu.gatech.seclass.tourneymanager.ListPlayers">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -85,6 +80,11 @@
             </intent-filter>
         </activity>
         <activity android:name="edu.gatech.seclass.tourneymanager.OngoingTourney">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="edu.gatech.seclass.tourneymanager.PlayerDetail">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

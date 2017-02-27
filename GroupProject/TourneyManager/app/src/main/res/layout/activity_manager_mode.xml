@@ -19,7 +19,7 @@
         android:layout_weight="0.08" />
 
     <Button
-        android:text="Add Player"
+        android:text="Manage Players"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonAddForm"
@@ -30,20 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView15"
-        android:layout_weight="0.10" />
-
-    <Button
-        android:text="Delete Player"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonDeleteForm"
-        android:onClick="buttonDeletePlayer" />
-
-    <TextView
-        android:text=" "
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView16"
         android:layout_weight="0.10" />
 
     <Button
