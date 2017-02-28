@@ -18,7 +18,7 @@ public class ManagePlayers extends AppCompatActivity {
 
     }
     public void buttonReturn(View view){
-        Intent intent = new Intent(ManagePlayers.this, ManageTournament.class);
+        Intent intent = new Intent(ManagePlayers.this, ManagerMode.class);
         startActivity(intent);
     }
 

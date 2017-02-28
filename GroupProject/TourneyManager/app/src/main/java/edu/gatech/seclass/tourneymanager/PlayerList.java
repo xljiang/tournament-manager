@@ -6,19 +6,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 
-public class PlayerPrizes extends AppCompatActivity {
+public class PlayerList extends AppCompatActivity {
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_player_prizes);
+        setContentView(R.layout.activity_player_list);
 
 
     }
     public void buttonReturn(View view){
-        Intent intent = new Intent(PlayerPrizes.this, PlayerMode.class);
+        Intent intent = new Intent(PlayerList.this, PlayerMode.class);
         startActivity(intent);
 
     }

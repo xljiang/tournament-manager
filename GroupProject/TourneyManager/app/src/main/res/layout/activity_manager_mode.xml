@@ -19,10 +19,23 @@
         android:layout_weight="0.08" />
 
     <Button
-        android:text="Manage Players"
+        android:text="Match List"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonAddForm"
+        android:id="@+id/buttonMatchList"
+        android:onClick="buttonMatchList" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_weight="0.10" />
+
+    <Button
+        android:text="Player List"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonPlayerList"
         android:onClick="buttonAddPlayer" />
 
     <TextView
@@ -33,9 +46,22 @@
         android:layout_weight="0.10" />
 
     <Button
-        android:text="Manage Tournament"
+        android:text="Profit History"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonManageForm"
+        android:id="@+id/buttonProfitHistory"
+        android:onClick="buttonProfitHistory" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_weight="0.10" />
+
+    <Button
+        android:text="Start Tournament"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonStartTourney"
         android:onClick="buttonManageTournament" />
 </LinearLayout>

@@ -32,28 +32,40 @@
         android:layout_height="wrap_content"
         android:id="@+id/spinner" />
 
+    <Button
+        android:text="Check entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView17"
-        android:layout_weight="0.12" />
+        android:id="@+id/textPlayerList"
+        android:layout_weight="0.48"
+        android:text="Player list: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textCurrentPrizes"
+        android:layout_weight="0.31"
+        android:text="Prizes:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:text="Profit:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textCurrentProfit"
+        android:layout_weight="0.15"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
     <Button
-        android:text="Start"
+        android:text="Start Tournament"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonStartTourneyForm" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView18"
-        android:layout_weight="0.09" />
-
-    <Button
-        android:text="Clear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonClear" />
 
 </LinearLayout>

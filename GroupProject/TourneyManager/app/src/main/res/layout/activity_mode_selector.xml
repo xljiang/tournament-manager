@@ -10,14 +10,6 @@
         android:id="@+id/textView11"
         android:layout_weight="0.15" />
 
-    <Button
-        android:text="Return"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonReturn"
-        android:layout_weight="0.15"
-        android:onClick="buttonReturn" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

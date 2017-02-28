@@ -29,7 +29,7 @@ public class ListPlayers extends ListActivity  implements android.view.View.OnCl
 
     @Override
     public void onClick(View view) {
-        if (view== findViewById(R.id.btnAdd)) {
+        if (view== findViewById(R.id.btnAddNew)) {
 
             Intent intent = new Intent(this, PlayerDetail.class);
             intent.putExtra("player_Id", 0);
@@ -91,7 +91,7 @@ public class ListPlayers extends ListActivity  implements android.view.View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manage_players);
 
-        btnAdd = (Button) findViewById(R.id.btnAdd);
+        btnAdd = (Button) findViewById(R.id.btnAddNew);
         btnAdd.setOnClickListener(this);
 
         btnGetAll = (Button) findViewById(R.id.btnGetAll);

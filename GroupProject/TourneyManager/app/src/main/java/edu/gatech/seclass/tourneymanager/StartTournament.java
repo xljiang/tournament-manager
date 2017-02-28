@@ -18,7 +18,7 @@ public class StartTournament extends AppCompatActivity {
 
     }
     public void buttonReturn(View view){
-        Intent intent = new Intent(StartTournament.this, OtherOptions.class);
+        Intent intent = new Intent(StartTournament.this, ManagerMode.class);
         startActivity(intent);
 
     }

@@ -18,13 +18,6 @@
         android:id="@+id/textView14"
         android:layout_weight="0.08" />
 
-    <Button
-        android:text="Ongoing Tournament"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonAddForm"
-        android:onClick="buttonOngoingTournament" />
-
     <TextView
         android:text=" "
         android:layout_width="match_parent"
@@ -33,11 +26,11 @@
         android:layout_weight="0.10" />
 
     <Button
-        android:text="Profile"
+        android:text="Match List"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonDeleteForm"
-        android:onClick="buttonProfile" />
+        android:id="@+id/buttonOngoingTournament"
+        android:onClick="buttonOngoingTournament" />
 
     <TextView
         android:text=" "
@@ -47,9 +40,9 @@
         android:layout_weight="0.10" />
 
     <Button
-        android:text="Prizes"
+        android:text="Player List"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonManageForm"
-        android:onClick="buttonPrizes" />
+        android:id="@+id/buttonPlayerList"
+        android:onClick="buttonPlayerList" />
 </LinearLayout>

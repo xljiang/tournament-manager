@@ -1,9 +1,5 @@
 package edu.gatech.seclass.tourneymanager;
 
-/**
- * Code from instinctcoder.com
- * Edited by Katja Krivoruchko for CS 6300 Spring 2017
- */
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,14 +20,25 @@ public class ManagerMode extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void buttonMatchList (View view){
+        Intent intent = new Intent(ManagerMode.this, MatchList.class);
+        startActivity(intent);
+
+    }
+
     public void buttonAddPlayer (View view){
         Intent intent = new Intent(ManagerMode.this, ListPlayers.class);
         startActivity(intent);
 
     }
+    public void buttonProfitHistory (View view){
+        Intent intent = new Intent(ManagerMode.this, ProfitHistory.class);
+        startActivity(intent);
 
+    }
     public void buttonManageTournament(View view){
-        Intent intent = new Intent(ManagerMode.this, ManageTournament.class);
+        Intent intent = new Intent(ManagerMode.this, StartTournament.class);
         startActivity(intent);
     }
 

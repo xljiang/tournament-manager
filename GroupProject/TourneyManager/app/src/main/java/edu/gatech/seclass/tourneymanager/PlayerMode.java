@@ -24,14 +24,11 @@ public class PlayerMode extends AppCompatActivity {
         startActivity(intent);
 
     }
-    public void buttonProfile (View view){
-        Intent intent = new Intent(PlayerMode.this, ChangeProfile.class);
+    public void buttonPlayerList (View view){
+        Intent intent = new Intent(PlayerMode.this, PlayerList.class);
         startActivity(intent);
     }
-    public void buttonPrizes(View view){
-        Intent intent = new Intent(PlayerMode.this, PlayerPrizes.class);
-        startActivity(intent);
-    }
+
 
 
 }
