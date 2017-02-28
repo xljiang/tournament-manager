@@ -36,7 +36,7 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
 
 
         buttonRegister.setOnClickListener(this);
-        //btnDelete.setOnClickListener(this);
+        buttonDelete.setOnClickListener(this);
         buttonClear.setOnClickListener(this);
 
 
@@ -46,10 +46,12 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         PlayerRepo repo = new PlayerRepo(this);
         Player player = new Player();
         player = repo.getStudentById(_Student_Id);
-
-        editTextUsername.setText(String.valueOf(player.username));
-        editTextName.setText(player.name);
-        editTextPhone.setText(String.valueOf(player.phone));
+        if (player.username != null){
+        editTextUsername.setText(String.valueOf(player.username));}
+        if (player.name != null){
+        editTextName.setText(String.valueOf(player.name));}
+        if (player.phone != null){
+        editTextPhone.setText(String.valueOf(player.phone));}
     }
 
 
@@ -73,13 +75,12 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
                 Toast.makeText(this,"Player Record updated",Toast.LENGTH_SHORT).show();
             }
         }
-        else if (view== findViewById(R.id.buttonDelete)){
-            Toast.makeText(this, "clicked delete", Toast.LENGTH_SHORT);
+        if (view== findViewById(R.id.buttonDelete)){
             PlayerRepo repo = new PlayerRepo(this);
             repo.delete(_Student_Id);
             Toast.makeText(this, "Player Record Deleted", Toast.LENGTH_SHORT);
             finish();
-        }else if (view== findViewById(R.id.buttonClear)){
+        } if (view== findViewById(R.id.buttonClear)){
             finish();
         }
 

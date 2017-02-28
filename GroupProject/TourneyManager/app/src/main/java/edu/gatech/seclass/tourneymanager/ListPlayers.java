@@ -25,6 +25,8 @@ public class ListPlayers extends ListActivity  implements android.view.View.OnCl
     Button btnAdd,btnGetAll, btnBack;
     TextView player_Id;
 
+
+
     @Override
     public void onClick(View view) {
         if (view== findViewById(R.id.btnAdd)) {
@@ -39,29 +41,49 @@ public class ListPlayers extends ListActivity  implements android.view.View.OnCl
                 startActivity(intent);
 
             }else {
+            refreshList(view);
 
-            PlayerRepo repo = new PlayerRepo(this);
 
-            ArrayList<HashMap<String, String>> studentList =  repo.getStudentList();
-            if(studentList.size()!=0) {
-                ListView lv = getListView();
-                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-                        player_Id = (TextView) view.findViewById(R.id.player_Id);
-                        String studentId = player_Id.getText().toString();
-                        Intent objIndent = new Intent(getApplicationContext(),PlayerDetail.class);
-                        objIndent.putExtra("player_Id", Integer.parseInt( studentId));
-                        startActivity(objIndent);
-                    }
-                });
-                ListAdapter adapter = new SimpleAdapter( ListPlayers.this,studentList, R.layout.view_player_entry, new String[] { "id","name"}, new int[] {R.id.player_Id, R.id.student_name});
-                setListAdapter(adapter);
-            }else{
-                Toast.makeText(this,"No records! Please add player",Toast.LENGTH_SHORT).show();
-            }
+
+
 
         }
+    }
+
+    public void refreshList(View view){
+        PlayerRepo repo = new PlayerRepo(this);
+        ArrayList<HashMap<String, String>> studentList =  repo.getStudentList();
+        if(studentList.size()!=0) {
+            ListView lv = getListView();
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                    player_Id = (TextView) view.findViewById(R.id.player_Id);
+                    String studentId = player_Id.getText().toString();
+                    Intent objIndent = new Intent(getApplicationContext(),PlayerDetail.class);
+                    objIndent.putExtra("player_Id", Integer.parseInt( studentId));
+                    startActivity(objIndent);
+                }
+            });
+            ListAdapter adapter = new SimpleAdapter( ListPlayers.this,studentList, R.layout.view_player_entry, new String[] { "id","name"}, new int[] {R.id.player_Id, R.id.student_name});
+            setListAdapter(adapter);
+        }else{
+            ListView lv = getListView();
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+                    player_Id = (TextView) view.findViewById(R.id.player_Id);
+                    String studentId = player_Id.getText().toString();
+                    Intent objIndent = new Intent(getApplicationContext(),PlayerDetail.class);
+                    objIndent.putExtra("player_Id", Integer.parseInt( studentId));
+                    startActivity(objIndent);
+                }
+            });
+            ListAdapter adapter = new SimpleAdapter( ListPlayers.this,studentList, R.layout.view_player_entry, new String[] { "id","name"}, new int[] {R.id.player_Id, R.id.student_name});
+            setListAdapter(adapter);
+            Toast.makeText(this,"No records! Please add player",Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
