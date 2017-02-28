@@ -44,7 +44,7 @@ All of the integration level and system level tests are shown below. Individual 
 
 | Test No.    | Purpose      | Steps            | Expected Result  | Actual Result  | Pass/Fail Info | Tester's Initials | Additional Info |
 |:-----------:|:------------------:|:------------:|:------------------:|:---------------:|:------:|:----:|:----:|
-| I1          | Verify Manager can add a player to and remove a player from the system  | JUnit test| be able to add/remove a player from the system, by using the player's username | | | | |
+| I1          | Verify Manager can add a player to and remove a player from the system  | JUnit test| be able to add/remove a player from the system | Able to add/remove a player from the system | Pass | KK | |
 | I2          | Verify Manager can manage matches  | JUnit test | can (1) add match, return Match (2) end a match | | | | |
 | I3.1        | Verify Manager can manage tournaments (1) start a tournament | JUnit test | return an ongoing tournament | | | | |
 | I3.2        | Verify Manager can manage tournaments (2) end a tournament | JUnit test | an ongoing tournament is terminated, also label this tournament is completed or not correctly | | | | |
