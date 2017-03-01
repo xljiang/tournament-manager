@@ -9,9 +9,9 @@ public class Tournament {
     public static final String TABLE = "Tournament";
 
     // Labels Table Columns names
-    public static final String KEY_ID = "tournamentID";
-    public static final String KEY_houseProfit = "houseProfit";
-    public static final String KEY_totalPrizeAwarded = "totalPrizeAwarded";
+    public static final String KEY_ID = "TournamentID";
+    public static final String KEY_HouseProfit = "HouseProfit";
+    public static final String KEY_TotalPrizeAwarded = "TotalPrizeAwarded";
 
     // properties help us to keep data
     private String tournamentID;
@@ -39,7 +39,7 @@ public class Tournament {
         return totalPrizeAwarded;
     }
 
-    public String setTotalPrizeAwarded(String totalPrizeAwarded) {
-        return totalPrizeAwarded;
+    public void setTotalPrizeAwarded(String totalPrizeAwarded) {
+        this.totalPrizeAwarded = totalPrizeAwarded;
     }
 }
