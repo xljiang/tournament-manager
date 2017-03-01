@@ -1,9 +1,11 @@
-package edu.gatech.seclass.tourneymanager;
+package edu.gatech.seclass.tourneymanager.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import edu.gatech.seclass.tourneymanager.R;
 
 
 public class splash extends AppCompatActivity {

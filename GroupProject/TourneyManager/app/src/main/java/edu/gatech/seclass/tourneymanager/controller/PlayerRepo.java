@@ -1,4 +1,4 @@
-package edu.gatech.seclass.tourneymanager;
+package edu.gatech.seclass.tourneymanager.controller;
 
 /**
  * Code from instinctcoder.com
@@ -15,6 +15,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import edu.gatech.seclass.tourneymanager.db.DBHelper;
+import edu.gatech.seclass.tourneymanager.model.Player;
 
 public class PlayerRepo {
     private DBHelper dbHelper;

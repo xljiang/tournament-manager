@@ -8,68 +8,68 @@
         android:label="Tourney Manager"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="edu.gatech.seclass.tourneymanager.splash">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="edu.gatech.seclass.tourneymanager.ModeSelector">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.ModeSelector">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="edu.gatech.seclass.tourneymanager.ManagerMode">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.ManagerMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="edu.gatech.seclass.tourneymanager.PlayerMode">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.PlayerMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         
-        <activity android:name="edu.gatech.seclass.tourneymanager.ManagePlayers">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.ManagePlayers">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
-        <activity android:name="edu.gatech.seclass.tourneymanager.ListPlayers">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.ListPlayers">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
-        <activity android:name="edu.gatech.seclass.tourneymanager.StartTournament">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.StartTournament">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
-        <activity android:name="edu.gatech.seclass.tourneymanager.PlayerList">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.PlayerList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
-        <activity android:name="edu.gatech.seclass.tourneymanager.OngoingTourney">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.OngoingTourney">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="edu.gatech.seclass.tourneymanager.PlayerDetail">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.PlayerDetail">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="edu.gatech.seclass.tourneymanager.MatchList">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="edu.gatech.seclass.tourneymanager.ProfitHistory">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.ProfitHistory">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

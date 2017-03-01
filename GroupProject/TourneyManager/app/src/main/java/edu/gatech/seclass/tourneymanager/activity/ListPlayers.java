@@ -1,4 +1,4 @@
-package edu.gatech.seclass.tourneymanager;
+package edu.gatech.seclass.tourneymanager.activity;
 
 /**
  * Code from instinctcoder.com
@@ -19,6 +19,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
+import edu.gatech.seclass.tourneymanager.R;
 
 public class ListPlayers extends ListActivity  implements android.view.View.OnClickListener{
 

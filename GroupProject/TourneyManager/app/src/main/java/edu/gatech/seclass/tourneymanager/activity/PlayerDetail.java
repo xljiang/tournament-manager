@@ -1,4 +1,4 @@
-package edu.gatech.seclass.tourneymanager;
+package edu.gatech.seclass.tourneymanager.activity;
 /**
  * Code from instinctcoder.com
  * Edited by Katja Krivoruchko for CS 6300 Spring 2017
@@ -11,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
+import edu.gatech.seclass.tourneymanager.R;
+import edu.gatech.seclass.tourneymanager.model.Player;
 
 public class PlayerDetail extends AppCompatActivity implements android.view.View.OnClickListener{
 
