@@ -15,7 +15,7 @@ public class Prize {
     public static final String KEY_PrizeType = "PrizeType";
     public static final String KEY_PrizeAmount = "PrizeAmount";
 
-    // instance variables
+    // instant variables
     private String tournamentID;
     private String playerID;
     private String prizeType;
