@@ -19,7 +19,7 @@ public class Prize {
     private int tournamentID;
     private int playerID;
     private String prizeType;
-    private String prizeAmount;
+    private int prizeAmount;
 
 
     // getters and setters
@@ -56,11 +56,11 @@ public class Prize {
         this.prizeType = prizeType;
     }
 
-    public String getPrizeAmount() {
+    public int getPrizeAmount() {
         return prizeAmount;
     }
 
-    public void setPrizeAmount(String prizeAmount) {
+    public void setPrizeAmount(int prizeAmount) {
         this.prizeAmount = prizeAmount;
     }
 }
