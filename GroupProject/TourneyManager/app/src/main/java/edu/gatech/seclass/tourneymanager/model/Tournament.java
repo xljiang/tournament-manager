@@ -10,11 +10,15 @@ public class Tournament {
 
     // Labels Table Columns names
     public static final String KEY_TourID = "TournamentID"; // primary key
+    public static final String KEY_TourName = "TourName";
+    public static final String KEY_TourDate = "Date";
     public static final String KEY_HouseProfit = "HouseProfit";
     public static final String KEY_TotalPrizeAwarded = "TotalPrizeAwarded";
 
     // properties help us to keep data
     private int tournamentID;
+    private String tourName;
+    private String date;
     private int houseProfit;
     private int totalPrizeAwarded;
 
@@ -25,6 +29,22 @@ public class Tournament {
 
     public void setTournamentID(int tournamentID) {
         this.tournamentID = tournamentID;
+    }
+
+    public String getTourName() {
+        return tourName;
+    }
+
+    public void setTourName(String tourName) {
+        this.tourName = tourName;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getHouseProfit() {
