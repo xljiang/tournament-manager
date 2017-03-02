@@ -14,7 +14,7 @@ public class MatchList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_match_list);
+        setContentView(R.layout.activity_match_list_manager_mode);
 
     }
     public void buttonReturn(View view){

@@ -69,6 +69,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.PlayerPrizeList">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
 
     </application>
 

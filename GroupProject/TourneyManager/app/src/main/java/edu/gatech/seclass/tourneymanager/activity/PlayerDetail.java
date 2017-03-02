@@ -32,7 +32,7 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_player_detail);
+        setContentView(R.layout.activity_add_player);
 
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
         buttonDelete = (Button) findViewById(R.id.buttonDelete);

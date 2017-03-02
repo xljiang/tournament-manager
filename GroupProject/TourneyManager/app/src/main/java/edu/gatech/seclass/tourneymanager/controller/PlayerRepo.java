@@ -69,6 +69,10 @@ public class PlayerRepo {
         db.close(); // Closing database connection
     }
 
+    public void deleteAll() {
+        //TODO
+    }
+
     public void update(Player player) {
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();

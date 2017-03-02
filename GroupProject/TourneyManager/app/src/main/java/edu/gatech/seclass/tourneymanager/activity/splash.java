@@ -15,12 +15,18 @@ public class splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        insertSampleData();
+
     }
+
     public void buttonModeSelector(View view){
         //setContentView(R.layout.activity_tourney_calc);
         Intent intent = new Intent(splash.this, ModeSelector.class);
         startActivity(intent);
+    }
 
+    private void insertSampleData() {
+        //TODO
     }
 
 

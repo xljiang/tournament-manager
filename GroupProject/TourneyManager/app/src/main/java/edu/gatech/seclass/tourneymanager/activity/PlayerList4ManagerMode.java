@@ -31,6 +31,29 @@ public class PlayerList4ManagerMode extends ListActivity  implements android.vie
     TextView player_id;
 
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_player_list_manager_mode);
+
+        btnAdd = (Button) findViewById(R.id.btnAddNew);
+        btnAdd.setOnClickListener(this);
+
+        btnGetAll = (Button) findViewById(R.id.btnGetAll);
+        btnGetAll.setOnClickListener(this);
+
+        btnBack = (Button) findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(this);
+
+        //TODO
+        // auto show listview
+
+    }
+
+    public void buttonReturn(View view){
+        Intent intent = new Intent(PlayerList4ManagerMode.this, ManagerMode.class);
+        startActivity(intent);
+    }
 
     @Override
     public void onClick(View view) {
@@ -39,13 +62,15 @@ public class PlayerList4ManagerMode extends ListActivity  implements android.vie
             Intent intent = new Intent(this, PlayerDetail.class);
             intent.putExtra("player_Id", 0);
             startActivity(intent);
-        }if (view== findViewById(R.id.btnBack)){
+        }
+
+        if (view== findViewById(R.id.btnBack)){
 
                 Intent intent = new Intent(this,ManagerMode.class);
                 //intent.putExtra("player_Id",0);
                 startActivity(intent);
 
-            }else {
+        }else {
             refreshList(view);
         }
     }
@@ -60,7 +85,7 @@ public class PlayerList4ManagerMode extends ListActivity  implements android.vie
                 public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
                     player_id = (TextView) view.findViewById(R.id.player_id);
                     String playerId = player_id.getText().toString();
-                    Intent objIndent = new Intent(getApplicationContext(),PlayerDetail.class);
+                    Intent objIndent = new Intent(getApplicationContext(),PlayerPrizeList.class);
                     objIndent.putExtra("player_Id", Integer.parseInt(playerId));
                     startActivity(objIndent);
                 }
@@ -77,28 +102,5 @@ public class PlayerList4ManagerMode extends ListActivity  implements android.vie
         }
 
     }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_player_list_manager_mode);
-
-        btnAdd = (Button) findViewById(R.id.btnAddNew);
-        btnAdd.setOnClickListener(this);
-
-        btnGetAll = (Button) findViewById(R.id.btnGetAll);
-        btnGetAll.setOnClickListener(this);
-
-        btnBack = (Button) findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(this);
-
-
-
-    }
-    public void buttonReturn(View view){
-        Intent intent = new Intent(PlayerList4ManagerMode.this, ManagerMode.class);
-        startActivity(intent);
-    }
-
 
 }

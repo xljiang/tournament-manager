@@ -17,16 +17,14 @@ import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 
 
-public class PlayerList4PlayerMode extends ListActivity implements View.OnClickListener {
-    Button btnRefreshPlayer;
+public class PlayerList4PlayerMode extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_list_player_mode);
 
-        btnRefreshPlayer = (Button) findViewById(R.id.btnRefreshPlayer);
-        btnRefreshPlayer.setOnClickListener(this);
+        showList();
     }
 
     public void buttonReturn(View view){
@@ -34,18 +32,10 @@ public class PlayerList4PlayerMode extends ListActivity implements View.OnClickL
         startActivity(intent);
     }
 
-    @Override
-    public void onClick(View view) {
-        if (view == findViewById(R.id.btnRefreshPlayer)) {
-            refreshList(view);
-        }
-    }
-
-    private void refreshList(View view) {
+    public void showList() {
         PlayerRepo playerRepo = new PlayerRepo(this);
         List<Map<String, String>> playerTotalList = playerRepo.getPlayerTotalList();
         if (playerTotalList.size() != 0) {
-            ListView lv = getListView();
             ListAdapter adapter = new SimpleAdapter(this,
                     playerTotalList,
                     R.layout.view_player_entry,
