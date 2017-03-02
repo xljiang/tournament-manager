@@ -1,7 +1,9 @@
 package edu.gatech.seclass.tourneymanager.activity;
 /**
- * Code from instinctcoder.com
- * Edited by Katja Krivoruchko for CS 6300 Spring 2017
+ * @author Katja Krivoruchko
+ * @author Xiaolu Jiang
+ *
+ * Reference: instinctcoder.com
  */
 
 import android.content.Intent;
@@ -23,12 +25,14 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
     EditText editTextName;
     EditText editTextUsername;
     EditText editTextPhone;
+    EditText editTextDeck;
+    EditText editTextTotal;
     private int _Student_Id=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_player);
+        setContentView(R.layout.activity_player_detail);
 
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
         buttonDelete = (Button) findViewById(R.id.buttonDelete);
@@ -37,7 +41,8 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
-
+        editTextDeck = (EditText) findViewById(R.id.editTextDeck);
+        editTextTotal = (EditText) findViewById(R.id.editTextTotal);
 
         buttonRegister.setOnClickListener(this);
         buttonDelete.setOnClickListener(this);
@@ -51,37 +56,45 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         Player player = new Player();
         player = repo.getStudentById(_Student_Id);
         if (player.username != null){
-        editTextUsername.setText(String.valueOf(player.username));}
+            editTextUsername.setText(String.valueOf(player.username));}
         if (player.name != null){
-        editTextName.setText(String.valueOf(player.name));}
+            editTextName.setText(String.valueOf(player.name));}
         if (player.phone != null){
-        editTextPhone.setText(String.valueOf(player.phone));}
+            editTextPhone.setText(String.valueOf(player.phone));}
+        if (player.getDeck() != null) {
+            editTextDeck.setText(String.valueOf(player.getDeck()));
+        }
+        if ((Integer)player.getTotal() != null) {
+            editTextTotal.setText(String.valueOf(player.getTotal()));
+        }
     }
 
 
 
     public void onClick(View view) {
         if (view == findViewById(R.id.buttonRegister)){
-            PlayerRepo repo = new PlayerRepo(this);
+            PlayerRepo playerRepo = new PlayerRepo(this);
             Player player = new Player();
             player.username=editTextUsername.getText().toString();
             player.phone = editTextPhone.getText().toString();
             player.name=editTextName.getText().toString();
+            player.setDeck(editTextDeck.getText().toString());
+            player.setTotal(Integer.parseInt(editTextTotal.getText().toString()));
             player.playerID =_Student_Id;
 
             if (_Student_Id==0){
-                _Student_Id = repo.insert(player);
+                _Student_Id = playerRepo.insert(player);
 
                 Toast.makeText(this,"New Player Added",Toast.LENGTH_SHORT).show();
             }else{
 
-                repo.update(player);
+                playerRepo.update(player);
                 Toast.makeText(this,"Player Record updated",Toast.LENGTH_SHORT).show();
             }
         }
         if (view== findViewById(R.id.buttonDelete)){
-            PlayerRepo repo = new PlayerRepo(this);
-            repo.delete(_Student_Id);
+            PlayerRepo playerRepo = new PlayerRepo(this);
+            playerRepo.delete(_Student_Id);
             Toast.makeText(this, "Player Record Deleted", Toast.LENGTH_SHORT);
             finish();
         } if (view== findViewById(R.id.buttonClear)){

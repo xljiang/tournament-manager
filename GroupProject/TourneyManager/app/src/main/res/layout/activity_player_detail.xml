@@ -34,6 +34,20 @@
         android:hint="Phone"
         android:inputType="phone" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/editTextDeck"
+        android:hint="Deck"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/editTextTotal"
+        android:hint="Total"/>
+
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

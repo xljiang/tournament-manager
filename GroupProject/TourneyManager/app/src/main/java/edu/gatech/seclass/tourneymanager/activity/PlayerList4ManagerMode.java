@@ -1,8 +1,10 @@
 package edu.gatech.seclass.tourneymanager.activity;
 
 /**
- * Code from instinctcoder.com
- * Edited by Katja Krivoruchko for CS 6300 Spring 2017
+ * @author Katja Krivoruchko
+ * @author Xiaolu Jiang
+ *
+ * reference: instinctcoder.com
  */
 
 import android.app.ListActivity;
@@ -17,16 +19,16 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.R;
 
-public class ListPlayers extends ListActivity  implements android.view.View.OnClickListener{
+public class PlayerList4ManagerMode extends ListActivity  implements android.view.View.OnClickListener{
 
     Button btnAdd,btnGetAll, btnBack;
-    TextView player_Id;
+    TextView player_id;
 
 
 
@@ -45,45 +47,32 @@ public class ListPlayers extends ListActivity  implements android.view.View.OnCl
 
             }else {
             refreshList(view);
-
-
-
-
-
         }
     }
 
     public void refreshList(View view){
-        PlayerRepo repo = new PlayerRepo(this);
-        ArrayList<HashMap<String, String>> studentList =  repo.getStudentList();
-        if(studentList.size()!=0) {
+        PlayerRepo playerRepo = new PlayerRepo(this);
+        List<Map<String, String>> playerTotalList =  playerRepo.getPlayerTotalList();
+        if(playerTotalList.size() != 0) {
             ListView lv = getListView();
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-                    player_Id = (TextView) view.findViewById(R.id.player_Id);
-                    String studentId = player_Id.getText().toString();
+                    player_id = (TextView) view.findViewById(R.id.player_id);
+                    String playerId = player_id.getText().toString();
                     Intent objIndent = new Intent(getApplicationContext(),PlayerDetail.class);
-                    objIndent.putExtra("player_Id", Integer.parseInt( studentId));
+                    objIndent.putExtra("player_Id", Integer.parseInt(playerId));
                     startActivity(objIndent);
                 }
             });
-            ListAdapter adapter = new SimpleAdapter( ListPlayers.this,studentList, R.layout.view_player_entry, new String[] { "id","name"}, new int[] {R.id.player_Id, R.id.student_name});
+            ListAdapter adapter = new SimpleAdapter(this,
+                                                    playerTotalList,
+                                                    R.layout.view_player_entry,
+                                                    new String[] {"id", "name", "total"},
+                                                    new int[] {R.id.player_id, R.id.player_name, R.id.player_total});
             setListAdapter(adapter);
+
         }else{
-            ListView lv = getListView();
-            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-                    player_Id = (TextView) view.findViewById(R.id.player_Id);
-                    String studentId = player_Id.getText().toString();
-                    Intent objIndent = new Intent(getApplicationContext(),PlayerDetail.class);
-                    objIndent.putExtra("player_Id", Integer.parseInt( studentId));
-                    startActivity(objIndent);
-                }
-            });
-            ListAdapter adapter = new SimpleAdapter( ListPlayers.this,studentList, R.layout.view_player_entry, new String[] { "id","name"}, new int[] {R.id.player_Id, R.id.student_name});
-            setListAdapter(adapter);
             Toast.makeText(this,"No records! Please add player",Toast.LENGTH_SHORT).show();
         }
 
@@ -92,7 +81,7 @@ public class ListPlayers extends ListActivity  implements android.view.View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manage_players);
+        setContentView(R.layout.activity_player_list_manager_mode);
 
         btnAdd = (Button) findViewById(R.id.btnAddNew);
         btnAdd.setOnClickListener(this);
@@ -107,7 +96,7 @@ public class ListPlayers extends ListActivity  implements android.view.View.OnCl
 
     }
     public void buttonReturn(View view){
-        Intent intent = new Intent(ListPlayers.this, ManagerMode.class);
+        Intent intent = new Intent(PlayerList4ManagerMode.this, ManagerMode.class);
         startActivity(intent);
     }
 

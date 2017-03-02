@@ -30,7 +30,7 @@ public class ManagerMode extends AppCompatActivity {
     }
 
     public void buttonAddPlayer (View view){
-        Intent intent = new Intent(ManagerMode.this, ListPlayers.class);
+        Intent intent = new Intent(ManagerMode.this, PlayerList4ManagerMode.class);
         startActivity(intent);
 
     }

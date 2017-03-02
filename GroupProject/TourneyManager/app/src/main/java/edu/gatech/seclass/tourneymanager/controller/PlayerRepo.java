@@ -11,13 +11,20 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import edu.gatech.seclass.tourneymanager.db.DBHelper;
+import edu.gatech.seclass.tourneymanager.db.DatabaseManager;
 import edu.gatech.seclass.tourneymanager.model.Player;
 
 public class PlayerRepo {
+    private final String TAG = PlayerRepo.class.getSimpleName().toString();
+
     private DBHelper dbHelper;
 
     public PlayerRepo(Context context) {
@@ -44,8 +51,8 @@ public class PlayerRepo {
         values.put(Player.KEY_name, player.name);
         values.put(Player.KEY_username,player.username);
         values.put(Player.KEY_phone, player.phone);
-        values.put(Player.KEY_Deck, "Deck");
-        values.put(Player.KEY_Total, 0);
+        values.put(Player.KEY_Deck, player.getDeck());
+        values.put(Player.KEY_Total, player.getTotal());
 
 
         // Inserting Row
@@ -85,9 +92,12 @@ public class PlayerRepo {
                 Player.KEY_ID + "," +
                 Player.KEY_name + "," +
                 Player.KEY_username + "," +
-                Player.KEY_phone +
+                Player.KEY_phone + "," +
+                Player.KEY_Deck + "," +
+                Player.KEY_Total +
                 " FROM " + Player.TABLE;
 
+        Log.d(TAG, selectQuery);
         //Player player = new Player();
         ArrayList<HashMap<String, String>> studentList = new ArrayList<HashMap<String, String>>();
 
@@ -119,12 +129,15 @@ public class PlayerRepo {
                 Player.KEY_ID + "," +
                 Player.KEY_name + "," +
                 Player.KEY_username + "," +
-                Player.KEY_phone +
+                Player.KEY_phone + "," +
+                Player.KEY_Deck + "," +
+                Player.KEY_Total +
                 " FROM " + Player.TABLE
                 + " WHERE " +
                 Player.KEY_ID + "=?";// It's a good practice to use parameter ?, instead of concatenate string
 
-        int iCount =0;
+        Log.d(TAG, selectQuery);
+        //int iCount =0;
         Player player = new Player();
 
         Cursor cursor = db.rawQuery(selectQuery, new String[] { String.valueOf(Id) } );
@@ -135,6 +148,8 @@ public class PlayerRepo {
                 player.name =cursor.getString(cursor.getColumnIndex(Player.KEY_name));
                 player.username  =cursor.getString(cursor.getColumnIndex(Player.KEY_username));
                 player.phone =cursor.getString(cursor.getColumnIndex(Player.KEY_phone));
+                player.setDeck(cursor.getString(cursor.getColumnIndex(Player.KEY_Deck)));
+                player.setTotal(cursor.getInt(cursor.getColumnIndex(Player.KEY_Total)));
 
             } while (cursor.moveToNext());
         }
@@ -142,6 +157,44 @@ public class PlayerRepo {
         cursor.close();
         db.close();
         return player;
+    }
+
+
+    // return a list of map with player name and player total prize amount
+    public List<Map<String, String>> getPlayerTotalList() {
+        List<Map<String, String>> playerTotalList = new ArrayList<>();
+
+        //Open connection to db
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        String selectQuery =  "SELECT  " +
+                Player.KEY_ID + "," +
+                Player.KEY_name + "," +
+                Player.KEY_Total +
+                " FROM " + Player.TABLE +
+                " ORDER BY " + Player.KEY_Total + " DESC";
+
+        Log.d(TAG, selectQuery);
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                HashMap<String, String> player = new HashMap<String, String>();
+                player.put("id", cursor.getString(cursor.getColumnIndex(Player.KEY_ID)));
+                player.put("name", cursor.getString(cursor.getColumnIndex(Player.KEY_name)));
+                player.put("total", cursor.getString(cursor.getColumnIndex(Player.KEY_Total)));
+
+                playerTotalList.add(player);
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return playerTotalList;
+
     }
 
 }

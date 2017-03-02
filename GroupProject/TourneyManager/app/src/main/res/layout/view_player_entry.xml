@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/linearLayout1"
+    android:minWidth="25px"
+    android:minHeight="25px">
+
     <TextView
-        android:id="@+id/player_Id"
+        android:id="@+id/player_id"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:visibility="gone" />
 
     <TextView
-        android:id="@+id/student_name"
-        android:layout_width="fill_parent"
+        android:id="@+id/player_name"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="6dip"
-        android:paddingTop="6dip"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:layout_weight="1"
+        android:text="" />
 
+    <TextView
+        android:id="@+id/player_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="" />
 </LinearLayout>
