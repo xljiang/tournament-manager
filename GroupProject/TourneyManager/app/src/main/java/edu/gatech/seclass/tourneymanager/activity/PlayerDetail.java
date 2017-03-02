@@ -67,7 +67,7 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
             player.username=editTextUsername.getText().toString();
             player.phone = editTextPhone.getText().toString();
             player.name=editTextName.getText().toString();
-            player.player_ID=_Student_Id;
+            player.playerID =_Student_Id;
 
             if (_Student_Id==0){
                 _Student_Id = repo.insert(player);

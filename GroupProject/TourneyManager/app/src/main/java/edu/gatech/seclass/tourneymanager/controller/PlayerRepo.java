@@ -1,14 +1,12 @@
 package edu.gatech.seclass.tourneymanager.controller;
 
 /**
- * Code from instinctcoder.com
- * Edited by Katja Krivoruchko for CS 6300 Spring 2017
+ * @author Katja Krivoruchko
+ * @author Xiaolu Jiang
+ *
+ * reference: instinctcoder.com
  */
 
-
-/**
- * Created by IT001 on 23-Jun-16.
- */
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -26,26 +24,41 @@ public class PlayerRepo {
         dbHelper = new DBHelper(context);
     }
 
+
+    public static String createTable() {
+        return "CREATE TABLE " + Player.TABLE  + "("
+                + Player.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
+                + Player.KEY_name + " TEXT, "
+                + Player.KEY_phone + " TEXT, "
+                + Player.KEY_username + " TEXT, "
+                + Player.KEY_Deck + " TEXT, "
+                + Player.KEY_Total + " INTEGER )";
+    }
+
     public int insert(Player player) {
 
         //Open connection to write data
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(Player.KEY_phone, player.phone);
-        values.put(Player.KEY_username,player.username);
+
         values.put(Player.KEY_name, player.name);
+        values.put(Player.KEY_username,player.username);
+        values.put(Player.KEY_phone, player.phone);
+        values.put(Player.KEY_Deck, "Deck");
+        values.put(Player.KEY_Total, 0);
+
 
         // Inserting Row
-        long player_Id = db.insert(Player.TABLE, null, values);
+        long playerId = db.insert(Player.TABLE, null, values);
         db.close(); // Closing database connection
-        return (int) player_Id;
+        return (int) playerId;
     }
 
-    public void delete(int player_Id) {
+    public void delete(int playerId) {
 
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         // It's a good practice to use parameter ?, instead of concatenate string
-        db.delete(Player.TABLE, Player.KEY_ID + "= ?", new String[] { String.valueOf(player_Id) });
+        db.delete(Player.TABLE, Player.KEY_ID + "= ?", new String[] { String.valueOf(playerId) });
         db.close(); // Closing database connection
     }
 
@@ -57,9 +70,11 @@ public class PlayerRepo {
         values.put(Player.KEY_phone, player.phone);
         values.put(Player.KEY_username,player.username);
         values.put(Player.KEY_name, player.name);
+        values.put(Player.KEY_Deck, player.getDeck());
+        values.put(Player.KEY_Total, player.getTotal());
 
         // It's a good practice to use parameter ?, instead of concatenate string
-        db.update(Player.TABLE, values, Player.KEY_ID + "= ?", new String[] { String.valueOf(player.player_ID) });
+        db.update(Player.TABLE, values, Player.KEY_ID + "= ?", new String[] { String.valueOf(player.playerID) });
         db.close(); // Closing database connection
     }
 
@@ -116,7 +131,7 @@ public class PlayerRepo {
 
         if (cursor.moveToFirst()) {
             do {
-                player.player_ID =cursor.getInt(cursor.getColumnIndex(Player.KEY_ID));
+                player.playerID =cursor.getInt(cursor.getColumnIndex(Player.KEY_ID));
                 player.name =cursor.getString(cursor.getColumnIndex(Player.KEY_name));
                 player.username  =cursor.getString(cursor.getColumnIndex(Player.KEY_username));
                 player.phone =cursor.getString(cursor.getColumnIndex(Player.KEY_phone));

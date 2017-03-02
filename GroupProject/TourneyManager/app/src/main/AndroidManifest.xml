@@ -48,7 +48,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="edu.gatech.seclass.tourneymanager.activity.PlayerList">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.PlayerList4PlayerMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

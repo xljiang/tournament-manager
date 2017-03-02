@@ -27,10 +27,9 @@ public class PlayerMode extends AppCompatActivity {
 
     }
     public void buttonPlayerList (View view){
-        Intent intent = new Intent(PlayerMode.this, PlayerList.class);
+        Intent intent = new Intent(PlayerMode.this, PlayerList4PlayerMode.class);
         startActivity(intent);
     }
-
 
 
 }

@@ -8,7 +8,7 @@ import android.view.View;
 import edu.gatech.seclass.tourneymanager.R;
 
 
-public class PlayerList extends AppCompatActivity {
+public class PlayerList4PlayerMode extends AppCompatActivity {
 
 
 
@@ -20,7 +20,7 @@ public class PlayerList extends AppCompatActivity {
 
     }
     public void buttonReturn(View view){
-        Intent intent = new Intent(PlayerList.this, PlayerMode.class);
+        Intent intent = new Intent(PlayerList4PlayerMode.this, PlayerMode.class);
         startActivity(intent);
 
     }
