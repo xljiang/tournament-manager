@@ -9,37 +9,37 @@ public class Tournament {
     public static final String TABLE = "Tournament";
 
     // Labels Table Columns names
-    public static final String KEY_ID = "TournamentID";
+    public static final String KEY_TourID = "TournamentID"; // primary key
     public static final String KEY_HouseProfit = "HouseProfit";
     public static final String KEY_TotalPrizeAwarded = "TotalPrizeAwarded";
 
     // properties help us to keep data
-    private String tournamentID;
-    private String houseProfit;
-    private String totalPrizeAwarded;
+    private int tournamentID;
+    private int houseProfit;
+    private int totalPrizeAwarded;
 
     // getters and setters
-    public String getTournamentID() {
+    public int getTournamentID() {
         return tournamentID;
     }
 
-    public void setTournamentID(String tournamentID) {
+    public void setTournamentID(int tournamentID) {
         this.tournamentID = tournamentID;
     }
 
-    public String getHouseProfit() {
+    public int getHouseProfit() {
         return houseProfit;
     }
 
-    public void setHouseProfit(String houseProfit) {
+    public void setHouseProfit(int houseProfit) {
         this.houseProfit = houseProfit;
     }
 
-    public String getTotalPrizeAwarded() {
+    public int getTotalPrizeAwarded() {
         return totalPrizeAwarded;
     }
 
-    public void setTotalPrizeAwarded(String totalPrizeAwarded) {
+    public void setTotalPrizeAwarded(int totalPrizeAwarded) {
         this.totalPrizeAwarded = totalPrizeAwarded;
     }
 }

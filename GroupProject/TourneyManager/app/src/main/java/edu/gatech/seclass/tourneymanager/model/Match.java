@@ -17,37 +17,37 @@ public class Match {
     public static final String KEY_Status = "Status";
 
     // instant variables
-    private String matchID;
-    private String player1ID;
-    private String player2ID;
+    private int matchID;
+    private int player1ID;
+    private int player2ID;
     private String round;
-    private String winnerID;
+    private int winnerID;
     private String status;
 
 
     // getters and setters
 
-    public String getMatchID() {
+    public int getMatchID() {
         return matchID;
     }
 
-    public void setMatchID(String matchID) {
+    public void setMatchID(int matchID) {
         this.matchID = matchID;
     }
 
-    public String getPlayer1ID() {
+    public int getPlayer1ID() {
         return player1ID;
     }
 
-    public void setPlayer1ID(String player1ID) {
+    public void setPlayer1ID(int player1ID) {
         this.player1ID = player1ID;
     }
 
-    public String getPlayer2ID() {
+    public int getPlayer2ID() {
         return player2ID;
     }
 
-    public void setPlayer2ID(String player2ID) {
+    public void setPlayer2ID(int player2ID) {
         this.player2ID = player2ID;
     }
 
@@ -59,11 +59,11 @@ public class Match {
         this.round = round;
     }
 
-    public String getWinnerID() {
+    public int getWinnerID() {
         return winnerID;
     }
 
-    public void setWinnerID(String winnerID) {
+    public void setWinnerID(int winnerID) {
         this.winnerID = winnerID;
     }
 

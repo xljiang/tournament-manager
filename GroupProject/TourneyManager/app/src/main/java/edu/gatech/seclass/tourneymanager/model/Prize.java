@@ -15,27 +15,36 @@ public class Prize {
     public static final String KEY_PrizeType = "PrizeType";
     public static final String KEY_PrizeAmount = "PrizeAmount";
 
-    // instant variables
-    private String tournamentID;
-    private String playerID;
+    private int runningID;
+    private int tournamentID;
+    private int playerID;
     private String prizeType;
     private String prizeAmount;
 
 
     // getters and setters
-    public String getTournamentID() {
+
+    public int getRunningID() {
+        return runningID;
+    }
+
+    public void setRunningID(int runningID) {
+        this.runningID = runningID;
+    }
+
+    public int getTournamentID() {
         return tournamentID;
     }
 
-    public void setTournamentID(String tournamentID) {
+    public void setTournamentID(int tournamentID) {
         this.tournamentID = tournamentID;
     }
 
-    public String getPlayerID() {
+    public int getPlayerID() {
         return playerID;
     }
 
-    public void setPlayerID(String playerID) {
+    public void setPlayerID(int playerID) {
         this.playerID = playerID;
     }
 
