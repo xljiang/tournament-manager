@@ -48,7 +48,7 @@ public class MatchDetailOngoing extends AppCompatActivity implements View.OnClic
         showMatch();
 
         // get winner (player1 or player2)
-        editTextWinner = (EditText) findViewById(R.id.match_detail_winner);
+        editTextWinner = (EditText) findViewById(R.id.match_detail_choose_winner);
 
     }
 
@@ -77,7 +77,9 @@ public class MatchDetailOngoing extends AppCompatActivity implements View.OnClic
         textViewPlayer1.setText(String.valueOf(match.getPlayer1ID()));
         textViewPlayer2.setText(String.valueOf(match.getPlayer2ID()));
         textViewStatus.setText(String.valueOf(match.getStatus()));
-        textViewWinner.setText(String.valueOf(match.getWinnerID()));
+        if (match.getWinnerID() != 0) {
+            textViewWinner.setText(String.valueOf(match.getWinnerID()));
+        } else textViewWinner.setText("");
     }
 
 
