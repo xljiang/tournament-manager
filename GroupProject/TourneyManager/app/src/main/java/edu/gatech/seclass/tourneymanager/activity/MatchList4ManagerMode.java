@@ -21,6 +21,11 @@ import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.controller.MatchRepo;
 import edu.gatech.seclass.tourneymanager.model.Match;
 
+/**
+ * @author Katja Krivoruchko
+ * @author Xiaolu Jiang
+ *
+ */
 
 public class MatchList4ManagerMode extends ListActivity implements View.OnClickListener {
 
@@ -50,7 +55,7 @@ public class MatchList4ManagerMode extends ListActivity implements View.OnClickL
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-                    TextView match_id = (TextView) view.findViewById(R.id.player_id);
+                    TextView match_id = (TextView) view.findViewById(R.id.match_id);
                     int matchId = Integer.parseInt(match_id.getText().toString());
                     Match match = new Match();
                     match = matchRepo.getMatchById(matchId);
@@ -67,6 +72,10 @@ public class MatchList4ManagerMode extends ListActivity implements View.OnClickL
                         startActivity(intent);
                     } else if (status.equals(Match.STATUS_FINISHED)) {
                         intent = new Intent(getApplicationContext(), MatchDetailFinished.class);
+                        intent.putExtra("match_ID", matchId);
+                        startActivity(intent);
+                    } else if (status.equals(Match.STATUS_NOTREADY)) {
+                        intent = new Intent(getApplicationContext(), MatchDetailNotReady.class);
                         intent.putExtra("match_ID", matchId);
                         startActivity(intent);
                     }
