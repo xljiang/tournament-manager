@@ -75,6 +75,24 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchDetailReady">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchDetailOngoing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchDetailFinished">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
 
     </application>
 
