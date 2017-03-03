@@ -60,8 +60,11 @@ public class PrizeRepo {
         db.close();
     }
 
+    // delete all items in the table
     public void deleteAll() {
-        //TODO
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete(Prize.TABLE, null, null);
+        db.close();
     }
 
     // delete all prize records in the Prize table for a single player

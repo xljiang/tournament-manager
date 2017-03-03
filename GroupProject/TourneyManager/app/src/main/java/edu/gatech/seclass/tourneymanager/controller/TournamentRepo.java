@@ -54,8 +54,11 @@ public class TournamentRepo {
         return (int) tourId;
     }
 
+    // delete all items in the table
     public void deleteAll() {
-        //TODO
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete(Tournament.TABLE, null, null);
+        db.close();
     }
 
     public List<Map<String, String>> getTourProfitHistoryList() {

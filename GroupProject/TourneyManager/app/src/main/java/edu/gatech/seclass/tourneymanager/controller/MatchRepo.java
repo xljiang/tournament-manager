@@ -1,5 +1,6 @@
 package edu.gatech.seclass.tourneymanager.controller;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -38,21 +39,46 @@ public class MatchRepo {
     }
 
     public int insert(Match match) {
-        //TODO
-        return 0;
+        //Open connection to write data
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(Match.KEY_Player1ID, match.getPlayer1ID());
+        values.put(Match.KEY_Player2ID, match.getPlayer2ID());
+        values.put(Match.KEY_Round, match.getRound());
+        values.put(Match.KEY_WinnerID, match.getWinnerID());
+        values.put(Match.KEY_Status, match.getStatus());
+
+        // Inserting Row
+        long matchId = db.insert(Match.TABLE, null, values);
+        db.close(); // Closing database connection
+        return (int) matchId;
     }
 
     public void delete(int matchId) {
         //TODO
     }
 
+    // delete all items in the table
     public void deleteAll() {
-        //TODO
-
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete(Match.TABLE, null, null);
+        db.close();
     }
 
     public void update(Match match) {
-        //TODO
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(Match.KEY_Player1ID, match.getPlayer1ID());
+        values.put(Match.KEY_Player2ID, match.getPlayer2ID());
+        values.put(Match.KEY_Round, match.getRound());
+        values.put(Match.KEY_WinnerID, match.getWinnerID());
+        values.put(Match.KEY_Status, match.getStatus());
+
+        // It's a good practice to use parameter ?, instead of concatenate string
+        db.update(Match.TABLE, values, Match.KEY_MatchID + "= ?", new String[] { String.valueOf(match.getMatchID()) });
+        db.close(); // Closing database connection
 
     }
 
