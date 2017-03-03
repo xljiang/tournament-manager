@@ -83,9 +83,43 @@ public class MatchRepo {
     }
 
     public Match getMatchById(int matchId) {
-        //TODO
-        return null;
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery =  "SELECT  " +
+                Match.KEY_MatchID + "," +
+                Match.KEY_Player1ID + "," +
+                Match.KEY_Player2ID + "," +
+                Match.KEY_Round + "," +
+                Match.KEY_WinnerID + "," +
+                Match.KEY_Status +
+                " FROM " + Match.TABLE
+                + " WHERE " +
+                Match.KEY_MatchID + "=?"
+                ;
+
+        Log.d(TAG, selectQuery);
+
+        Match match = new Match();
+
+        Cursor cursor = db.rawQuery(selectQuery, new String[] { String.valueOf(matchId) } );
+
+        if (cursor.moveToFirst()) {
+            do {
+                match.setMatchID(cursor.getInt(cursor.getColumnIndex(Match.KEY_MatchID)));
+                match.setPlayer1ID(cursor.getInt(cursor.getColumnIndex(Match.KEY_Player1ID)));
+                match.setPlayer2ID(cursor.getInt(cursor.getColumnIndex(Match.KEY_Player2ID)));
+                match.setRound(cursor.getString(cursor.getColumnIndex(Match.KEY_Round)));
+                match.setWinnerID(cursor.getInt(cursor.getColumnIndex(Match.KEY_WinnerID)));
+                match.setStatus(cursor.getString(cursor.getColumnIndex(Match.KEY_Status)));
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return match;
     }
+
+
 
     public List<Map<String, String>> getMatchList() {
         List<Map<String, String>> matchList = new ArrayList<>();
