@@ -165,4 +165,16 @@ public class MatchRepo {
         return matchList;
 
     }
+
+    // return how many players in this match
+    public int getPlayerCount() {
+        //Open connection to db
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        String countQuery = "SELECT  * FROM " + Match.TABLE;
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int cnt = cursor.getCount();
+        cursor.close();
+        return cnt;
+    }
 }
