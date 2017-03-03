@@ -27,7 +27,7 @@ public class MatchDetailNotReady extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_match_detail_notReady);
+        setContentView(R.layout.activity_match_detail_not_ready);
 
         // get match
         Intent intent = getIntent();
