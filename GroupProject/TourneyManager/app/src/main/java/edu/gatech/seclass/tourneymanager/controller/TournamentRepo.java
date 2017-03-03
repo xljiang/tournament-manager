@@ -84,11 +84,11 @@ public class TournamentRepo {
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> tournament = new HashMap<String, String>();
-                tournament.put("id", cursor.getString(cursor.getColumnIndex(Tournament.KEY_TourID)));
-                tournament.put("name", cursor.getString(cursor.getColumnIndex(Tournament.KEY_TourName)));
-                tournament.put("date", cursor.getString(cursor.getColumnIndex(Tournament.KEY_TourDate)));
-                tournament.put("profit", cursor.getString(cursor.getColumnIndex(Tournament.KEY_HouseProfit)));
-                tournament.put("totalPrizeAmount", cursor.getString(cursor.getColumnIndex(Tournament.KEY_TotalPrizeAwarded)));
+                tournament.put("tourId", cursor.getString(cursor.getColumnIndex(Tournament.KEY_TourID)));
+                tournament.put("tourName", cursor.getString(cursor.getColumnIndex(Tournament.KEY_TourName)));
+                tournament.put("tourDate", cursor.getString(cursor.getColumnIndex(Tournament.KEY_TourDate)));
+                tournament.put("tourProfit", cursor.getString(cursor.getColumnIndex(Tournament.KEY_HouseProfit)));
+                tournament.put("tourTotalPrizeAmount", cursor.getString(cursor.getColumnIndex(Tournament.KEY_TotalPrizeAwarded)));
 
                 tournamentProfitList.add(tournament);
 

@@ -22,7 +22,7 @@ public class PlayerMode extends AppCompatActivity {
 
     }
     public void buttonOngoingTournament (View view){
-        Intent intent = new Intent(PlayerMode.this, OngoingTourney.class);
+        Intent intent = new Intent(PlayerMode.this, MatchList4PlayerMode.class);
         startActivity(intent);
 
     }

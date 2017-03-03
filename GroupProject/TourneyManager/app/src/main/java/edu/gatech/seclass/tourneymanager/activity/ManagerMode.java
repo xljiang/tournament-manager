@@ -24,7 +24,7 @@ public class ManagerMode extends AppCompatActivity {
     }
 
     public void buttonMatchList (View view){
-        Intent intent = new Intent(ManagerMode.this, MatchList.class);
+        Intent intent = new Intent(ManagerMode.this, MatchList4ManagerMode.class);
         startActivity(intent);
 
     }

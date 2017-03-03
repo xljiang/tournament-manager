@@ -48,7 +48,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="edu.gatech.seclass.tourneymanager.activity.OngoingTourney">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchList4PlayerMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -58,7 +58,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchList">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchList4ManagerMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
