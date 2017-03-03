@@ -16,6 +16,11 @@ import java.util.Map;
 import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 
+/**
+ * @author Katja Krivoruchko
+ * @author Xiaolu Jiang
+ *
+ */
 
 public class PlayerList4PlayerMode extends ListActivity {
 

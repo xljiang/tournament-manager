@@ -17,6 +17,10 @@ import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.controller.TournamentRepo;
 import edu.gatech.seclass.tourneymanager.model.Tournament;
 
+/**
+ * Created by Xiaolu Jiang on 2/28/17.
+ * @author Xiaolu Jiang
+ */
 
 public class ProfitHistory extends ListActivity {
 

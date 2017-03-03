@@ -1,10 +1,5 @@
 package edu.gatech.seclass.tourneymanager.activity;
-/**
- * @author Katja Krivoruchko
- * @author Xiaolu Jiang
- *
- * Reference: instinctcoder.com
- */
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +12,13 @@ import android.widget.Toast;
 import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.model.Player;
+
+/**
+ * @author Katja Krivoruchko
+ * @author Xiaolu Jiang
+ *
+ * Reference: instinctcoder.com
+ */
 
 public class PlayerDetail extends AppCompatActivity implements android.view.View.OnClickListener{
 

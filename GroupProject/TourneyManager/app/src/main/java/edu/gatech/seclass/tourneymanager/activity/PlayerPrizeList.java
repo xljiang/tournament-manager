@@ -18,6 +18,10 @@ import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.controller.PrizeRepo;
 import edu.gatech.seclass.tourneymanager.model.Player;
 
+/**
+ * Created by Xiaolu Jiang on 2/28/17.
+ * @author Xiaolu Jiang
+ */
 
 public class PlayerPrizeList extends ListActivity implements View.OnClickListener {
 
