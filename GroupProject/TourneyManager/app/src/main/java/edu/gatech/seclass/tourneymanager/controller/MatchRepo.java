@@ -28,6 +28,7 @@ public class MatchRepo {
         dbHelper = new DBHelper(context);
     }
 
+
     public static String createTable() {
         return "CREATE TABLE " + Match.TABLE  + "("
                 + Match.KEY_MatchID  + " INTEGER PRIMARY KEY ,"
@@ -177,4 +178,26 @@ public class MatchRepo {
         cursor.close();
         return cnt;
     }
+
+    // return true if all matches has finished
+    public boolean allMatchCompleted() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        String selectQuery =  "SELECT " + Match.KEY_Status + " FROM " + Match.TABLE;
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                String status = cursor.getString(cursor.getColumnIndex(Match.KEY_Status));
+                if (!status.equals(Match.STATUS_FINISHED)) {
+                    return false;
+                }
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return true;
+    }
+
 }
