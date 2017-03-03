@@ -21,6 +21,7 @@ import static edu.gatech.seclass.tourneymanager.R.id.editTextUsername;
 
 /**
  * Created by Xiaolu Jiang on 3/2/17.
+ * @author Xiaolu Jiang
  */
 
 public class MatchDetailReady extends AppCompatActivity implements android.view.View.OnClickListener {

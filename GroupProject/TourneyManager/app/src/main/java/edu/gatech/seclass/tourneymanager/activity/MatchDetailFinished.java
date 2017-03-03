@@ -14,6 +14,7 @@ import edu.gatech.seclass.tourneymanager.model.Match;
 
 /**
  * Created by Xiaolu Jiang on 3/2/17.
+ * @author Xiaolu Jiang
  */
 
 public class MatchDetailFinished extends AppCompatActivity {
