@@ -54,11 +54,60 @@ public class TournamentRepo {
         return (int) tourId;
     }
 
+    public void update(Tournament tournament) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(Tournament.KEY_TourName, tournament.getTourName());
+        values.put(Tournament.KEY_TourDate, tournament.getDate());
+        values.put(Tournament.KEY_HouseProfit, tournament.getHouseProfit());
+        values.put(Tournament.KEY_TotalPrizeAwarded, tournament.getTotalPrizeAwarded());
+
+        // update row
+        db.update(Tournament.TABLE, values, Tournament.KEY_TourID + "= ?", new String[] { String.valueOf(tournament.getTournamentID()) });
+        db.close();
+    }
+
     // delete all items in the table
     public void deleteAll() {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         db.delete(Tournament.TABLE, null, null);
         db.close();
+    }
+
+    public Tournament getTournamentById(int tournamentId) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery =  "SELECT  " +
+                Tournament.KEY_TourID + "," +
+                Tournament.KEY_TourName + "," +
+                Tournament.KEY_TourDate + "," +
+                Tournament.KEY_HouseProfit + "," +
+                Tournament.KEY_TotalPrizeAwarded +
+                " FROM " + Tournament.TABLE
+                + " WHERE " +
+                Tournament.KEY_TourID + "=?"
+                ;
+
+        Log.d(TAG, selectQuery);
+
+        Tournament tournament = new Tournament();
+
+        Cursor cursor = db.rawQuery(selectQuery, new String[] { String.valueOf(tournamentId) } );
+
+        if (cursor.moveToFirst()) {
+            do {
+                tournament.setTournamentID(cursor.getInt(cursor.getColumnIndex(Tournament.KEY_TourID)));
+                tournament.setTourName(cursor.getString(cursor.getColumnIndex(Tournament.KEY_TourName)));
+                tournament.setDate(cursor.getString(cursor.getColumnIndex(Tournament.KEY_TourDate)));
+                tournament.setHouseProfit(cursor.getInt(cursor.getColumnIndex(Tournament.KEY_HouseProfit)));
+                tournament.setTotalPrizeAwarded(cursor.getInt(cursor.getColumnIndex(Tournament.KEY_TotalPrizeAwarded)));
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return tournament;
     }
 
     public List<Map<String, String>> getTourProfitHistoryList() {
