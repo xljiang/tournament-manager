@@ -1,5 +1,7 @@
 package edu.gatech.seclass.tourneymanager.controller;
 
+import android.content.Context;
+
 import edu.gatech.seclass.tourneymanager.model.Match;
 
 /**
@@ -13,11 +15,15 @@ public class Manager {
 
     }
 
-
-    public boolean hasOngoingTournament() {
-        //TODO
-        return true;
+    // return true if there is a ongoing tournament
+    // if match list is not empty, then there is ongoing tournament
+    public boolean hasOngoingTournament(Context context) {
+        MatchRepo matchRepo = new MatchRepo(context);
+        int count = matchRepo.getPlayerCount();
+        return count == 0 ? false : true;
     }
+
+
 
     public void startTournament() {
         //TODO
