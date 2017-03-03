@@ -77,7 +77,7 @@ public class PlayerPrizeList extends ListActivity implements View.OnClickListene
         if (view == findViewById(R.id.buttonDelete)) {
             PlayerRepo playerRepo = new PlayerRepo(this);
             playerRepo.delete(player_Id);
-            Toast.makeText(this, "Player Record Deleted", Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Player Record Deleted", Toast.LENGTH_SHORT).show();
             finish();
         }
 
