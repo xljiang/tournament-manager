@@ -4,6 +4,12 @@ package edu.gatech.seclass.tourneymanager.model;
  * Created by Xiaolu Jiang on 2/28/17.
  */
 
+/*
+    Tournament Logic:
+    - completed: id, profit, total prize awarded
+    - if ongoing tournament: id, current profit, potential total prize
+    - if not completed but terminated: id, profit (= entry price), 0
+ */
 public class Tournament {
     // Labels table name
     public static final String TABLE = "Tournament";
