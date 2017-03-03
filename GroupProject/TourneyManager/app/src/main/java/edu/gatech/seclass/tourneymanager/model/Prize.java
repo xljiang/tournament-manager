@@ -15,6 +15,12 @@ public class Prize {
     public static final String KEY_PrizeType = "PrizeType";
     public static final String KEY_PrizeAmount = "PrizeAmount";
 
+    // Prize type
+    public static final String PRIZE_FIRST = "First";
+    public static final String PRIZE_SECOND = "Second";
+    public static final String PRIZE_THIRD = "Third";
+
+
     private int runningID;
     private int tournamentID;
     private int playerID;

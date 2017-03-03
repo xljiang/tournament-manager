@@ -16,6 +16,19 @@ public class Match {
     public static final String KEY_WinnerID = "WinnerID";
     public static final String KEY_Status = "Status";
 
+    // Match Round
+    public static final String ROUND_FINAL = "Final"; // 2
+    public static final String ROUND_SEMIFINAL = "SemiFinal"; //4
+    public static final String ROUND_THIRDPLACE = "ThirdPlace";
+    public static final String ROUND_QUARTERFINAL = "QuarterFinal"; // 8
+    public static final String ROUND_EIGHTHFINAL = "EighthFinal"; // 16
+
+    // Match Status
+    public static final String STATUS_FINISHED = "Finished";
+    public static final String STATUS_ONGOING = "Ongoing";
+    public static final String STATUS_READY = "Ready";
+
+
     // instant variables
     private int matchID;
     private int player1ID;
