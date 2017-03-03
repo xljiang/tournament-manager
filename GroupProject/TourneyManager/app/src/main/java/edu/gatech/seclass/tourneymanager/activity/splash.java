@@ -88,26 +88,55 @@ public class splash extends AppCompatActivity {
         // insert several matches
         Match match = new Match();
 
+        match.setMatchID(1);
         match.setPlayer1ID(1);
         match.setPlayer2ID(2);
-        match.setRound(Match.ROUND_SEMIFINAL);
-        match.setWinnerID(1);
-        match.setStatus(Match.STATUS_ONGOING);
-        matchRepo.insert(match);
-
-        match.setPlayer1ID(3);
-        match.setPlayer2ID(4);
-        match.setRound(Match.ROUND_SEMIFINAL);
-        match.setWinnerID(3);
-        match.setStatus(Match.STATUS_ONGOING);
-        matchRepo.insert(match);
-
-        match.setPlayer1ID(1);
-        match.setPlayer2ID(3);
-        match.setRound(Match.ROUND_FINAL);
-        //match.setWinnerID();
+        match.setRound(Match.ROUND_QUARTERFINAL);
         match.setStatus(Match.STATUS_READY);
         matchRepo.insert(match);
+
+        match.setMatchID(2);
+        match.setPlayer1ID(3);
+        match.setPlayer2ID(4);
+        match.setRound(Match.ROUND_QUARTERFINAL);
+        match.setStatus(Match.STATUS_READY);
+        matchRepo.insert(match);
+
+        match.setMatchID(3);
+        match.setPlayer1ID(5);
+        match.setPlayer2ID(6);
+        match.setRound(Match.ROUND_QUARTERFINAL);
+        match.setStatus(Match.STATUS_READY);
+        matchRepo.insert(match);
+
+        match.setMatchID(4);
+        match.setPlayer1ID(7);
+        match.setPlayer2ID(8);
+        match.setRound(Match.ROUND_QUARTERFINAL);
+        match.setStatus(Match.STATUS_READY);
+        matchRepo.insert(match);
+
+        match.setMatchID(5);
+        match.setRound(Match.ROUND_SEMIFINAL);
+        match.setStatus(Match.STATUS_NOTREADY);
+        matchRepo.insert(match);
+
+        match.setMatchID(6);
+        match.setRound(Match.ROUND_SEMIFINAL);
+        match.setStatus(Match.STATUS_NOTREADY);
+        matchRepo.insert(match);
+
+        match.setMatchID(7);
+        match.setRound(Match.ROUND_THIRDPLACE);
+        match.setStatus(Match.STATUS_NOTREADY);
+        matchRepo.insert(match);
+
+        match.setMatchID(8);
+        match.setRound(Match.ROUND_FINAL);
+        match.setStatus(Match.STATUS_NOTREADY);
+        matchRepo.insert(match);
+
+
 
         // insert several tournaments
         Tournament tournament = new Tournament();
