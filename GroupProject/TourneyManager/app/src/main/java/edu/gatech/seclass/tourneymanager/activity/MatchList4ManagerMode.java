@@ -18,8 +18,13 @@ import java.util.List;
 import java.util.Map;
 
 import edu.gatech.seclass.tourneymanager.R;
+import edu.gatech.seclass.tourneymanager.controller.Manager;
 import edu.gatech.seclass.tourneymanager.controller.MatchRepo;
+import edu.gatech.seclass.tourneymanager.controller.PrizeRepo;
+import edu.gatech.seclass.tourneymanager.controller.TournamentRepo;
 import edu.gatech.seclass.tourneymanager.model.Match;
+import edu.gatech.seclass.tourneymanager.model.Prize;
+import edu.gatech.seclass.tourneymanager.model.Tournament;
 
 /**
  * @author Katja Krivoruchko
@@ -102,13 +107,12 @@ public class MatchList4ManagerMode extends ListActivity implements View.OnClickL
 
     public void onClick(View view) {
         if (view == findViewById(R.id.btnEndTour)) {
-            //TODO
-
-            // show final result
-
-            // check if end properly or terminated early
-            // completed tournament -> record to db
-            // incompleted tournament -> refund
+            // end the tournament
+            MatchRepo matchRepo = new MatchRepo(this);
+            TournamentRepo tournamentRepo = new TournamentRepo(this);
+            PrizeRepo prizeRepo = new PrizeRepo(this);
+            Manager manager = new Manager();
+            manager.endTournament(matchRepo, tournamentRepo, prizeRepo);
 
             Toast.makeText(this, "Tournament Ended!", Toast.LENGTH_SHORT);
 
@@ -117,6 +121,7 @@ public class MatchList4ManagerMode extends ListActivity implements View.OnClickL
             showList();
         }
     }
+
 
 
 
