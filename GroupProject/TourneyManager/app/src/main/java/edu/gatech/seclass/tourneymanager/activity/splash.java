@@ -116,6 +116,9 @@ public class splash extends AppCompatActivity {
         match.setStatus(Match.STATUS_READY);
         matchRepo.insert(match);
 
+        match.setPlayer1ID(0); // 0 is no player
+        match.setPlayer2ID(0); // 0 is no player
+
         match.setMatchID(5);
         match.setRound(Match.ROUND_SEMIFINAL);
         match.setStatus(Match.STATUS_NOTREADY);
