@@ -2,6 +2,7 @@ package edu.gatech.seclass.tourneymanager.model;
 
 /**
  * Created by Xiaolu Jiang on 2/28/17.
+ * @author Xiaolu Jiang
  */
 
 public class Prize {

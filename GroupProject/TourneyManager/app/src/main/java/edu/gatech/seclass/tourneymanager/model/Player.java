@@ -1,8 +1,12 @@
 package edu.gatech.seclass.tourneymanager.model;
 
 /**
- * Created by IT001 on 23-Jun-16.
+ * @author Katja Krivoruchko
+ * @author Xiaolu Jiang
+ *
+ * reference: instinctcoder.com
  */
+
 public class Player {
     // Labels table name
     public static final String TABLE = "Player";
