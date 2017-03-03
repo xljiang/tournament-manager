@@ -34,7 +34,7 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
 
-        buttonRegister = (Button) findViewById(R.id.buttonRegister);
+        buttonRegister = (Button) findViewById(R.id.buttonRegistor);
         buttonDelete = (Button) findViewById(R.id.buttonDelete);
         buttonClear = (Button) findViewById(R.id.buttonClear);
 
@@ -72,7 +72,7 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
 
 
     public void onClick(View view) {
-        if (view == findViewById(R.id.buttonRegister)){
+        if (view == findViewById(R.id.buttonRegistor)){
             PlayerRepo playerRepo = new PlayerRepo(this);
             Player player = new Player();
             player.username=editTextUsername.getText().toString();

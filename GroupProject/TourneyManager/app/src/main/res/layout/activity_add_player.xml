@@ -63,7 +63,7 @@
         android:text="Add or Update Player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonRegister" />
+        android:id="@+id/buttonRegistor" />
 
     <TextView
         android:layout_width="match_parent"

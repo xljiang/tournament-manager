@@ -45,8 +45,7 @@ public class PlayerList4ManagerMode extends ListActivity  implements android.vie
         btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setOnClickListener(this);
 
-        //TODO
-        // auto show listview
+        refreshList();
 
     }
 
@@ -71,11 +70,11 @@ public class PlayerList4ManagerMode extends ListActivity  implements android.vie
                 startActivity(intent);
 
         }else {
-            refreshList(view);
+            refreshList();
         }
     }
 
-    public void refreshList(View view){
+    public void refreshList(){
         PlayerRepo playerRepo = new PlayerRepo(this);
         List<Map<String, String>> playerTotalList =  playerRepo.getPlayerTotalList();
         if(playerTotalList.size() != 0) {
