@@ -131,28 +131,22 @@
         android:layout_alignStart="@+id/textView8"
         android:textStyle="normal|bold" />
 
-    <RadioGroup
+    <TextView
+        android:text="Please input 1 or 2: "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView27">
-
-    </RadioGroup>
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:id="@+id/radio_player1"
-        android:text="Player1"
         android:layout_below="@+id/textView27"
-        android:layout_alignStart="@+id/textView27" />
+        android:layout_alignStart="@+id/textView27"
+        android:layout_marginTop="19dp"
+        android:id="@+id/textView23" />
 
-    <RadioButton
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radio_player2"
-        android:text="Player2"
-        android:layout_alignBaseline="@+id/radio_player1"
-        android:layout_alignBottom="@+id/radio_player1"
-        android:layout_toEndOf="@+id/textView27" />
+        android:inputType="number"
+        android:ems="10"
+        android:layout_alignBottom="@+id/textView23"
+        android:layout_toEndOf="@+id/match_detail_status"
+        android:id="@+id/match_detail_winner" />
 
 </RelativeLayout>
