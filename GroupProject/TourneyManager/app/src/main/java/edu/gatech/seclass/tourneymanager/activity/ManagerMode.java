@@ -8,6 +8,9 @@ import android.view.View;
 
 import edu.gatech.seclass.tourneymanager.R;
 
+/**
+ * @author Katja Krivoruchko
+ */
 
 public class ManagerMode extends AppCompatActivity {
 
