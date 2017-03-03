@@ -27,6 +27,7 @@ public class Match {
     public static final String STATUS_FINISHED = "Finished";
     public static final String STATUS_ONGOING = "Ongoing";
     public static final String STATUS_READY = "Ready";
+    public static final String STATUS_NOTREADY = "NotReady";
 
 
     // instant variables

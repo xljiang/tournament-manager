@@ -30,7 +30,7 @@ public class MatchRepo {
 
     public static String createTable() {
         return "CREATE TABLE " + Match.TABLE  + "("
-                + Match.KEY_MatchID  + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
+                + Match.KEY_MatchID  + " INTEGER PRIMARY KEY ,"
                 + Match.KEY_Player1ID + " INTEGER, "
                 + Match.KEY_Player2ID + " INTEGER, "
                 + Match.KEY_Round + " TEXT, "
@@ -43,6 +43,7 @@ public class MatchRepo {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
+        values.put(Match.KEY_MatchID, match.getMatchID());
         values.put(Match.KEY_Player1ID, match.getPlayer1ID());
         values.put(Match.KEY_Player2ID, match.getPlayer2ID());
         values.put(Match.KEY_Round, match.getRound());
