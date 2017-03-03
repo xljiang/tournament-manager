@@ -42,17 +42,6 @@
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@+id/btnRefreshMatchList" />
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:onClick="buttonReturn"
-        android:layout_alignBaseline="@+id/textView21"
-        android:layout_alignBottom="@+id/textView21"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="13dp" />
-
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
@@ -60,6 +49,16 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView5"
         android:layout_above="@+id/btnRefreshMatchList" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:onClick="buttonReturn"
+        android:layout_marginEnd="13dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
