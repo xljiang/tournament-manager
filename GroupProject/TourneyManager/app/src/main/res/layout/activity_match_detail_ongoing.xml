@@ -147,6 +147,6 @@
         android:ems="10"
         android:layout_alignBottom="@+id/textView23"
         android:layout_toEndOf="@+id/match_detail_status"
-        android:id="@+id/match_detail_winner" />
+        android:id="@+id/match_detail_choose_winner" />
 
 </RelativeLayout>
