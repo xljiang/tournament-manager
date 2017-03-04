@@ -75,6 +75,44 @@ public class TournamentRepo {
         db.close();
     }
 
+    // get the last tournament in table
+    public Tournament getLastTournament() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        String selectQuery =  "SELECT  " +
+                Tournament.KEY_TourID + "," +
+                Tournament.KEY_TourName + "," +
+                Tournament.KEY_TourDate + "," +
+                Tournament.KEY_HouseProfit + "," +
+                Tournament.KEY_TotalPrizeAwarded +
+                " FROM " + Tournament.TABLE +
+                " ORDER BY " + Tournament.KEY_TourID +
+                " DESC LIMIT 1"
+                ;
+
+        Log.d(TAG, selectQuery);
+
+        Tournament tournament = new Tournament();
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                tournament.setTournamentID(cursor.getInt(cursor.getColumnIndex(Tournament.KEY_TourID)));
+                tournament.setTourName(cursor.getString(cursor.getColumnIndex(Tournament.KEY_TourName)));
+                tournament.setDate(cursor.getString(cursor.getColumnIndex(Tournament.KEY_TourDate)));
+                tournament.setHouseProfit(cursor.getInt(cursor.getColumnIndex(Tournament.KEY_HouseProfit)));
+                tournament.setTotalPrizeAwarded(cursor.getInt(cursor.getColumnIndex(Tournament.KEY_TotalPrizeAwarded)));
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return tournament;
+    }
+
+
     public Tournament getTournamentById(int tournamentId) {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String selectQuery =  "SELECT  " +
