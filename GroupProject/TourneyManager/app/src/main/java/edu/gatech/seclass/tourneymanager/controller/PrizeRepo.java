@@ -102,6 +102,7 @@ public class PrizeRepo {
             do {
                 HashMap<String, String> prize = new HashMap<String, String>();
                 prize.put("runningId", cursor.getString(cursor.getColumnIndex(Prize.KEY_RunningID)));
+                prize.put("tourId", cursor.getString(cursor.getColumnIndex(Prize.KEY_TournamentID)));
                 //prize.put("playerName", cursor.getString(cursor.getColumnIndex("Table Name")));
                 //prize.put("tourName", cursor.getString(cursor.getColumnIndex("Table Name")));
                 prize.put("prizeType", cursor.getString(cursor.getColumnIndex(Prize.KEY_PrizeType)));

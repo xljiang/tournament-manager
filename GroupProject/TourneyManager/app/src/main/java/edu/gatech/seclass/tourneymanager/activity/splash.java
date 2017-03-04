@@ -50,6 +50,7 @@ public class splash extends AppCompatActivity {
         // insert several players
         Player player = new Player();
 
+        player.setPlayerID(1);
         player.setName("Mike");
         player.setUsername("mike");
         player.setPhone("123-123");
@@ -57,6 +58,7 @@ public class splash extends AppCompatActivity {
         player.setDeck("T");
         playerRepo.insert(player);
 
+        player.setPlayerID(2);
         player.setName("Tom");
         player.setUsername("tom");
         player.setPhone("123-123");
@@ -64,6 +66,7 @@ public class splash extends AppCompatActivity {
         player.setDeck("T");
         playerRepo.insert(player);
 
+        player.setPlayerID(3);
         player.setName("Jeremy");
         player.setUsername("jeremy");
         player.setPhone("123-123");
@@ -71,6 +74,7 @@ public class splash extends AppCompatActivity {
         player.setDeck("T");
         playerRepo.insert(player);
 
+        player.setPlayerID(4);
         player.setName("Julie");
         player.setUsername("julie");
         player.setPhone("123-123");
@@ -78,8 +82,49 @@ public class splash extends AppCompatActivity {
         player.setDeck("T");
         playerRepo.insert(player);
 
+        player.setPlayerID(5);
         player.setName("Sophie");
         player.setUsername("sophie");
+        player.setPhone("123-123");
+        player.setTotal(0);
+        player.setDeck("T");
+        playerRepo.insert(player);
+
+        player.setPlayerID(6);
+        player.setName("Ann");
+        player.setUsername("ann");
+        player.setPhone("123-123");
+        player.setTotal(0);
+        player.setDeck("T");
+        playerRepo.insert(player);
+
+        player.setPlayerID(7);
+        player.setName("Lisa");
+        player.setUsername("lisa");
+        player.setPhone("123-123");
+        player.setTotal(0);
+        player.setDeck("T");
+        playerRepo.insert(player);
+
+        player.setPlayerID(8);
+        player.setName("Dan");
+        player.setUsername("dan");
+        player.setPhone("123-123");
+        player.setTotal(0);
+        player.setDeck("T");
+        playerRepo.insert(player);
+
+        player.setPlayerID(9);
+        player.setName("Emma");
+        player.setUsername("emma");
+        player.setPhone("123-123");
+        player.setTotal(0);
+        player.setDeck("T");
+        playerRepo.insert(player);
+
+        player.setPlayerID(10);
+        player.setName("Bob");
+        player.setUsername("bob");
         player.setPhone("123-123");
         player.setTotal(0);
         player.setDeck("T");
@@ -195,19 +240,19 @@ public class splash extends AppCompatActivity {
         prize.setPrizeAmount(10);
         prizeRepo.insert(prize);
 
-        prize.setTournamentID(1);
+        prize.setTournamentID(2);
         prize.setPlayerID(2);
         prize.setPrizeType(Prize.PRIZE_FIRST);
         prize.setPrizeAmount(30);
         prizeRepo.insert(prize);
 
-        prize.setTournamentID(1);
+        prize.setTournamentID(2);
         prize.setPlayerID(3);
         prize.setPrizeType(Prize.PRIZE_SECOND);
         prize.setPrizeAmount(20);
         prizeRepo.insert(prize);
 
-        prize.setTournamentID(1);
+        prize.setTournamentID(2);
         prize.setPlayerID(4);
         prize.setPrizeType(Prize.PRIZE_THIRD);
         prize.setPrizeAmount(10);

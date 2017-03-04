@@ -64,8 +64,8 @@ public class PlayerPrizeList extends ListActivity implements View.OnClickListene
             ListAdapter adapter = new SimpleAdapter(this,
                     playerPrizeList,
                     R.layout.view_prize_entry,
-                    new String[] {"runningId", "prizeType", "prizeAmount"},
-                    new int[] {R.id.running_id, R.id.prize_type, R.id.prize_amount});
+                    new String[] {"runningId", "tourId", "prizeType", "prizeAmount"},
+                    new int[] {R.id.running_id, R.id.prize_tourId, R.id.prize_type, R.id.prize_amount});
             setListAdapter(adapter);
         } else {
             Toast.makeText(this, "No record! This player didn't win any prize!", Toast.LENGTH_LONG).show();

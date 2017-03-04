@@ -13,10 +13,10 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:ems="10"
         android:id="@+id/editTextId"
-        android:hint="Player ID (start from 1)" />
+        android:hint="Player ID" />
 
     <EditText
         android:layout_width="match_parent"
@@ -47,14 +47,16 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/editTextDeck"
-        android:hint="Deck"/>
+        android:hint="Deck"
+        android:inputType="text" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/editTextTotal"
-        android:hint="Total"/>
+        android:hint="Total"
+        android:inputType="number" />
 
     <Spinner
         android:layout_width="match_parent"
