@@ -20,7 +20,7 @@ public class Player {
     public static final String KEY_Total = "Total";
 
     // property help us to keep data
-    public int playerID;
+    public int playerID; // player id = 0 means no such player
     public String name;
     public String username;
     public String phone;

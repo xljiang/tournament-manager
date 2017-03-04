@@ -53,8 +53,8 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        int houseCut = Integer.parseInt(editTextHouseCut.getText().toString());
-        int entry = Integer.parseInt(editTextEntryPrice.getText().toString());
+        int houseCut = convertEditTextToInteger(editTextHouseCut);
+        int entry = convertEditTextToInteger(editTextEntryPrice);
         int houseProfit = entry * houseCut /100;
         int totalPrizeAmount = entry - houseProfit;
 
@@ -121,6 +121,14 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
     // check if house cut and entry is a valid input
     private boolean isValidInput(int houseCut, int entry) {
         return entry > 0 && houseCut >= 0 && houseCut <= 100;
+    }
+
+    // convert an EditText (number) to Integer
+    private int convertEditTextToInteger(EditText editText) {
+        if (editText.getText().toString().equals("")) {
+            return -1;
+        }
+        return Integer.parseInt(editText.getText().toString());
     }
 
 }

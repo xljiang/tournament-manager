@@ -45,10 +45,10 @@ public class Manager {
         // create new match list
         if (count == 8) {
             // at 8 matches to start
-            insertMatch(matchRepo, 1, players.get(1), players.get(2), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
-            insertMatch(matchRepo, 2, players.get(3), players.get(3), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
-            insertMatch(matchRepo, 3, players.get(5), players.get(6), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
-            insertMatch(matchRepo, 4, players.get(7), players.get(8), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 1, players.get(0), players.get(1), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 2, players.get(2), players.get(3), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 3, players.get(4), players.get(5), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 4, players.get(6), players.get(7), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
             insertMatch(matchRepo, 5, 0, 0, Match.ROUND_SEMIFINAL, 0, Match.STATUS_NOTREADY);
             insertMatch(matchRepo, 6, 0, 0, Match.ROUND_SEMIFINAL, 0, Match.STATUS_NOTREADY);
             insertMatch(matchRepo, 7, 0, 0, Match.ROUND_THIRDPLACE, 0, Match.STATUS_NOTREADY);
