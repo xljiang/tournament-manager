@@ -2,6 +2,9 @@ package edu.gatech.seclass.tourneymanager.controller;
 
 import android.content.Context;
 
+import java.util.List;
+import java.util.Map;
+
 import edu.gatech.seclass.tourneymanager.model.Match;
 import edu.gatech.seclass.tourneymanager.model.Player;
 import edu.gatech.seclass.tourneymanager.model.Prize;
@@ -175,5 +178,14 @@ public class Manager {
             // TODO
         }
 
+    }
+
+    public void print(List<Map<String, String>> list) {
+        for (int i = 0; i <= list.size(); i++) {
+            Map<String, String> map = list.get(i);
+            for (String key: map.keySet()) {
+                System.out.println(key + ": " + map.get(key));
+            }
+        }
     }
 }

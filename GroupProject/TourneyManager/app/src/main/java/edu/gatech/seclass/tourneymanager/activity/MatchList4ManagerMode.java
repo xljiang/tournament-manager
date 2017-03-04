@@ -102,6 +102,14 @@ public class MatchList4ManagerMode extends ListActivity implements View.OnClickL
             setListAdapter(adapter);
 
         } else {
+            ListAdapter adapter = new SimpleAdapter(this,
+                    matchList,
+                    R.layout.view_match_entry,
+                    new String[] {"id", "player1name", "player2name", "round", "winnerName", "status"},
+                    new int[] {R.id.match_id, R.id.player1_name, R.id.player2_name, R.id.match_round,
+                            R.id.match_winner, R.id.match_status});
+
+            setListAdapter(adapter);
             Toast.makeText(this, "No Ongoing Tournament!", Toast.LENGTH_LONG).show();
         }
     }

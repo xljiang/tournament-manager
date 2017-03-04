@@ -54,7 +54,7 @@ public class splash extends AppCompatActivity {
         player.setName("Mike");
         player.setUsername("mike");
         player.setPhone("123-123");
-        player.setTotal(100);
+        player.setTotal(0);
         player.setDeck("T");
         playerRepo.insert(player);
 
@@ -62,7 +62,7 @@ public class splash extends AppCompatActivity {
         player.setName("Tom");
         player.setUsername("tom");
         player.setPhone("123-123");
-        player.setTotal(10);
+        player.setTotal(0);
         player.setDeck("T");
         playerRepo.insert(player);
 
@@ -70,7 +70,7 @@ public class splash extends AppCompatActivity {
         player.setName("Jeremy");
         player.setUsername("jeremy");
         player.setPhone("123-123");
-        player.setTotal(200);
+        player.setTotal(0);
         player.setDeck("T");
         playerRepo.insert(player);
 
@@ -78,7 +78,7 @@ public class splash extends AppCompatActivity {
         player.setName("Julie");
         player.setUsername("julie");
         player.setPhone("123-123");
-        player.setTotal(20);
+        player.setTotal(0);
         player.setDeck("T");
         playerRepo.insert(player);
 
@@ -192,25 +192,25 @@ public class splash extends AppCompatActivity {
         tournament.setTourName("Tournament1");
         tournament.setDate("2017-03-01");
         tournament.setHouseProfit(100);
-        tournament.setTotalPrizeAwarded(40);
+        tournament.setTotalPrizeAwarded(100);
         tournamentRepo.insert(tournament);
 
         tournament.setTourName("Tournament2");
         tournament.setDate("2017-03-02");
-        tournament.setHouseProfit(200);
-        tournament.setTotalPrizeAwarded(80);
+        tournament.setHouseProfit(100);
+        tournament.setTotalPrizeAwarded(100);
         tournamentRepo.insert(tournament);
 
         tournament.setTourName("Tournament3");
         tournament.setDate("2017-03-03");
-        tournament.setHouseProfit(150);
-        tournament.setTotalPrizeAwarded(70);
+        tournament.setHouseProfit(100);
+        tournament.setTotalPrizeAwarded(100);
         tournamentRepo.insert(tournament);
 
         tournament.setTourName("Tournament4");
         tournament.setDate("2017-03-04");
-        tournament.setHouseProfit(50);
-        tournament.setTotalPrizeAwarded(40);
+        tournament.setHouseProfit(100);
+        tournament.setTotalPrizeAwarded(100);
         tournamentRepo.insert(tournament);
 
         tournament.setTourName("Tournament5");
@@ -225,7 +225,7 @@ public class splash extends AppCompatActivity {
         prize.setTournamentID(1);
         prize.setPlayerID(1);
         prize.setPrizeType(Prize.PRIZE_FIRST);
-        prize.setPrizeAmount(30);
+        prize.setPrizeAmount(100);
         prizeRepo.insert(prize);
 
         prize.setTournamentID(1);
