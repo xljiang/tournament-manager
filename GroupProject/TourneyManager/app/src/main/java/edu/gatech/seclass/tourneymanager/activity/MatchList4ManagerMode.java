@@ -20,6 +20,7 @@ import java.util.Map;
 import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.controller.Manager;
 import edu.gatech.seclass.tourneymanager.controller.MatchRepo;
+import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.controller.PrizeRepo;
 import edu.gatech.seclass.tourneymanager.controller.TournamentRepo;
 import edu.gatech.seclass.tourneymanager.model.Match;
@@ -111,8 +112,9 @@ public class MatchList4ManagerMode extends ListActivity implements View.OnClickL
             MatchRepo matchRepo = new MatchRepo(this);
             TournamentRepo tournamentRepo = new TournamentRepo(this);
             PrizeRepo prizeRepo = new PrizeRepo(this);
+            PlayerRepo playerRepo = new PlayerRepo(this);
             Manager manager = new Manager();
-            manager.endTournament(matchRepo, tournamentRepo, prizeRepo);
+            manager.endTournament(matchRepo, tournamentRepo, prizeRepo, playerRepo);
 
             Toast.makeText(this, "Tournament Ended!", Toast.LENGTH_SHORT);
 
