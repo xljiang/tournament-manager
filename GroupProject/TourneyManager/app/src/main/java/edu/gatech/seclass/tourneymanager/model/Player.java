@@ -77,7 +77,4 @@ public class Player {
         this.total = currTotalAmount;
     }
 
-    public void setTotal(int currTotalAmount, int newPrizeAmount) {
-        this.total = currTotalAmount + newPrizeAmount;
-    }
 }
