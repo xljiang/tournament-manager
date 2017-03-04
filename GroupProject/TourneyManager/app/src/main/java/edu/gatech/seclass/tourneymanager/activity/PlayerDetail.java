@@ -24,6 +24,7 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
 
     Button buttonRegister ,  buttonDelete;
     Button buttonClear;
+    EditText editTextId;
     EditText editTextName;
     EditText editTextUsername;
     EditText editTextPhone;
@@ -40,6 +41,7 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         buttonDelete = (Button) findViewById(R.id.buttonDelete);
         buttonClear = (Button) findViewById(R.id.buttonClear);
 
+        editTextId = (EditText) findViewById(R.id.editTextId);
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
@@ -57,6 +59,9 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         PlayerRepo repo = new PlayerRepo(this);
         Player player = new Player();
         player = repo.getStudentById(_Student_Id);
+        if (player.getPlayerID() != 0) {
+            editTextId.setText(String.valueOf(player.getPlayerID()));
+        }
         if (player.username != null){
             editTextUsername.setText(String.valueOf(player.username));}
         if (player.name != null){

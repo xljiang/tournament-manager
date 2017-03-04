@@ -69,7 +69,7 @@ public class Manager {
             int prizes = ongoingTournament.getTotalPrizeAwarded();
             int firstPrizeAmount = (int) (prizes * 0.5);
             int secondPrizeAmount = (int) (prizes * 0.3);
-            int thirdPrizeAmount = (int) (prizes * 0.3);
+            int thirdPrizeAmount = (int) (prizes * 0.2);
 
             // no need to change record Tournament Table
 
@@ -93,6 +93,7 @@ public class Manager {
             ongoingTournament.setTotalPrizeAwarded(newTotalPrize);
             tournamentRepo.update(ongoingTournament);
             // don't need to record result to the Prize table
+            // don't need to update Player table
         }
 
         // delete all match results
@@ -109,7 +110,7 @@ public class Manager {
         prizeRepo.insert(prize);
     }
 
-    // update player total amount
+    // update player total amount - Player Table
     private void updatePlayer(PlayerRepo playerRepo, int playerId, int amount) {
         Player player = playerRepo.getStudentById(playerId);
         player.setTotal(player.getTotal() + amount);

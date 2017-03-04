@@ -170,8 +170,8 @@ public class splash extends AppCompatActivity {
 
         tournament.setTourName("Tournament5");
         tournament.setDate("2017-03-05");
-        tournament.setHouseProfit(80);
-        tournament.setTotalPrizeAwarded(80);
+        tournament.setHouseProfit(100);
+        tournament.setTotalPrizeAwarded(100);
         tournamentRepo.insert(tournament);
 
         // insert several prizes
