@@ -15,17 +15,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:id="@+id/editTextName"
-        android:hint="House cut"
+        android:id="@+id/editTextHouseCut"
+        android:hint="House Cut Percentage"
         android:inputType="number" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName|number"
+        android:inputType="number"
         android:ems="10"
-        android:id="@+id/editTextUsername"
-        android:hint="Entry Fee" />
+        android:id="@+id/editTextEntryPrice"
+        android:hint="Entry Price" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -36,36 +36,54 @@
         android:text="Check entry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button" />
+        android:id="@+id/btnCheckEntry" />
+
+    <TextView
+        android:text="Player List:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView24"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textPlayerList"
-        android:layout_weight="0.48"
-        android:text="Player list: "
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:layout_weight="0.77"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
+        android:text="Current House Profit:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textCurrentPrizes"
-        android:layout_weight="0.31"
-        android:text="Prizes:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:id="@+id/textView25"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
-        android:text="Profit:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textCurrentProfit"
-        android:layout_weight="0.15"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+        android:layout_weight="0.13"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:text="Total Prize Amount:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView28"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textCurrentTotalPrizeAmount"
+        android:layout_weight="0.11"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <Button
         android:text="Start Tournament"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonStartTourneyForm" />
+        android:id="@+id/btnStartTour" />
 
 </LinearLayout>
