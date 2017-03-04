@@ -70,22 +70,44 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
         players.add(8);
 
         if (view == findViewById(R.id.btnCheckEntry)) {
-            // show player list, house profit, total prize amount on the screen.
-            textPlayerList.setText(players.toString()); // show name in the future //TODO
-            textCurrentProfit.setText(String.valueOf(houseProfit));
-            textCurrentTotalPrizeAmount.setText(String.valueOf(totalPrizeAmount));
+            if (isValidInput(houseCut, entry)) {
+                // show player list, house profit, total prize amount on the screen.
+                textPlayerList.setText(players.toString()); // show name in the future //TODO
+                textCurrentProfit.setText(String.valueOf(houseProfit));
+                textCurrentTotalPrizeAmount.setText(String.valueOf(totalPrizeAmount));
+            } else {
+                if (houseCut < 0 || houseCut > 100) {
+                    editTextHouseCut.setError("Invalid house cut percentage");
+                }
+                if (entry <= 0) {
+                    editTextEntryPrice.setError("Invalid entry price");
+                }
+                textCurrentProfit.setText("");
+                textCurrentTotalPrizeAmount.setText("");
+            }
         }
 
         if (view == findViewById(R.id.btnStartTour)) {
-            TournamentRepo tournamentRepo = new TournamentRepo(this);
-            MatchRepo matchRepo = new MatchRepo(this);
-            Manager manager = new Manager();
 
-            if (matchRepo.getPlayerCount() != 0) { // has ongoing tournament, don't start
-                Toast.makeText(this,"Can not start! Already has an ongoing tournament!",Toast.LENGTH_SHORT).show();
 
-            } else { // start the tournament
-                manager.startTournament(tournamentRepo, matchRepo, houseProfit, totalPrizeAmount, players);
+            if (textCurrentProfit.getText().toString().isEmpty()
+                    || textCurrentTotalPrizeAmount.getText().toString().isEmpty()
+                    || textPlayerList.getText().toString().isEmpty()) {
+
+                // if input is not checked or invalid
+                Toast.makeText(this, "Please Check Entry First.", Toast.LENGTH_SHORT).show();
+
+            } else {
+                TournamentRepo tournamentRepo = new TournamentRepo(this);
+                MatchRepo matchRepo = new MatchRepo(this);
+                Manager manager = new Manager();
+
+                if (matchRepo.getPlayerCount() != 0) { // has ongoing tournament, don't start
+                    Toast.makeText(this, "Can not start! Already has an ongoing tournament!", Toast.LENGTH_SHORT).show();
+
+                } else { // start the tournament
+                    manager.startTournament(tournamentRepo, matchRepo, houseProfit, totalPrizeAmount, players);
+                }
             }
         }
     }
@@ -94,6 +116,11 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
     public void buttonReturn(View view){
         Intent intent = new Intent(StartTournament.this, ManagerMode.class);
         startActivity(intent);
+    }
+
+    // check if house cut and entry is a valid input
+    private boolean isValidInput(int houseCut, int entry) {
+        return entry > 0 && houseCut >= 0 && houseCut <= 100;
     }
 
 }
