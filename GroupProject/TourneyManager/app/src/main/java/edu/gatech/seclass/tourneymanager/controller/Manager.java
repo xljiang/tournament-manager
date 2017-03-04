@@ -2,6 +2,9 @@ package edu.gatech.seclass.tourneymanager.controller;
 
 import android.content.Context;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -30,11 +33,41 @@ public class Manager {
     }
 
 
+    // start a new tournament and add
+    public void startTournament(TournamentRepo tournamentRepo, MatchRepo matchRepo,
+                                int houseProfit, int totalPrizeAmount, ArrayList<Integer> players) {
 
-    public void startTournament() {
-        //TODO
-        // refactor code from StartTournament class
+        int count = players.size();
+
+        // shuffle the player list
+        Collections.shuffle(players);
+
+        // create new match list
+        if (count == 8) {
+            // at 8 matches to start
+            insertMatch(matchRepo, 1, players.get(1), players.get(2), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 2, players.get(3), players.get(3), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 3, players.get(5), players.get(6), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 4, players.get(7), players.get(8), Match.ROUND_QUARTERFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 5, 0, 0, Match.ROUND_SEMIFINAL, 0, Match.STATUS_NOTREADY);
+            insertMatch(matchRepo, 6, 0, 0, Match.ROUND_SEMIFINAL, 0, Match.STATUS_NOTREADY);
+            insertMatch(matchRepo, 7, 0, 0, Match.ROUND_THIRDPLACE, 0, Match.STATUS_NOTREADY);
+            insertMatch(matchRepo, 8, 0, 0, Match.ROUND_FINAL, 0, Match.STATUS_NOTREADY);
+
+        } else if (count == 16) {
+            //TODO
+            // add 16 matches to start
+        }
+
+        // record current ongoing tournament info (name, date, profit, total prize) to db
+        Tournament tournament = new Tournament();
+        tournament.setTourName("Tournament");
+        tournament.setDate("2017-03-02"); // TODO get system date
+        tournament.setHouseProfit(houseProfit);
+        tournament.setTotalPrizeAwarded(totalPrizeAmount);
+        tournamentRepo.insert(tournament);
     }
+
 
 
     // end the tournament and record result to db
@@ -119,6 +152,19 @@ public class Manager {
         player.setTotal(player.getTotal() + amount);
         playerRepo.update(player);
     }
+
+    // insert match to the Match Table
+    private void insertMatch(MatchRepo matchRepo, int matchId, int player1Id, int player2Id, String round, int winnerId, String status) {
+        Match match = new Match();
+        match.setMatchID(matchId);
+        match.setPlayer1ID(player1Id);
+        match.setPlayer2ID(player2Id);
+        match.setRound(round);
+        match.setWinnerID(winnerId);
+        match.setStatus(status);
+        matchRepo.insert(match);
+    }
+
 
 
     //put winner information to the next attending match
