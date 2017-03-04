@@ -1,6 +1,6 @@
 # User Manual
 
-version 1.0
+version 1.1
 
 **Author**: Team 50
 
@@ -37,7 +37,6 @@ Match list shows tournament manager the list of matches for the ongoing tourname
 > **Note:** When there is no ongoing tournament, no matches are shown, as none are played or pending.
 
 ![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/match_list_no_tourney.jpg)
-
 
 #### 2.1.2 Player List
 
@@ -89,7 +88,7 @@ Third place prize is calculated as the remaining pot, or 20% of the pot after th
 
 ### 2.2 Player Mode
 
-Player mode as two options, Match List and Player List.
+Player mode has two options, Match List and Player List.
 
 ![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/player_mode.jpg)
 
@@ -97,8 +96,11 @@ Player mode as two options, Match List and Player List.
 
 Through the Player Mode, Match List option allows the player to see (but not edit), the list of all matches for the current tournament, as well as their status.
 
-
 ![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/match_list_player.jpg)
+
+> **Note:** Similarly to the Manager mode, when there is no ongoing tournament, no matches are shown.
+
+![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/match_list_player_no_tourney.jpg)
 
 #### 2.2.2 Player List
 
