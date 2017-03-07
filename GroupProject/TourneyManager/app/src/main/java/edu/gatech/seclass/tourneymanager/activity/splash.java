@@ -10,10 +10,6 @@ import edu.gatech.seclass.tourneymanager.controller.MatchRepo;
 import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.controller.PrizeRepo;
 import edu.gatech.seclass.tourneymanager.controller.TournamentRepo;
-import edu.gatech.seclass.tourneymanager.model.Match;
-import edu.gatech.seclass.tourneymanager.model.Player;
-import edu.gatech.seclass.tourneymanager.model.Prize;
-import edu.gatech.seclass.tourneymanager.model.Tournament;
 
 
 public class splash extends AppCompatActivity {
@@ -39,7 +35,7 @@ public class splash extends AppCompatActivity {
         MatchRepo matchRepo = new MatchRepo(this);
         PrizeRepo prizeRepo = new PrizeRepo(this);
 
-        // Delete Old data
+        /*// Delete Old data
         playerRepo.deleteAll();
         tournamentRepo.deleteAll();
         matchRepo.deleteAll();
@@ -256,7 +252,7 @@ public class splash extends AppCompatActivity {
         prize.setPlayerID(4);
         prize.setPrizeType(Prize.PRIZE_THIRD);
         prize.setPrizeAmount(10);
-        prizeRepo.insert(prize);
+        prizeRepo.insert(prize);*/
 
 
     }

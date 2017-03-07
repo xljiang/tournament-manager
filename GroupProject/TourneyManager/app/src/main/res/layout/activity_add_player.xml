@@ -42,26 +42,12 @@
         android:hint="Phone"
         android:inputType="phone" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/editTextDeck"
-        android:hint="Deck"
-        android:inputType="text" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:id="@+id/editTextTotal"
-        android:hint="Total"
-        android:inputType="number" />
-
     <Spinner
+        android:id="@+id/spinner_deck"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner" />
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
 
     <TextView
         android:layout_width="match_parent"

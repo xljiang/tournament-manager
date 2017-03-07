@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +32,7 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
     private TextView textPlayerList;
     private TextView textCurrentProfit;
     private TextView textCurrentTotalPrizeAmount;
+    Integer num_player = 8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,33 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
         textCurrentProfit = (TextView) findViewById(R.id.textCurrentProfit);
         textCurrentTotalPrizeAmount = (TextView) findViewById(R.id.textCurrentTotalPrizeAmount);
 
+        Spinner players = (Spinner)findViewById(R.id.players_dropdown);
+        String[] items = new String[]{"8", "16"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        players.setAdapter(adapter);
+        players.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View position,
+                                       int pos, long id) {
+
+                switch (pos) {
+                    case 0:
+                        num_player = 8;
+                        break;
+                    case 1:
+                        num_player = 16;
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
     }
 
 
@@ -55,8 +86,8 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         int houseCut = convertEditTextToInteger(editTextHouseCut);
         int entry = convertEditTextToInteger(editTextEntryPrice);
-        int houseProfit = entry * houseCut /100;
-        int totalPrizeAmount = entry - houseProfit;
+        int houseProfit = entry *  num_player * houseCut /100;
+        int totalPrizeAmount = entry *num_player - houseProfit;
 
         //TODO get player list from UI selection
         ArrayList<Integer> players = new ArrayList<Integer>();

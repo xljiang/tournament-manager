@@ -5,12 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
 
-import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.R;
+import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.model.Player;
 
 /**
@@ -20,7 +24,7 @@ import edu.gatech.seclass.tourneymanager.model.Player;
  * Reference: instinctcoder.com
  */
 
-public class PlayerDetail extends AppCompatActivity implements android.view.View.OnClickListener{
+public class PlayerDetail extends AppCompatActivity implements android.view.View.OnClickListener {
 
     Button buttonRegister ,  buttonDelete;
     Button buttonClear;
@@ -31,6 +35,9 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
     EditText editTextDeck;
     EditText editTextTotal;
     private int _Student_Id=0;
+    String deck = "Engineer";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +52,53 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
-        editTextDeck = (EditText) findViewById(R.id.editTextDeck);
-        editTextTotal = (EditText) findViewById(R.id.editTextTotal);
+        //editTextDeck = (EditText) findViewById(R.id.editTextDeck);
+        //editTextTotal = (EditText) findViewById(R.id.editTextTotal);
 
         buttonRegister.setOnClickListener(this);
         buttonDelete.setOnClickListener(this);
         buttonClear.setOnClickListener(this);
 
+
+
+        Spinner dropdown = (Spinner)findViewById(R.id.spinner_deck);
+        String[] items = new String[]{"Engineer", "Buzz", "Sideways", "Wreck", "T", "RAT"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
+        dropdown.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View position,
+                                       int pos, long id) {
+
+                switch (pos) {
+                    case 0:
+                        deck = "Engineer";
+                        break;
+                    case 1:
+                        deck = "Buzz";
+                        break;
+                    case 2:
+                        deck = "Sideways";
+                        break;
+                    case 3:
+                        deck = "Wreck";
+                        break;
+                    case 4:
+                        deck = "T";
+                        break;
+                    case 5:
+                        deck = "RAT";
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+
+            }
+        });
 
         _Student_Id =0;
         Intent intent = getIntent();
@@ -69,11 +116,13 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         if (player.phone != null){
             editTextPhone.setText(String.valueOf(player.phone));}
         if (player.getDeck() != null) {
-            editTextDeck.setText(String.valueOf(player.getDeck()));
+                int spinnerPosition = adapter.getPosition(player.getDeck());
+                dropdown.setSelection(spinnerPosition);
+                //editTextDeck.setText((String.valueOf(player.getDeck())));
         }
-        if ((Integer)player.getTotal() != null) {
-            editTextTotal.setText(String.valueOf(player.getTotal()));
-        }
+        //if ((Integer)player.getTotal() != null) {
+        //    editTextTotal.setText(String.valueOf(player.getTotal()));
+        //}
     }
 
 
@@ -85,8 +134,9 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
             player.username=editTextUsername.getText().toString();
             player.phone = editTextPhone.getText().toString();
             player.name=editTextName.getText().toString();
-            player.setDeck(editTextDeck.getText().toString());
-            player.setTotal(Integer.parseInt(editTextTotal.getText().toString()));
+            player.setDeck(deck);
+
+            //player.setTotal(Integer.parseInt(editTextTotal.getText().toString()));
             player.playerID =_Student_Id;
 
             if (_Student_Id==0){
