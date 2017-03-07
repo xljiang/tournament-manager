@@ -35,8 +35,11 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
     private TextView textPlayerList;
     private TextView textCurrentProfit;
     private TextView textCurrentTotalPrizeAmount;
+    private TextView textSelectionInstruction;
     Integer num_player = 8;
-
+    String playerText = "";
+    Integer num_players_selected = 0;
+    ArrayList<Integer> selectedPlayers = new ArrayList<Integer>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,15 +61,20 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
         textPlayerList = (TextView) findViewById(R.id.textPlayerList);
         textCurrentProfit = (TextView) findViewById(R.id.textCurrentProfit);
         textCurrentTotalPrizeAmount = (TextView) findViewById(R.id.textCurrentTotalPrizeAmount);
+        //textSelectionInstruction = (TextView) findViewById(R.id.textSelectInstruction);
+
+
+
+
 
         Spinner players = (Spinner)findViewById(R.id.players_dropdown);
-        PlayerRepo playerRepo = new PlayerRepo(this);
+        final PlayerRepo playerRepo = new PlayerRepo(this);
         List<Map<String, String>> playerTotalList = playerRepo.getPlayerTotalList();
         String[] items;
         if (playerTotalList.size() <16){
-            items = new String[]{"8"};
+            items = new String[]{"8-player tourney (not enough players for 16)"};
         }
-        else{items = new String[]{"8", "16"};}
+        else{items = new String[]{"8-player tourney", "16-player tourney"};}
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         players.setAdapter(adapter);
@@ -79,9 +87,11 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
                 switch (pos) {
                     case 0:
                         num_player = 8;
+                        //textSelectionInstruction.setText("Please select 8 players for the tourney:");
                         break;
                     case 1:
                         num_player = 16;
+                        //textSelectionInstruction.setText("Please select 16 players for the tourney:");
                         break;
                 }
             }
@@ -92,6 +102,63 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
 
             }
         });
+
+
+
+
+        final Spinner playersList = (Spinner)findViewById(R.id.spinnerPlayerList);
+
+        final ArrayList items2 = playerRepo.getPlayerUsernames();
+        final String emp = "Please select a player for the tourney:";
+        items2.add(0, emp);
+
+
+
+
+        final ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items2);
+        playersList.setAdapter(adapter2);
+        playersList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View position,
+                                       int pos, long id) {
+                Integer selectedID = 0;
+                if (pos != 0) {
+                    //Instead of makeText, remove the username from list and add it to the textbox below
+                    //Once the number of items added is equal num_players, stop (show message?)
+
+                    playerText = playerText + " " + parent.getItemAtPosition(pos).toString() + ", ";
+                    textPlayerList.setText(playerText);
+
+
+                    selectedID = playerRepo.getIDbyUsername(parent.getItemAtPosition(pos).toString());
+                    num_players_selected = num_players_selected + 1;
+                    selectedPlayers.add(selectedID);
+
+                    items2.remove(pos);
+                    playersList.setAdapter(adapter2);
+
+
+                }
+                if (num_players_selected == num_player){
+                    //Remove all remaining players from the dropdown list
+                    items2.clear();
+                    //remove the last comma
+                    playerText = playerText.substring(0, playerText.length() - 1);
+                    textPlayerList.setText(playerText);
+                    String done = "(All " + num_player.toString() + " players selected)";
+                    items2.add(0, done);
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
 
     }
 
@@ -104,24 +171,15 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
         int totalPrizeAmount = entry *num_player - houseProfit;
 
 
+        ArrayList<Integer> selectedPlayerIDs = new ArrayList<Integer>();
 
-        //TODO get player list from UI selection
-        ArrayList<Integer> players = new ArrayList<Integer>();
-        players.add(1);
-        players.add(2);
-        players.add(3);
-        players.add(4);
-        players.add(5);
-        players.add(6);
-        players.add(7);
-        players.add(8);
 
         if (view == findViewById(R.id.btnCheckEntry)) {
             if (isValidInput(houseCut, entry)) {
                 // show player list, house profit, total prize amount on the screen.
-                textPlayerList.setText(players.toString()); // show name in the future //TODO
-                textCurrentProfit.setText(String.valueOf(houseProfit));
-                textCurrentTotalPrizeAmount.setText(String.valueOf(totalPrizeAmount));
+                //textPlayerList.setText(players.toString()); // show name in the future //TODO
+                textCurrentProfit.setText("Current House Profit: " + String.valueOf(houseProfit));
+                textCurrentTotalPrizeAmount.setText("Total Prize Amount: " + String.valueOf(totalPrizeAmount));
             } else {
                 if (houseCut < 0 || houseCut > 100) {
                     editTextHouseCut.setError("Invalid house cut percentage");
@@ -153,7 +211,7 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
                     Toast.makeText(this, "Can not start! Already has an ongoing tournament!", Toast.LENGTH_SHORT).show();
 
                 } else { // start the tournament
-                    manager.startTournament(tournamentRepo, matchRepo, houseProfit, totalPrizeAmount, players);
+                    manager.startTournament(tournamentRepo, matchRepo, houseProfit, totalPrizeAmount, selectedPlayers);
                 }
             }
         }

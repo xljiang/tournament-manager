@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.Map;
 
 import edu.gatech.seclass.tourneymanager.db.DBHelper;
-import edu.gatech.seclass.tourneymanager.db.DatabaseManager;
 import edu.gatech.seclass.tourneymanager.model.Player;
 
 public class PlayerRepo {
@@ -130,6 +129,33 @@ public class PlayerRepo {
         return studentList;
 
     }
+    public Integer getIDbyUsername(String Username){
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery =  "SELECT  " +
+                Player.KEY_ID +
+                " FROM " + Player.TABLE
+                + " WHERE " +
+                Player.KEY_username + "=?";// It's a good practice to use parameter ?, instead of concatenate string
+
+        Log.d(TAG, selectQuery);
+        //int iCount =0;
+        Player player = new Player();
+        Integer ID = 0;
+        Cursor cursor = db.rawQuery(selectQuery, new String[] { String.valueOf(Username) } );
+
+        if (cursor.moveToFirst()) {
+            do {
+
+                ID  = cursor.getInt(cursor.getColumnIndex(Player.KEY_ID));
+
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return ID;
+    }
 
     public Player getStudentById(int Id){
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -167,6 +193,37 @@ public class PlayerRepo {
         return player;
     }
 
+    //return a list of usernames
+    public ArrayList<String> getPlayerUsernames() {
+        //List<String> playerUsernames = new ArrayList<>();
+        ArrayList playerUsernames = new ArrayList<>();
+
+        //Open connection to db
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        String selectQuery =  "SELECT  " +
+                Player.KEY_username +
+                " FROM " + Player.TABLE;
+
+        Log.d(TAG, selectQuery);
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                playerUsernames.add(cursor.getString(cursor.getColumnIndex(Player.KEY_username)));
+
+                //playerUsernames.add(player);
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return playerUsernames;
+
+    }
 
     // return a list of map with player name and player total prize amount
     public List<Map<String, String>> getPlayerTotalList() {
