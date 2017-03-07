@@ -24,14 +24,6 @@
         android:layout_alignParentBottom="true"
         android:id="@+id/btnUpdate" />
 
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/btnUpdate"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/player_name" />
-
     <Button
         android:text="Delete Player"
         android:layout_width="wrap_content"
@@ -39,5 +31,60 @@
         android:id="@+id/buttonDelete"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnBack"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="38dp" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:onClick="buttonReturn"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnBack"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true">
+
+
+        <TextView
+            android:id="@+id/textview42"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tournament ID"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/textview43"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Prize"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/textview44"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Amount"
+            android:textStyle="normal|bold" />
+
+    </LinearLayout>
+
+
+
 
 </RelativeLayout>

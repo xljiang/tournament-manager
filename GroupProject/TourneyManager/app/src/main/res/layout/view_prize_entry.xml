@@ -16,21 +16,21 @@
 
     <TextView
         android:id="@+id/prize_tourId"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="" />
 
     <TextView
         android:id="@+id/prize_type"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="" />
 
     <TextView
         android:id="@+id/prize_amount"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="" />
