@@ -68,10 +68,10 @@
         android:layout_weight="0.09" />
 
     <Button
-        android:text="Delete Player"
+        android:text="Clear Input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonDelete" />
+        android:id="@+id/buttonClear" />
 
     <TextView
         android:layout_width="match_parent"

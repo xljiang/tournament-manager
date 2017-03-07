@@ -26,14 +26,12 @@ import edu.gatech.seclass.tourneymanager.model.Player;
 
 public class PlayerDetail extends AppCompatActivity implements android.view.View.OnClickListener {
 
-    Button buttonRegister ,  buttonDelete;
+    Button buttonRegister;
     Button buttonClear;
     EditText editTextId;
     EditText editTextName;
     EditText editTextUsername;
     EditText editTextPhone;
-    EditText editTextDeck;
-    EditText editTextTotal;
     private int _Student_Id=0;
     String deck = "Engineer";
 
@@ -45,18 +43,14 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         setContentView(R.layout.activity_add_player);
 
         buttonRegister = (Button) findViewById(R.id.buttonRegistor);
-        buttonDelete = (Button) findViewById(R.id.buttonDelete);
         buttonClear = (Button) findViewById(R.id.buttonClear);
 
         editTextId = (EditText) findViewById(R.id.editTextId);
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
-        //editTextDeck = (EditText) findViewById(R.id.editTextDeck);
-        //editTextTotal = (EditText) findViewById(R.id.editTextTotal);
 
         buttonRegister.setOnClickListener(this);
-        buttonDelete.setOnClickListener(this);
         buttonClear.setOnClickListener(this);
 
 
@@ -149,12 +143,8 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
                 Toast.makeText(this,"Player Record updated",Toast.LENGTH_SHORT).show();
             }
         }
-        if (view== findViewById(R.id.buttonDelete)){
-            PlayerRepo playerRepo = new PlayerRepo(this);
-            playerRepo.delete(_Student_Id);
-            Toast.makeText(this, "Player Record Deleted", Toast.LENGTH_SHORT);
-            finish();
-        } if (view== findViewById(R.id.buttonClear)){
+        if (view== findViewById(R.id.buttonClear)){
+            //TODO implement clear function
             finish();
         }
 
