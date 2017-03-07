@@ -5,8 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
+
+import java.util.List;
+import java.util.Map;
 
 import edu.gatech.seclass.tourneymanager.R;
+import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 
 /**
  * @author Katja Krivoruchko
@@ -43,9 +48,16 @@ public class ManagerMode extends AppCompatActivity {
 
     }
     public void buttonManageTournament(View view){
-        Intent intent = new Intent(ManagerMode.this, StartTournament.class);
-        startActivity(intent);
-    }
+        PlayerRepo playerRepo = new PlayerRepo(this);
+        List<Map<String, String>> playerTotalList = playerRepo.getPlayerTotalList();
+        if (playerTotalList.size() <8){
+            Toast.makeText(this,"At least 8 players required!",Toast.LENGTH_SHORT).show();
+        }
+        else{Intent intent = new Intent(ManagerMode.this, StartTournament.class);
+            startActivity(intent);
+        }
+
+            }
 
 
 }

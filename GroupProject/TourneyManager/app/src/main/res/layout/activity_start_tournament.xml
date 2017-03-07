@@ -32,6 +32,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/players_dropdown" />
 
+    <TextView
+        android:text="Please select players for the tournament:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView29"
+        android:layout_weight="0.25"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerPlayers" />
+
     <Button
         android:text="Check entry"
         android:layout_width="match_parent"

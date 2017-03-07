@@ -13,10 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.controller.Manager;
 import edu.gatech.seclass.tourneymanager.controller.MatchRepo;
+import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.controller.TournamentRepo;
 
 /**
@@ -37,6 +40,10 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
         setContentView(R.layout.activity_start_tournament);
 
         btnCheckEntry = (Button) findViewById(R.id.btnCheckEntry);
@@ -53,7 +60,14 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
         textCurrentTotalPrizeAmount = (TextView) findViewById(R.id.textCurrentTotalPrizeAmount);
 
         Spinner players = (Spinner)findViewById(R.id.players_dropdown);
-        String[] items = new String[]{"8", "16"};
+        PlayerRepo playerRepo = new PlayerRepo(this);
+        List<Map<String, String>> playerTotalList = playerRepo.getPlayerTotalList();
+        String[] items;
+        if (playerTotalList.size() <16){
+            items = new String[]{"8"};
+        }
+        else{items = new String[]{"8", "16"};}
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         players.setAdapter(adapter);
         players.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -88,6 +102,8 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
         int entry = convertEditTextToInteger(editTextEntryPrice);
         int houseProfit = entry *  num_player * houseCut /100;
         int totalPrizeAmount = entry *num_player - houseProfit;
+
+
 
         //TODO get player list from UI selection
         ArrayList<Integer> players = new ArrayList<Integer>();
