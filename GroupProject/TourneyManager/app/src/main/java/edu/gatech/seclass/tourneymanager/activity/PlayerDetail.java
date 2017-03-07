@@ -32,8 +32,8 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
     EditText editTextName;
     EditText editTextUsername;
     EditText editTextPhone;
-    private int _Student_Id=0;
     String deck = "Engineer";
+    Spinner spinnerDropdown;
 
 
 
@@ -55,11 +55,11 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
 
 
 
-        Spinner dropdown = (Spinner)findViewById(R.id.spinner_deck);
+        spinnerDropdown = (Spinner)findViewById(R.id.spinner_deck);
         String[] items = new String[]{"Engineer", "Buzz", "Sideways", "Wreck", "T", "RAT"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
-        dropdown.setOnItemSelectedListener(new OnItemSelectedListener() {
+        spinnerDropdown.setAdapter(adapter);
+        spinnerDropdown.setOnItemSelectedListener(new OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View position,
@@ -94,29 +94,6 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
             }
         });
 
-        _Student_Id =0;
-        Intent intent = getIntent();
-        _Student_Id =intent.getIntExtra("player_Id", 0);
-        PlayerRepo repo = new PlayerRepo(this);
-        Player player = new Player();
-        player = repo.getStudentById(_Student_Id);
-        if (player.getPlayerID() != 0) {
-            editTextId.setText(String.valueOf(player.getPlayerID()));
-        }
-        if (player.username != null){
-            editTextUsername.setText(String.valueOf(player.username));}
-        if (player.name != null){
-            editTextName.setText(String.valueOf(player.name));}
-        if (player.phone != null){
-            editTextPhone.setText(String.valueOf(player.phone));}
-        if (player.getDeck() != null) {
-                int spinnerPosition = adapter.getPosition(player.getDeck());
-                dropdown.setSelection(spinnerPosition);
-                //editTextDeck.setText((String.valueOf(player.getDeck())));
-        }
-        //if ((Integer)player.getTotal() != null) {
-        //    editTextTotal.setText(String.valueOf(player.getTotal()));
-        //}
     }
 
 
@@ -125,30 +102,32 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         if (view == findViewById(R.id.buttonRegistor)){
             PlayerRepo playerRepo = new PlayerRepo(this);
             Player player = new Player();
-            player.username=editTextUsername.getText().toString();
-            player.phone = editTextPhone.getText().toString();
-            player.name=editTextName.getText().toString();
+
+            // get player properties from UI
+            player.setPlayerID(Integer.parseInt(editTextId.getText().toString()));
+            player.setUsername(editTextUsername.getText().toString());
+            player.setName(editTextName.getText().toString());
+            player.setPhone(editTextPhone.getText().toString());
             player.setDeck(deck);
 
-            //player.setTotal(Integer.parseInt(editTextTotal.getText().toString()));
-            player.playerID =_Student_Id;
+            // add new player to database
+            playerRepo.insert(player);
 
-            if (_Student_Id==0){
-                _Student_Id = playerRepo.insert(player);
+            Toast.makeText(this,"New Player Added",Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(this,"New Player Added",Toast.LENGTH_SHORT).show();
-            }else{
-
-                playerRepo.update(player);
-                Toast.makeText(this,"Player Record updated",Toast.LENGTH_SHORT).show();
-            }
         }
+
         if (view== findViewById(R.id.buttonClear)){
-            //TODO implement clear function
-            finish();
-        }
 
+            editTextId.setText("");
+            editTextUsername.setText(String.valueOf(""));
+            editTextName.setText(String.valueOf(""));
+            editTextPhone.setText(String.valueOf(""));
+            spinnerDropdown.setSelection(0);
+
+        }
 
     }
+
 
 }
