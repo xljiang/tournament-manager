@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnBack"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="9dp" />
+        android:layout_marginTop="38dp" />
 
     <Button
         android:id="@+id/btnBack"
@@ -31,6 +31,56 @@
         android:onClick="buttonReturn"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnBack"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/textview37"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Round"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/textview38"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Player 1"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/textview39"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Player 2"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/textview40"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Status"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/textview41"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Winner"
+            android:textStyle="normal|bold" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>
