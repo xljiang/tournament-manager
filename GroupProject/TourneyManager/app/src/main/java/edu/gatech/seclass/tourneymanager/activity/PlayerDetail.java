@@ -129,5 +129,12 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
 
     }
 
+    public void buttonReturn(View view){
+        Intent intent = new Intent(PlayerDetail.this, PlayerList4ManagerMode.class);
+        startActivity(intent);
+    }
+
+
+
 
 }

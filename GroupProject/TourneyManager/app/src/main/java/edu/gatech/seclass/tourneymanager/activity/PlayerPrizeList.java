@@ -87,5 +87,9 @@ public class PlayerPrizeList extends ListActivity implements View.OnClickListene
 
     }
 
+    public void buttonReturn(View view){
+        Intent intent = new Intent(PlayerPrizeList.this, PlayerList4ManagerMode.class);
+        startActivity(intent);
+    }
 
 }

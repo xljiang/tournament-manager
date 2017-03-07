@@ -8,7 +8,8 @@
         android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonReturn" />
+        android:id="@+id/buttonReturn"
+        android:onClick="buttonReturn" />
 
     <EditText
         android:layout_width="match_parent"
