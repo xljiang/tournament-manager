@@ -2,8 +2,10 @@ package edu.gatech.seclass.tourneymanager.controller;
 
 import android.content.Context;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -61,7 +63,9 @@ public class Manager {
         // record current ongoing tournament info (name, date, profit, total prize) to db
         Tournament tournament = new Tournament();
         tournament.setTourName("Tournament");
-        tournament.setDate("2017-03-02"); // TODO get system date
+        String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+
+        tournament.setDate(date);
         tournament.setHouseProfit(houseProfit);
         tournament.setTotalPrizeAwarded(totalPrizeAmount);
         tournamentRepo.insert(tournament);
