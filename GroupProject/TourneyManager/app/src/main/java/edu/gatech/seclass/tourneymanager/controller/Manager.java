@@ -57,7 +57,22 @@ public class Manager {
 
         } else if (count == 16) {
             //TODO
-            // add 16 matches to start
+            insertMatch(matchRepo, 1, players.get(0), players.get(1), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 2, players.get(2), players.get(3), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 3, players.get(4), players.get(5), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 4, players.get(6), players.get(7), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 5, players.get(8), players.get(9), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 6, players.get(10), players.get(11), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 7, players.get(12), players.get(13), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 8, players.get(14), players.get(15), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
+            insertMatch(matchRepo, 9, 0, 0, Match.ROUND_QUARTERFINAL, 0, Match.STATUS_NOTREADY);
+            insertMatch(matchRepo, 10, 0, 0, Match.ROUND_QUARTERFINAL, 0, Match.STATUS_NOTREADY);
+            insertMatch(matchRepo, 11, 0, 0, Match.ROUND_QUARTERFINAL, 0, Match.STATUS_NOTREADY);
+            insertMatch(matchRepo, 12, 0, 0, Match.ROUND_QUARTERFINAL, 0, Match.STATUS_NOTREADY);
+            insertMatch(matchRepo, 13, 0, 0, Match.ROUND_SEMIFINAL, 0, Match.STATUS_NOTREADY);
+            insertMatch(matchRepo, 14, 0, 0, Match.ROUND_SEMIFINAL, 0, Match.STATUS_NOTREADY);
+            insertMatch(matchRepo, 15, 0, 0, Match.ROUND_THIRDPLACE, 0, Match.STATUS_NOTREADY);
+            insertMatch(matchRepo, 16, 0, 0, Match.ROUND_FINAL, 0, Match.STATUS_NOTREADY);
         }
 
         // record current ongoing tournament info (name, date, profit, total prize) to db
@@ -114,8 +129,8 @@ public class Manager {
 
             // record to Prize table
             addPrize(prizeRepo, ongoingTourId, firstPlayerId, Prize.PRIZE_FIRST, firstPrizeAmount);
-            addPrize(prizeRepo, ongoingTourId, secondPlayerId, Prize.PRIZE_FIRST, secondPrizeAmount);
-            addPrize(prizeRepo, ongoingTourId, thirdPlayerId, Prize.PRIZE_FIRST, thirdPrizeAmount);
+            addPrize(prizeRepo, ongoingTourId, secondPlayerId, Prize.PRIZE_SECOND, secondPrizeAmount);
+            addPrize(prizeRepo, ongoingTourId, thirdPlayerId, Prize.PRIZE_THIRD, thirdPrizeAmount);
 
             // update Player table (update total)
             updatePlayer(playerRepo, firstPlayerId, firstPrizeAmount);
@@ -171,7 +186,7 @@ public class Manager {
 
 
     //put winner information to the next attending match
-    //also need to put looser information to the final and 3rd place match
+    //also need to put loser information to the final and 3rd place match
     // if current match is final or 3rd place match, do nothing
     public void putPlayerIntoNextMatch(MatchRepo matchRepo, int currMatchId, int count, int winnerId, int looserId) {
         Match nextMatch1 = new Match();
