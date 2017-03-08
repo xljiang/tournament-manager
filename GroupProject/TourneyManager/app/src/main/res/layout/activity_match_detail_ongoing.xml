@@ -87,11 +87,11 @@
         android:layout_alignStart="@+id/match_detail_round" />
 
     <Button
-        android:text="Refresh"
+        android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
-        android:id="@+id/btnRefreshMatch"
+        android:id="@+id/btnBack"
         android:layout_alignBaseline="@+id/btnEndMatch"
         android:layout_alignBottom="@+id/btnEndMatch"
         android:layout_toEndOf="@+id/match_detail_status" />

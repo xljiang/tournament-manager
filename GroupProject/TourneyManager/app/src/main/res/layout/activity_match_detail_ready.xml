@@ -95,11 +95,11 @@
         android:layout_alignStart="@+id/textView26" />
 
     <Button
-        android:text="Refresh"
+        android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
-        android:id="@+id/btnRefreshMatch"
+        android:id="@+id/btnBack"
         android:layout_alignBaseline="@+id/btnStartMatch"
         android:layout_alignBottom="@+id/btnStartMatch"
         android:layout_toEndOf="@+id/btnStartMatch" />

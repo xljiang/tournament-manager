@@ -21,7 +21,7 @@ import edu.gatech.seclass.tourneymanager.model.Match;
 
 public class MatchDetailOngoing extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnEndMatch, btnRefreshMatch;
+    Button btnEndMatch, btnBack;
     TextView textViewRound;
     TextView textViewPlayer1;
     TextView textViewPlayer2;
@@ -37,10 +37,10 @@ public class MatchDetailOngoing extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_match_detail_ongoing);
 
         btnEndMatch = (Button) findViewById(R.id.btnEndMatch);
-        btnRefreshMatch = (Button) findViewById(R.id.btnRefreshMatch);
+        btnBack = (Button) findViewById(R.id.btnBack);
 
         btnEndMatch.setOnClickListener(this);
-        btnRefreshMatch.setOnClickListener(this);
+        btnBack.setOnClickListener(this);
 
         // get match
         Intent intent = getIntent();
@@ -56,8 +56,10 @@ public class MatchDetailOngoing extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         if (view == findViewById(R.id.btnEndMatch)) {
             endMatch();
-        } else if (view == findViewById(R.id.btnRefreshMatch)) {
             showMatch();
+        } else if (view == findViewById(R.id.btnBack)) {
+            Intent intent = new Intent(MatchDetailOngoing.this, MatchList4ManagerMode.class);
+            startActivity(intent);
         }
 
     }

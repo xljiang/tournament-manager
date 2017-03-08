@@ -3,6 +3,8 @@ package edu.gatech.seclass.tourneymanager.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import edu.gatech.seclass.tourneymanager.R;
@@ -12,10 +14,12 @@ import edu.gatech.seclass.tourneymanager.model.Match;
 /**
  * Created by Xiaolu Jiang on 3/3/17.
  * @author Xiaolu Jiang
+ * @author Katja Krivoruchko
  */
 
-public class MatchDetailNotReady extends AppCompatActivity {
+public class MatchDetailNotReady extends AppCompatActivity implements android.view.View.OnClickListener  {
 
+    Button btnBack;
     TextView textViewRound;
     TextView textViewPlayer1;
     TextView textViewPlayer2;
@@ -29,9 +33,13 @@ public class MatchDetailNotReady extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_detail_not_ready);
 
+       btnBack = (Button) findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(this);
+
         // get match
         Intent intent = getIntent();
-        match_Id =intent.getIntExtra("match_ID", 0);
+        match_Id = intent.getIntExtra("match_ID", 0);
 
         MatchRepo matchRepo = new MatchRepo(this);
         Match match = new Match();
@@ -51,4 +59,10 @@ public class MatchDetailNotReady extends AppCompatActivity {
         //textViewWinner.setText(String.valueOf(match.getWinnerID()));
     }
 
+    public void onClick(View view) {
+        if (view == findViewById(R.id.btnBack)) {
+            Intent intent = new Intent(MatchDetailNotReady.this, MatchList4ManagerMode.class);
+            startActivity(intent);
+        }
+    }
 }
