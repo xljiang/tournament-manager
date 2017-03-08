@@ -1,10 +1,11 @@
 package edu.gatech.seclass.tourneymanager.activity;
 
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -24,8 +25,6 @@ import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.controller.PrizeRepo;
 import edu.gatech.seclass.tourneymanager.controller.TournamentRepo;
 import edu.gatech.seclass.tourneymanager.model.Match;
-import edu.gatech.seclass.tourneymanager.model.Prize;
-import edu.gatech.seclass.tourneymanager.model.Tournament;
 
 /**
  * @author Katja Krivoruchko
@@ -117,14 +116,27 @@ public class MatchList4ManagerMode extends ListActivity implements View.OnClickL
     public void onClick(View view) {
         if (view == findViewById(R.id.btnEndTour)) {
             // end the tournament
-            MatchRepo matchRepo = new MatchRepo(this);
-            TournamentRepo tournamentRepo = new TournamentRepo(this);
-            PrizeRepo prizeRepo = new PrizeRepo(this);
-            PlayerRepo playerRepo = new PlayerRepo(this);
-            Manager manager = new Manager();
-            manager.endTournament(matchRepo, tournamentRepo, prizeRepo, playerRepo);
+            final MatchRepo matchRepo = new MatchRepo(this);
+            final TournamentRepo tournamentRepo = new TournamentRepo(this);
+            final PrizeRepo prizeRepo = new PrizeRepo(this);
+            final PlayerRepo playerRepo = new PlayerRepo(this);
+            final Manager manager = new Manager();
 
-            Toast.makeText(this, "Tournament Ended!", Toast.LENGTH_SHORT);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("End Tournament?")
+                    .setTitle("Woodruff Lounge")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            manager.endTournament(matchRepo, tournamentRepo, prizeRepo, playerRepo);;
+                            showList();
+
+                        }
+
+                    })
+                    .setNeutralButton("No", null);
+            AlertDialog alert = builder.create();
+            alert.show();
+            //Toast.makeText(this, "Tournament Ended!", Toast.LENGTH_SHORT);
 
         }
         if (view == findViewById(R.id.btnRefreshMatchList)) {

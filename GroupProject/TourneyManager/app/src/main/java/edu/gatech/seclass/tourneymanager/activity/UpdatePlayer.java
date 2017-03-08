@@ -46,17 +46,13 @@ public class UpdatePlayer extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_update_player);
 
         buttonUpdatePlayer = (Button) findViewById(R.id.buttonUpdatePlayer);
-        buttonDeletePlayer = (Button) findViewById(R.id.buttonDeletePlayer);
 
-        //editTextId = (EditText) findViewById(R.id.editTextId);
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
 
         buttonUpdatePlayer.setOnClickListener(this);
         buttonDeletePlayer.setOnClickListener(this);
-
-
 
         spinnerDropdown = (Spinner)findViewById(R.id.spinner_deck);
         String[] items = new String[]{"Engineer", "Buzz", "Sideways", "Wreck", "T", "RAT"};
@@ -155,14 +151,7 @@ public class UpdatePlayer extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        if (view== findViewById(R.id.buttonDeletePlayer)){
 
-            PlayerRepo playerRepo = new PlayerRepo(this);
-            playerRepo.delete(player_Id);
-            Toast.makeText(this, "Player Record Deleted", Toast.LENGTH_SHORT).show();
-            finish();
-
-        }
 
     }
 

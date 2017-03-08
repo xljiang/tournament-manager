@@ -1,6 +1,8 @@
 package edu.gatech.seclass.tourneymanager.activity;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -79,10 +81,24 @@ public class PlayerPrizeList extends ListActivity implements View.OnClickListene
             startActivity(intent);
         }
         if (view == findViewById(R.id.buttonDelete)) {
-            PlayerRepo playerRepo = new PlayerRepo(this);
-            playerRepo.delete(player_Id);
-            Toast.makeText(this, "Player Record Deleted", Toast.LENGTH_SHORT).show();
-            finish();
+            final PlayerRepo playerRepo = new PlayerRepo(this);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Delete Player?")
+                    .setTitle("Woodruff Lounge")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+
+                            playerRepo.delete(player_Id);
+                            Intent intent = new Intent(PlayerPrizeList.this, PlayerList4ManagerMode.class);
+                            startActivity(intent);
+
+                        }
+
+                    })
+                    .setNeutralButton("No", null);
+            AlertDialog alert = builder.create();
+            alert.show();
         }
 
     }
