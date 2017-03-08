@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.model.Player;
@@ -127,19 +129,30 @@ public class UpdatePlayer extends AppCompatActivity implements View.OnClickListe
             PlayerRepo playerRepo = new PlayerRepo(this);
             Player player = new Player();
             player = playerRepo.getStudentById(player_Id);
+            String old_username = String.valueOf(player.getUsername());
 
             // get player properties from UI
             //player.setPlayerID(Integer.parseInt(editTextId.getText().toString()));
-            player.setUsername(editTextUsername.getText().toString());
-            player.setName(editTextName.getText().toString());
-            player.setPhone(editTextPhone.getText().toString());
-            player.setDeck(deck);
+            ArrayList items2 = playerRepo.getPlayerUsernames();
+            items2.remove(player.getUsername());
 
-            // update player info to database
-            playerRepo.update(player);
 
-            Toast.makeText(this,"Player Information Updated",Toast.LENGTH_SHORT).show();
 
+            if ((items2.contains(editTextUsername.getText().toString()))) {
+                editTextUsername.setError("Username already exists!");
+
+            }
+            else {
+                player.setUsername(editTextUsername.getText().toString());
+                player.setName(editTextName.getText().toString());
+                player.setPhone(editTextPhone.getText().toString());
+                player.setDeck(deck);
+
+                // update player info to database
+                playerRepo.update(player);
+
+                Toast.makeText(this, "Player Information Updated", Toast.LENGTH_SHORT).show();
+            }
         }
 
         if (view== findViewById(R.id.buttonDeletePlayer)){

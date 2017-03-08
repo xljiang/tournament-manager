@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemSelectedListener;
+
+import java.util.ArrayList;
 
 import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
@@ -102,19 +104,26 @@ public class AddPlayer extends AppCompatActivity implements android.view.View.On
         if (view == findViewById(R.id.buttonRegistor)){
             PlayerRepo playerRepo = new PlayerRepo(this);
             Player player = new Player();
+            ArrayList items2 = playerRepo.getPlayerUsernames();
 
-            // get player properties from UI
-            //player.setPlayerID(Integer.parseInt(editTextId.getText().toString()));
-            player.setUsername(editTextUsername.getText().toString());
-            player.setName(editTextName.getText().toString());
-            player.setPhone(editTextPhone.getText().toString());
-            player.setDeck(deck);
 
-            // add new player to database
-            playerRepo.insert(player);
+            if (items2.contains(editTextUsername.getText().toString())) {
+                editTextUsername.setError("Username already exists!");
 
-            Toast.makeText(this,"New Player Added",Toast.LENGTH_SHORT).show();
+            }
+            else {
+                // get player properties from UI
+                //player.setPlayerID(Integer.parseInt(editTextId.getText().toString()));
+                player.setUsername(editTextUsername.getText().toString());
+                player.setName(editTextName.getText().toString());
+                player.setPhone(editTextPhone.getText().toString());
+                player.setDeck(deck);
 
+                // add new player to database
+                playerRepo.insert(player);
+
+                Toast.makeText(this, "New Player Added", Toast.LENGTH_SHORT).show();
+            }
         }
 
         if (view== findViewById(R.id.buttonClear)){
