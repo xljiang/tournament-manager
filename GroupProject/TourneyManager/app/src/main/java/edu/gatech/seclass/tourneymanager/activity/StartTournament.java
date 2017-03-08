@@ -212,6 +212,7 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
 
                 } else { // start the tournament
                     manager.startTournament(tournamentRepo, matchRepo, houseProfit, totalPrizeAmount, selectedPlayers);
+                    Toast.makeText(this, "A New Tournament Started!", Toast.LENGTH_SHORT).show();
                 }
             }
         }
