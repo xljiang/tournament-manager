@@ -68,6 +68,14 @@ public class TournamentRepo {
         db.close();
     }
 
+    // delete a tournament by id
+    public void delete(int tournamentId) {
+
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.delete(Tournament.TABLE, Tournament.KEY_TourID + "= ?", new String[] { String.valueOf(tournamentId) });
+        db.close();
+    }
+
     // delete all items in the table
     public void deleteAll() {
         SQLiteDatabase db = dbHelper.getWritableDatabase();

@@ -139,13 +139,8 @@ public class Manager {
 
 
         } else { // the tournament was terminated early
-            // also record result to db
-            // to tournament table: refund all profit, set total prize = 0
-            int newProfit = ongoingTournament.getHouseProfit() + ongoingTournament.getTotalPrizeAwarded();
-            int newTotalPrize = 0;
-            ongoingTournament.setHouseProfit(newProfit);
-            ongoingTournament.setTotalPrizeAwarded(newTotalPrize);
-            tournamentRepo.update(ongoingTournament);
+            // delete tournament Table entry
+            tournamentRepo.delete(ongoingTourId);
             // don't need to record result to the Prize table
             // don't need to update Player table
         }
