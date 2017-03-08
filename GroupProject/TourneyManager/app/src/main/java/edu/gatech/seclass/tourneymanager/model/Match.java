@@ -19,16 +19,16 @@ public class Match {
 
     // Match Round
     public static final String ROUND_FINAL = "Final"; // 2
-    public static final String ROUND_SEMIFINAL = "SemiFinal"; //4
-    public static final String ROUND_THIRDPLACE = "ThirdPlace";
-    public static final String ROUND_QUARTERFINAL = "QuarterFinal"; // 8
-    public static final String ROUND_EIGHTHFINAL = "EighthFinal"; // 16
+    public static final String ROUND_SEMIFINAL = "1/2"; //4
+    public static final String ROUND_THIRDPLACE = "3rd";
+    public static final String ROUND_QUARTERFINAL = "1/8"; // 8
+    public static final String ROUND_EIGHTHFINAL = "1/16"; // 16
 
     // Match Status
     public static final String STATUS_FINISHED = "Finished";
     public static final String STATUS_ONGOING = "Ongoing";
     public static final String STATUS_READY = "Ready";
-    public static final String STATUS_NOTREADY = "NotReady";
+    public static final String STATUS_NOTREADY = "Not Ready";
 
 
     // instant variables
