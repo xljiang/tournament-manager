@@ -1,5 +1,7 @@
 package edu.gatech.seclass.tourneymanager.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -41,6 +43,11 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
     Integer num_players_selected = 0;
     ArrayList<Integer> selectedPlayers = new ArrayList<Integer>();
     PlayerRepo playerRepo = new PlayerRepo(this);
+    int houseCut = 0;
+    int houseProfit = 0;
+    int entry = 0;
+    int totalPrizeAmount = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -166,10 +173,10 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        int houseCut = convertEditTextToInteger(editTextHouseCut);
-        int entry = convertEditTextToInteger(editTextEntryPrice);
-        int houseProfit = entry *  num_player * houseCut /100;
-        int totalPrizeAmount = entry *num_player - houseProfit;
+        houseCut = convertEditTextToInteger(editTextHouseCut);
+        entry = convertEditTextToInteger(editTextEntryPrice);
+        houseProfit = entry *  num_player * houseCut /100;
+        totalPrizeAmount = entry *num_player - houseProfit;
 
 
         ArrayList<Integer> selectedPlayerIDs = new ArrayList<Integer>();
@@ -212,18 +219,34 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
             }
 
             else {
-                TournamentRepo tournamentRepo = new TournamentRepo(this);
-                MatchRepo matchRepo = new MatchRepo(this);
-                Manager manager = new Manager();
+                final TournamentRepo tournamentRepo = new TournamentRepo(this);
+                final MatchRepo matchRepo = new MatchRepo(this);
+                final Manager manager = new Manager();
 
                 if (matchRepo.getPlayerCount() != 0) { // has ongoing tournament, don't start
                     Toast.makeText(this, "Can not start! Already has an ongoing tournament!", Toast.LENGTH_SHORT).show();
 
                 } else { // start the tournament
-                    manager.startTournament(tournamentRepo, matchRepo, houseProfit, totalPrizeAmount, selectedPlayers);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("Start Tournament?")
+                            .setTitle("Woodruff Lounge")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    manager.startTournament(tournamentRepo, matchRepo, houseProfit, totalPrizeAmount, selectedPlayers);
+
+                                }
+
+                            })
+                            .setNeutralButton("No", null);
+                    AlertDialog alert = builder.create();
+                    alert.show();
+
                 }
             }
         }
+    }
+    public void startTourney(){
+
     }
 
 
