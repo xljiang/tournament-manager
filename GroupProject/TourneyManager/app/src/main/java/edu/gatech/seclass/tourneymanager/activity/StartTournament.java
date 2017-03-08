@@ -40,6 +40,7 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
     String playerText = "";
     Integer num_players_selected = 0;
     ArrayList<Integer> selectedPlayers = new ArrayList<Integer>();
+    PlayerRepo playerRepo = new PlayerRepo(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +69,7 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
 
 
         Spinner players = (Spinner)findViewById(R.id.players_dropdown);
-        final PlayerRepo playerRepo = new PlayerRepo(this);
+
         List<Map<String, String>> playerTotalList = playerRepo.getPlayerTotalList();
         String[] items;
         if (playerTotalList.size() <16){
@@ -177,10 +178,11 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
         if (view == findViewById(R.id.btnCheckEntry)) {
             if (isValidInput(houseCut, entry)) {
                 // show player list, house profit, total prize amount on the screen.
-                //textPlayerList.setText(players.toString()); // show name in the future //TODO
+                //textPlayerList.setText(players.toString()); //
                 textCurrentProfit.setText("Current House Profit: " + String.valueOf(houseProfit));
                 textCurrentTotalPrizeAmount.setText("Total Prize Amount: " + String.valueOf(totalPrizeAmount));
             } else {
+
                 if (houseCut < 0 || houseCut > 100) {
                     editTextHouseCut.setError("Invalid house cut percentage");
                 }
@@ -197,12 +199,19 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
 
             if (textCurrentProfit.getText().toString().isEmpty()
                     || textCurrentTotalPrizeAmount.getText().toString().isEmpty()
-                    || textPlayerList.getText().toString().isEmpty()) {
+                    || textPlayerList.getText().toString().isEmpty()){
 
                 // if input is not checked or invalid
                 Toast.makeText(this, "Please Check Entry First.", Toast.LENGTH_SHORT).show();
 
-            } else {
+            }
+            else if(num_player != num_players_selected){
+                //if there are fewer than 8 or 16 players selected
+                Toast.makeText(this, "Please make sure to select " + num_player.toString() + " players for the tournament.", Toast.LENGTH_SHORT).show();
+
+            }
+
+            else {
                 TournamentRepo tournamentRepo = new TournamentRepo(this);
                 MatchRepo matchRepo = new MatchRepo(this);
                 Manager manager = new Manager();
@@ -212,7 +221,6 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
 
                 } else { // start the tournament
                     manager.startTournament(tournamentRepo, matchRepo, houseProfit, totalPrizeAmount, selectedPlayers);
-                    Toast.makeText(this, "A New Tournament Started!", Toast.LENGTH_SHORT).show();
                 }
             }
         }
