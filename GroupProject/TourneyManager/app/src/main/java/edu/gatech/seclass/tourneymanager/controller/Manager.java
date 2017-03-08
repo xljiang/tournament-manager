@@ -56,7 +56,6 @@ public class Manager {
             insertMatch(matchRepo, 8, 0, 0, Match.ROUND_FINAL, 0, Match.STATUS_NOTREADY);
 
         } else if (count == 16) {
-            //TODO
             insertMatch(matchRepo, 1, players.get(0), players.get(1), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
             insertMatch(matchRepo, 2, players.get(2), players.get(3), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
             insertMatch(matchRepo, 3, players.get(4), players.get(5), Match.ROUND_EIGHTHFINAL, 0, Match.STATUS_READY);
@@ -166,7 +165,7 @@ public class Manager {
         playerRepo.update(player);
     }
 
-    // insert match to the Match Table
+    // insert new match to the Match Table
     private void insertMatch(MatchRepo matchRepo, int matchId, int player1Id, int player2Id, String round, int winnerId, String status) {
         Match match = new Match();
         match.setMatchID(matchId);
@@ -184,49 +183,28 @@ public class Manager {
     //also need to put loser information to the final and 3rd place match
     // if current match is final or 3rd place match, do nothing
     public void putPlayerIntoNextMatch(MatchRepo matchRepo, int currMatchId, int count, int winnerId, int looserId) {
-        Match nextMatch1 = new Match();
-        Match nextMatch2 = new Match();
+        // -1 or "-1" means no change!
         if (count == 8) {
             switch (currMatchId) {
                 case 1:
-                    nextMatch1 = matchRepo.getMatchById(5);
-                    nextMatch1.setPlayer1ID(winnerId);
-                    matchRepo.update(nextMatch1);
+                    updateMatch(matchRepo, 5, winnerId, -1, "-1");
                     break;
                 case 2:
-                    nextMatch1 = matchRepo.getMatchById(5);
-                    nextMatch1.setPlayer2ID(winnerId);
-                    nextMatch1.setStatus(Match.STATUS_READY);
-                    matchRepo.update(nextMatch1);
+                    updateMatch(matchRepo, 5, -1, winnerId, Match.STATUS_READY);
                     break;
                 case 3:
-                    nextMatch1 = matchRepo.getMatchById(6);
-                    nextMatch1.setPlayer1ID(winnerId);
-                    matchRepo.update(nextMatch1);
+                    updateMatch(matchRepo, 6, winnerId, -1, "-1");
                     break;
                 case 4:
-                    nextMatch1 = matchRepo.getMatchById(6);
-                    nextMatch1.setPlayer2ID(winnerId);
-                    nextMatch1.setStatus(Match.STATUS_READY);
-                    matchRepo.update(nextMatch1);
+                    updateMatch(matchRepo, 6, -1, winnerId, Match.STATUS_READY);
                     break;
                 case 5:
-                    nextMatch1 = matchRepo.getMatchById(8);
-                    nextMatch1.setPlayer1ID(winnerId);
-                    nextMatch2 = matchRepo.getMatchById(7);
-                    nextMatch2.setPlayer1ID(looserId);
-                    matchRepo.update(nextMatch1);
-                    matchRepo.update(nextMatch2);
+                    updateMatch(matchRepo, 8, winnerId, -1, "-1");
+                    updateMatch(matchRepo, 7, looserId, -1, "-1");
                     break;
                 case 6:
-                    nextMatch1 = matchRepo.getMatchById(8);
-                    nextMatch1.setPlayer2ID(winnerId);
-                    nextMatch1.setStatus(Match.STATUS_READY);
-                    nextMatch2 = matchRepo.getMatchById(7);
-                    nextMatch2.setPlayer2ID(looserId);
-                    nextMatch2.setStatus(Match.STATUS_READY);
-                    matchRepo.update(nextMatch1);
-                    matchRepo.update(nextMatch2);
+                    updateMatch(matchRepo, 8, -1, winnerId, Match.STATUS_READY);
+                    updateMatch(matchRepo, 7, -1, looserId, Match.STATUS_READY);
                     break;
                 case 7:
                     return;
@@ -234,9 +212,77 @@ public class Manager {
                     return;
             }
         } else if (count == 16) {
-            // TODO
+            switch (currMatchId) {
+                case 1:
+                    updateMatch(matchRepo, 9, winnerId, -1, "-1");
+                    break;
+                case 2:
+                    updateMatch(matchRepo, 9, -1, winnerId, Match.STATUS_READY);
+                    break;
+                case 3:
+                    updateMatch(matchRepo, 10, winnerId, -1, "-1");
+                    break;
+                case 4:
+                    updateMatch(matchRepo, 10, -1, winnerId, Match.STATUS_READY);
+                    break;
+                case 5:
+                    updateMatch(matchRepo, 11, winnerId, -1, "-1");
+                    break;
+                case 6:
+                    updateMatch(matchRepo, 11, -1, winnerId, Match.STATUS_READY);
+                    break;
+                case 7:
+                    updateMatch(matchRepo, 12, winnerId, -1, "-1");
+                    break;
+                case 8:
+                    updateMatch(matchRepo, 12, -1, winnerId, Match.STATUS_READY);
+                    break;
+                case 9:
+                    updateMatch(matchRepo, 13, winnerId, -1, "-1");
+                    break;
+                case 10:
+                    updateMatch(matchRepo, 13, -1, winnerId, Match.STATUS_READY);
+                    break;
+                case 11:
+                    updateMatch(matchRepo, 14, winnerId, -1, "-1");
+                    break;
+                case 12:
+                    updateMatch(matchRepo, 14, -1, winnerId, Match.STATUS_READY);
+                    break;
+                case 13:
+                    updateMatch(matchRepo, 16, winnerId, -1, "-1");
+                    updateMatch(matchRepo, 15, looserId, -1, "-1");
+                    break;
+                case 14:
+                    updateMatch(matchRepo, 16, -1, winnerId, Match.STATUS_READY);
+                    updateMatch(matchRepo, 15, -1, looserId, Match.STATUS_READY);
+                    break;
+                case 15:
+                    return;
+                case 16:
+                    return;
+            }
         }
 
+    }
+
+    // update a match with match id = matchId
+    // only update 1) player1Id, 2) player2Id, 3) match status
+    // if player1Id or player2Id = -1, or status = "-1", means no change to this field
+    private void updateMatch(MatchRepo matchRepo, int matchId, int player1Id, int player2Id, String status) {
+        Match match = new Match();
+        match = matchRepo.getMatchById(matchId);
+        if (player1Id != -1) {
+            match.setPlayer1ID(player1Id);
+        }
+        if (player2Id != -1) {
+            match.setPlayer2ID(player2Id);
+        }
+        if (!status.equals("-1")) {
+            match.setStatus(status);
+        }
+        // update match to database
+        matchRepo.update(match);
     }
 
     public void print(List<Map<String, String>> list) {
