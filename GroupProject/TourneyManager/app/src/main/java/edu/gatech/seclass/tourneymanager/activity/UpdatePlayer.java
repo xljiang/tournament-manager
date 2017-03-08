@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
@@ -24,10 +24,10 @@ import edu.gatech.seclass.tourneymanager.model.Player;
  * Reference: instinctcoder.com
  */
 
-public class AddPlayer extends AppCompatActivity implements android.view.View.OnClickListener {
+public class UpdatePlayer extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonRegister;
-    Button buttonClear;
+    Button buttonUpdatePlayer;
+    Button buttonDeletePlayer;
     //EditText editTextId;
     EditText editTextName;
     EditText editTextUsername;
@@ -35,23 +35,24 @@ public class AddPlayer extends AppCompatActivity implements android.view.View.On
     String deck = "Engineer";
     Spinner spinnerDropdown;
 
+    private int player_Id = 0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_player);
+        setContentView(R.layout.activity_update_player);
 
-        buttonRegister = (Button) findViewById(R.id.buttonRegistor);
-        buttonClear = (Button) findViewById(R.id.buttonClear);
+        buttonUpdatePlayer = (Button) findViewById(R.id.buttonUpdatePlayer);
+        buttonDeletePlayer = (Button) findViewById(R.id.buttonDeletePlayer);
 
         //editTextId = (EditText) findViewById(R.id.editTextId);
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
 
-        buttonRegister.setOnClickListener(this);
-        buttonClear.setOnClickListener(this);
+        buttonUpdatePlayer.setOnClickListener(this);
+        buttonDeletePlayer.setOnClickListener(this);
 
 
 
@@ -94,14 +95,38 @@ public class AddPlayer extends AppCompatActivity implements android.view.View.On
             }
         });
 
+
+        Intent intent = getIntent();
+        player_Id = intent.getIntExtra("player_Id", 0);
+
+        System.out.println(player_Id);
+        PlayerRepo playerRepo = new PlayerRepo(this);
+        Player player = new Player();
+        player = playerRepo.getStudentById(player_Id);
+        if (player.getUsername() != null) {
+            editTextUsername.setText(String.valueOf(player.getUsername()));
+        }
+        if (player.getName() != null) {
+            editTextName.setText(String.valueOf(player.getName()));
+        }
+        if (player.getPhone() != null) {
+            editTextPhone.setText(String.valueOf(player.getPhone()));
+        }
+        if (player.getDeck() != null) {
+            int spinnerPosition = adapter.getPosition(player.getDeck());
+            spinnerDropdown.setSelection(spinnerPosition);
+        }
+
     }
 
 
 
     public void onClick(View view) {
-        if (view == findViewById(R.id.buttonRegistor)){
+
+        if (view == findViewById(R.id.buttonUpdatePlayer)){
             PlayerRepo playerRepo = new PlayerRepo(this);
             Player player = new Player();
+            player = playerRepo.getStudentById(player_Id);
 
             // get player properties from UI
             //player.setPlayerID(Integer.parseInt(editTextId.getText().toString()));
@@ -110,27 +135,26 @@ public class AddPlayer extends AppCompatActivity implements android.view.View.On
             player.setPhone(editTextPhone.getText().toString());
             player.setDeck(deck);
 
-            // add new player to database
-            playerRepo.insert(player);
+            // update player info to database
+            playerRepo.update(player);
 
-            Toast.makeText(this,"New Player Added",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Player Information Updated",Toast.LENGTH_SHORT).show();
 
         }
 
-        if (view== findViewById(R.id.buttonClear)){
+        if (view== findViewById(R.id.buttonDeletePlayer)){
 
-            //editTextId.setText("");
-            editTextUsername.setText(String.valueOf(""));
-            editTextName.setText(String.valueOf(""));
-            editTextPhone.setText(String.valueOf(""));
-            spinnerDropdown.setSelection(0);
+            PlayerRepo playerRepo = new PlayerRepo(this);
+            playerRepo.delete(player_Id);
+            Toast.makeText(this, "Player Record Deleted", Toast.LENGTH_SHORT).show();
+            finish();
 
         }
 
     }
 
     public void buttonReturn(View view){
-        Intent intent = new Intent(AddPlayer.this, PlayerList4ManagerMode.class);
+        Intent intent = new Intent(UpdatePlayer.this, PlayerList4ManagerMode.class);
         startActivity(intent);
     }
 

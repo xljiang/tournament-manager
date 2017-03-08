@@ -74,7 +74,7 @@ public class PlayerPrizeList extends ListActivity implements View.OnClickListene
 
     public void onClick(View view) {
         if (view == findViewById(R.id.btnUpdate)) {
-            Intent intent = new Intent(PlayerPrizeList.this, AddPlayer.class);
+            Intent intent = new Intent(PlayerPrizeList.this, UpdatePlayer.class);
             intent.putExtra("player_Id", player_Id);
             startActivity(intent);
         }
