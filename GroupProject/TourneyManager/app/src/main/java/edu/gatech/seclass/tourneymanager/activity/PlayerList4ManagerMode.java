@@ -58,7 +58,7 @@ public class PlayerList4ManagerMode extends ListActivity  implements android.vie
     public void onClick(View view) {
         if (view== findViewById(R.id.btnAddNew)) {
 
-            Intent intent = new Intent(this, PlayerDetail.class);
+            Intent intent = new Intent(this, AddPlayer.class);
             //intent.putExtra("player_Id", 0);
             startActivity(intent);
         }

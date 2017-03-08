@@ -24,7 +24,7 @@ import edu.gatech.seclass.tourneymanager.model.Player;
  * Reference: instinctcoder.com
  */
 
-public class PlayerDetail extends AppCompatActivity implements android.view.View.OnClickListener {
+public class AddPlayer extends AppCompatActivity implements android.view.View.OnClickListener {
 
     Button buttonRegister;
     Button buttonClear;
@@ -45,7 +45,7 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
         buttonRegister = (Button) findViewById(R.id.buttonRegistor);
         buttonClear = (Button) findViewById(R.id.buttonClear);
 
-        editTextId = (EditText) findViewById(R.id.editTextId);
+        //editTextId = (EditText) findViewById(R.id.editTextId);
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
@@ -104,7 +104,7 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
             Player player = new Player();
 
             // get player properties from UI
-            player.setPlayerID(Integer.parseInt(editTextId.getText().toString()));
+            //player.setPlayerID(Integer.parseInt(editTextId.getText().toString()));
             player.setUsername(editTextUsername.getText().toString());
             player.setName(editTextName.getText().toString());
             player.setPhone(editTextPhone.getText().toString());
@@ -130,7 +130,7 @@ public class PlayerDetail extends AppCompatActivity implements android.view.View
     }
 
     public void buttonReturn(View view){
-        Intent intent = new Intent(PlayerDetail.this, PlayerList4ManagerMode.class);
+        Intent intent = new Intent(AddPlayer.this, PlayerList4ManagerMode.class);
         startActivity(intent);
     }
 

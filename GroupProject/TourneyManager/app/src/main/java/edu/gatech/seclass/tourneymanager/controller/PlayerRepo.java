@@ -33,10 +33,10 @@ public class PlayerRepo {
 
     public static String createTable() {
         return "CREATE TABLE " + Player.TABLE  + "("
-                + Player.KEY_ID  + " INTEGER PRIMARY KEY,"
+                + Player.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + Player.KEY_name + " TEXT, "
                 + Player.KEY_phone + " TEXT, "
-                + Player.KEY_username + " TEXT, "
+                + Player.KEY_username + " TEXT, " // TODO NOT NULL UNIQUE
                 + Player.KEY_Deck + " TEXT, "
                 + Player.KEY_Total + " INTEGER )";
     }
@@ -47,7 +47,7 @@ public class PlayerRepo {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(Player.KEY_ID, player.getPlayerID());
+        //values.put(Player.KEY_ID, player.getPlayerID());
         values.put(Player.KEY_name, player.getName());
         values.put(Player.KEY_username,player.getUsername());
         values.put(Player.KEY_phone, player.getPhone());
