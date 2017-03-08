@@ -9,13 +9,13 @@
     android:minHeight="25px">
 
     <TextView
-        android:id="@+id/tour_id"
+        android:id="@+id/tour_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:visibility="gone" />
 
     <TextView
-        android:id="@+id/tour_name"
+        android:id="@+id/tour_id"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
