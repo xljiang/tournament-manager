@@ -21,8 +21,8 @@ public class Match {
     public static final String ROUND_FINAL = "Final"; // 2
     public static final String ROUND_SEMIFINAL = "1/2"; //4
     public static final String ROUND_THIRDPLACE = "3rd";
-    public static final String ROUND_QUARTERFINAL = "1/8"; // 8
-    public static final String ROUND_EIGHTHFINAL = "1/16"; // 16
+    public static final String ROUND_QUARTERFINAL = "1/4"; // 8
+    public static final String ROUND_EIGHTHFINAL = "1/8"; // 16
 
     // Match Status
     public static final String STATUS_FINISHED = "Finished";
