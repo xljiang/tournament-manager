@@ -52,7 +52,6 @@ public class UpdatePlayer extends AppCompatActivity implements View.OnClickListe
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
 
         buttonUpdatePlayer.setOnClickListener(this);
-        buttonDeletePlayer.setOnClickListener(this);
 
         spinnerDropdown = (Spinner)findViewById(R.id.spinner_deck);
         String[] items = new String[]{"Engineer", "Buzz", "Sideways", "Wreck", "T", "RAT"};
