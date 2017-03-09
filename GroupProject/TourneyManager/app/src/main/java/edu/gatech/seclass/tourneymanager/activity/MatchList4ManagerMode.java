@@ -34,7 +34,7 @@ import edu.gatech.seclass.tourneymanager.model.Match;
 
 public class MatchList4ManagerMode extends ListActivity implements View.OnClickListener {
 
-    Button btnEndTour, btnBack;
+    Button btnEndTour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +43,6 @@ public class MatchList4ManagerMode extends ListActivity implements View.OnClickL
 
         btnEndTour = (Button) findViewById(R.id.btnEndTour);
         btnEndTour.setOnClickListener(this);
-        btnBack = (Button) findViewById(R.id.btnRefreshMatchList);
-        btnBack.setOnClickListener(this);
 
 
 
@@ -140,10 +138,6 @@ public class MatchList4ManagerMode extends ListActivity implements View.OnClickL
             alert.show();
             //Toast.makeText(this, "Tournament Ended!", Toast.LENGTH_SHORT);
 
-        }
-        if (view == findViewById(R.id.btnRefreshMatchList)) {
-            Intent intent = new Intent(MatchList4ManagerMode.this,  ManagerMode.class);
-            startActivity(intent);
         }
 
     }

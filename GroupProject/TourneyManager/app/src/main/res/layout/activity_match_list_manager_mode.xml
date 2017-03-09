@@ -7,6 +7,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
+    <TextView
+        android:text="Match List"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView21"
+        android:layout_weight="0.10"
+        android:textSize="20sp" />
+
 
     <TextView
         android:text="Click on each match to manage"
@@ -14,31 +22,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:id="@+id/textView5"
-        android:layout_below="@+id/textView21" />
-
-    <Button
-        android:text="End Tournament"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnEndTour"
-        android:layout_marginEnd="26dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/btnRefreshMatchList" />
+        android:layout_below="@+id/textView21"
+        android:layout_marginTop="10dp"/>
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnBack"
+        android:layout_below="@+id/textView5"
         android:layout_alignParentStart="true"
         android:layout_marginTop="38dp"
-        android:layout_above="@+id/btnRefreshMatchList" />
+        android:layout_above="@+id/buttonBack" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnBack"
+        android:layout_below="@+id/textView5"
         android:layout_marginTop="10dp"
         android:layout_alignParentStart="true">
 
@@ -84,34 +84,25 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/btnBack"
+
+    <Button
+        android:text="End Tournament"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" "
-        android:onClick="buttonReturn"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/btnEndTour"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="31dp" />
 
     <Button
         android:text="Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnRefreshMatchList"
-        android:layout_marginEnd="30dp"
+        android:id="@+id/buttonBack"
+        android:layout_marginEnd="32dp"
         android:onClick="buttonReturn"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/btnBack" />
-
-    <TextView
-        android:text="Match List"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView21"
-        android:layout_weight="0.10"
-        android:textSize="20sp"
-        android:layout_above="@+id/listView"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>
