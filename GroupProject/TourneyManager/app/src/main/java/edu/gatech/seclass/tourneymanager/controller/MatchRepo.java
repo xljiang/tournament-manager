@@ -150,8 +150,10 @@ public class MatchRepo {
             do {
                 HashMap<String, String> match = new HashMap<String, String>();
                 match.put("id", cursor.getString(cursor.getColumnIndex(Match.KEY_MatchID)));
-                match.put("player1name", cursor.getString(cursor.getColumnIndex(Match.KEY_Player1ID)));// store id now
-                match.put("player2name", cursor.getString(cursor.getColumnIndex(Match.KEY_Player2ID)));// store id now
+                match.put("player1name", getNameByID(cursor.getString(cursor.getColumnIndex(Match.KEY_Player1ID))));// store id now
+                match.put("player2name", getNameByID(cursor.getString(cursor.getColumnIndex(Match.KEY_Player2ID))));// store id now
+                //match.put("player1name", cursor.getString(cursor.getColumnIndex(Match.KEY_Player1ID)));// store id now
+                //match.put("player2name", cursor.getString(cursor.getColumnIndex(Match.KEY_Player2ID)));// store id now
                 match.put("round", cursor.getString(cursor.getColumnIndex(Match.KEY_Round)));
                 match.put("winnerName", cursor.getString(cursor.getColumnIndex(Match.KEY_WinnerID)));// store id now
                 match.put("status", cursor.getString(cursor.getColumnIndex(Match.KEY_Status)));
@@ -163,6 +165,9 @@ public class MatchRepo {
 
         cursor.close();
         db.close();
+
+        //Log.d(TAG, getNameByID("230"));
+
         return matchList;
 
     }
@@ -198,6 +203,47 @@ public class MatchRepo {
         cursor.close();
         db.close();
         return true;
+    }
+
+    public String getNameByID(String pID){
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        /*String selectQuery =  "SELECT " +
+                Player.KEY_name +
+                " FROM " + Player.TABLE
+                + " WHERE " +
+                Player.KEY_ID + "=" + pID;// It's a good practice to use parameter ?, instead of concatenate string
+        */
+
+        String selectQuery="";
+        selectQuery = "Select Player.name FROM Player WHERE Player.id = " + pID;
+
+        //selectQuery="Select Player.name FROM Player WHERE Player.id = 170";
+
+        //selectQuery="Select Match.Status FROM Match WHERE Match.Player1ID = 1";
+
+        Log.d(TAG, selectQuery);
+        //int iCount =0;
+
+        //Cursor cursor = db.rawQuery(selectQuery, new String[] {pID} );
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        String name = "";
+        if (cursor.moveToFirst()) {
+            do {
+                //name  = cursor.getString(cursor.getColumnIndex(Player.KEY_username));
+                name = cursor.getString(0);
+                Log.d(TAG, name);
+                //name = cursor.getString(1);
+                //Log.d(TAG, name);
+            } while (cursor.moveToNext());
+        }
+        else{
+            Log.d(TAG, "getNameByID didn't return anything");
+        }
+
+        cursor.close();
+        db.close();
+        return name;
     }
 
 }

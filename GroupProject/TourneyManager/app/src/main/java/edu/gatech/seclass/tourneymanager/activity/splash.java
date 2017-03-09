@@ -34,12 +34,12 @@ public class splash extends AppCompatActivity {
     }
 
     private void insertSampleData() {
-        PlayerRepo playerRepo = new PlayerRepo(this);
+        /*PlayerRepo playerRepo = new PlayerRepo(this);
         TournamentRepo tournamentRepo = new TournamentRepo(this);
         MatchRepo matchRepo = new MatchRepo(this);
         PrizeRepo prizeRepo = new PrizeRepo(this);
 
-        // Delete Old data
+        //Delete Old data
         playerRepo.deleteAll();
         tournamentRepo.deleteAll();
         matchRepo.deleteAll();
@@ -48,7 +48,7 @@ public class splash extends AppCompatActivity {
         // Insert sample data
 
         // insert several players
-        Player player = new Player();
+        /*Player player = new Player();
 
         player.setPlayerID(1);
         player.setName("Mike");
@@ -128,35 +128,35 @@ public class splash extends AppCompatActivity {
         player.setPhone("123-123");
         player.setTotal(0);
         player.setDeck("T");
-        playerRepo.insert(player);
+        playerRepo.insert(player);*/
 
         // insert several matches
-        Match match = new Match();
+       /* Match match = new Match();
 
         match.setMatchID(1);
-        match.setPlayer1ID(1);
-        match.setPlayer2ID(2);
+        match.setPlayer1ID(211);
+        match.setPlayer2ID(212);
         match.setRound(Match.ROUND_QUARTERFINAL);
         match.setStatus(Match.STATUS_READY);
         matchRepo.insert(match);
 
         match.setMatchID(2);
-        match.setPlayer1ID(3);
-        match.setPlayer2ID(4);
+        match.setPlayer1ID(213);
+        match.setPlayer2ID(214);
         match.setRound(Match.ROUND_QUARTERFINAL);
         match.setStatus(Match.STATUS_READY);
         matchRepo.insert(match);
 
         match.setMatchID(3);
-        match.setPlayer1ID(5);
-        match.setPlayer2ID(6);
+        match.setPlayer1ID(215);
+        match.setPlayer2ID(216);
         match.setRound(Match.ROUND_QUARTERFINAL);
         match.setStatus(Match.STATUS_READY);
         matchRepo.insert(match);
 
         match.setMatchID(4);
-        match.setPlayer1ID(7);
-        match.setPlayer2ID(8);
+        match.setPlayer1ID(217);
+        match.setPlayer2ID(218);
         match.setRound(Match.ROUND_QUARTERFINAL);
         match.setStatus(Match.STATUS_READY);
         matchRepo.insert(match);
@@ -187,7 +187,7 @@ public class splash extends AppCompatActivity {
 
 
         // insert several tournaments
-        Tournament tournament = new Tournament();
+        /*Tournament tournament = new Tournament();
 
         tournament.setTourName("Tournament1");
         tournament.setDate("2017-03-01");
@@ -256,7 +256,7 @@ public class splash extends AppCompatActivity {
         prize.setPlayerID(4);
         prize.setPrizeType(Prize.PRIZE_THIRD);
         prize.setPrizeAmount(10);
-        prizeRepo.insert(prize);
+        prizeRepo.insert(prize);*/
 
 
     }
