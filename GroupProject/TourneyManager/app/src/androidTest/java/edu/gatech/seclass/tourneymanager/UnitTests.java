@@ -3,25 +3,23 @@ package edu.gatech.seclass.tourneymanager;
 import android.app.Instrumentation;
 import android.content.Intent;
 import android.test.TouchUtils;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-
+import edu.gatech.seclass.tourneymanager.activity.AddPlayer;
 import edu.gatech.seclass.tourneymanager.activity.ManagerMode;
+import edu.gatech.seclass.tourneymanager.activity.MatchList4ManagerMode;
+import edu.gatech.seclass.tourneymanager.activity.ModeSelector;
 import edu.gatech.seclass.tourneymanager.activity.PlayerList4ManagerMode;
-import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
-import edu.gatech.seclass.tourneymanager.model.Player;
+
 
 import static android.R.attr.button;
-import static android.support.v4.app.ActivityCompatJB.startActivity;
 import static junit.framework.Assert.assertNotNull;
-import android.widget.AdapterView.OnItemSelectedListener;
+import edu.gatech.seclass.tourneymanager.R;
+import edu.gatech.seclass.tourneymanager.activity.ProfitHistory;
+import edu.gatech.seclass.tourneymanager.activity.StartTournament;
+
 /**
  * Created by vidyakv on 3/9/2017.
  */
@@ -45,66 +43,72 @@ public class UnitTests {
         assertNotNull(phonenum);
 
     }
-@Test
-public void onClick(View view)
-    EditText editTextName;
-    EditText editTextUsername;
-    EditText editTextPhone;
-    String deck = "Engineer";
-    Spinner spinnerDropdown;
-    Button buttonRegister;
-    Button buttonClear;
-    editTextName= (EditText) findViewById(R.id.editTextName);
-    editTextUsername = (EditText) findViewById(R.id.editTextUsername);
-    editTextPhone = (EditText) findViewById(R.id.editTextPhone);
-
-
-
-    if (View view == findViewById(R.id.buttonRegistor)){
-        PlayerRepo playerRepo = new PlayerRepo(this);
-        Player player = new Player();
-        ArrayList items2 = playerRepo.getPlayerUsernames();
-
-
-        if (items2.contains(editTextUsername.getText().toString())) {
-            editTextUsername.setError("Username already exists!");
-
-        }
-        else {
-            // get player properties from UI
-            //player.setPlayerID(Integer.parseInt(editTextId.getText().toString()));
-            player.setUsername(editTextUsername.getText().toString());
-            player.setName(editTextName.getText().toString());
-            player.setPhone(editTextPhone.getText().toString());
-            player.setDeck(deck);
-
-            // add new player to database
-            playerRepo.insert(player);
-
-            Toast.makeText(this, "New Player Added", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    if (View view== findViewById(R.id.buttonClear)){
-
-        //editTextId.setText("");
-        editTextUsername.setText(String.valueOf(""));
-        editTextName.setText(String.valueOf(""));
-        editTextPhone.setText(String.valueOf(""));
-        spinnerDropdown.setSelection(0);
-
-    }
-
-}
-}
     @Test
 
-        public void testButton() {
+        public void testAddPlayerButton(){
 
         button buttonRegistor;
         TouchUtils.clickView(this,buttonRegistor);
 
+        }
+
+
+    @Test
+    public void testButtonclear(){
+        button buttonClear;
+        TouchUtils.clickView(this,buttonClear);
+
+        }
+
+
+     @Test
+     public void testreturnfromAddPlayerClassbutton() {
+         button buttonReturn;
+         TouchUtils.clickView(PlayerList4ManagerMode.class,buttonReturn);
+
+     }
+
+    @Test
+    public void testreturnfromManagerModebutton() {
+        button buttonReturn ;
+        TouchUtils.clickView( ModeSelector.class,buttonReturn);
+            }
+
+    @Test
+    public void testmatchlistbutton() {
+        button matchlistbutton;
+        TouchUtils.clickView(MatchList4ManagerMode.class,matchlistbutton);
+    }
+     @Test
+     public void testaddplayerfrommanagermodebutton() {
+         button addplayerbutton ;
+         TouchUtils.clickView(PlayerList4ManagerMode.class,addplayerbutton);
+     }
+
+
+    @Test
+    public void testprofithistorybutton() {
+        button profithistorybutton;
+        TouchUtils.clickView(ProfitHistory.class,profithistorybutton);
+    }
+    @Test
+    public void testmanagetournamentbutton() {
+        button managetournamentbutton;
+        TouchUtils.clickView(StartTournament.class,managetournamentbutton);
+    }
+
+
+    @Test
+    public void testreturnfrom_profithistory_button() {
+        button retprofithistory_button;
+        TouchUtils.clickView(ManagerMode.class,retprofithistory_button);
+
+    }
+    @Test
+    public void testreturnfrom_starttournament_button() {
+        button retstarttour_button;
+        TouchUtils.clickView(ManagerMode.class,retstarttour_button);
+
+    }
 
 }
-
-
