@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import edu.gatech.seclass.tourneymanager.R;
+import edu.gatech.seclass.tourneymanager.controller.Manager;
+import edu.gatech.seclass.tourneymanager.controller.MatchRepo;
 
 /**
  * @author Katja Krivoruchko
@@ -31,7 +33,13 @@ public class ModeSelector extends AppCompatActivity {
 
     }
     public void buttonPlayerMode(View view){
-        Intent intent = new Intent(ModeSelector.this, PlayerMode.class);
+        Manager manager = new Manager();
+        Intent intent = new Intent();
+        if (manager.hasOngoingTournament(this)) {
+            intent = new Intent(ModeSelector.this, MatchList4PlayerMode.class);
+        } else {
+            intent = new Intent(ModeSelector.this, PlayerList4PlayerMode.class);
+        }
         startActivity(intent);
     }
 

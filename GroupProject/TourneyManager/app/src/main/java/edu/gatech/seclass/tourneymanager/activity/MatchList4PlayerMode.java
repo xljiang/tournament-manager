@@ -33,7 +33,7 @@ public class MatchList4PlayerMode extends ListActivity {
         showList();
     }
     public void buttonReturn(View view){
-        Intent intent = new Intent(MatchList4PlayerMode.this, PlayerMode.class);
+        Intent intent = new Intent(MatchList4PlayerMode.this, ModeSelector.class);
         startActivity(intent);
 
     }
