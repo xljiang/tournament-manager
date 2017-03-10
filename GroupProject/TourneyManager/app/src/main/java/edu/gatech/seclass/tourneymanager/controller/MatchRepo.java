@@ -240,6 +240,7 @@ public class MatchRepo {
         }
         else{
             Log.d(TAG, "getNameByID didn't return anything");
+            name = "TBD";
         }
 
         cursor.close();

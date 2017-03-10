@@ -84,8 +84,10 @@ public class MatchDetailReady extends AppCompatActivity implements android.view.
         textViewStatus = (TextView) findViewById(R.id.match_detail_status);
 
         textViewRound.setText(String.valueOf(match.getRound()));
-        textViewPlayer1.setText(String.valueOf(match.getPlayer1ID()));
-        textViewPlayer2.setText(String.valueOf(match.getPlayer2ID()));
+        //textViewPlayer1.setText(String.valueOf(match.getPlayer1ID()));
+        //textViewPlayer2.setText(String.valueOf(match.getPlayer2ID()));
+        textViewPlayer1.setText(matchRepo.getNameByID(String.valueOf(match.getPlayer1ID())));
+        textViewPlayer2.setText(matchRepo.getNameByID(String.valueOf(match.getPlayer2ID())));
         textViewStatus.setText(String.valueOf(match.getStatus()));
     }
 
