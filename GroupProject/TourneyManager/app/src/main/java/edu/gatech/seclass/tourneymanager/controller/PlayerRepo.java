@@ -36,9 +36,9 @@ public class PlayerRepo {
     public static String createTable() {
         return "CREATE TABLE " + Player.TABLE  + "("
                 + Player.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + Player.KEY_name + " TEXT, "
+                + Player.KEY_name + " TEXT NOT NULL, "
                 + Player.KEY_phone + " TEXT, "
-                + Player.KEY_username + " TEXT, " // TODO NOT NULL UNIQUE
+                + Player.KEY_username + " TEXT UNIQUE NOT NULL, " // TODO NOT NULL UNIQUE
                 + Player.KEY_Deck + " TEXT, "
                 + Player.KEY_Total + " INTEGER )";
     }

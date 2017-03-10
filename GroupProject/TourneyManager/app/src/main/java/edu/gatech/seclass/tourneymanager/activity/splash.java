@@ -10,10 +10,7 @@ import edu.gatech.seclass.tourneymanager.controller.MatchRepo;
 import edu.gatech.seclass.tourneymanager.controller.PlayerRepo;
 import edu.gatech.seclass.tourneymanager.controller.PrizeRepo;
 import edu.gatech.seclass.tourneymanager.controller.TournamentRepo;
-import edu.gatech.seclass.tourneymanager.model.Match;
 import edu.gatech.seclass.tourneymanager.model.Player;
-import edu.gatech.seclass.tourneymanager.model.Prize;
-import edu.gatech.seclass.tourneymanager.model.Tournament;
 
 
 public class splash extends AppCompatActivity {
@@ -34,7 +31,7 @@ public class splash extends AppCompatActivity {
     }
 
     private void insertSampleData() {
-        /*PlayerRepo playerRepo = new PlayerRepo(this);
+        PlayerRepo playerRepo = new PlayerRepo(this);
         TournamentRepo tournamentRepo = new TournamentRepo(this);
         MatchRepo matchRepo = new MatchRepo(this);
         PrizeRepo prizeRepo = new PrizeRepo(this);
@@ -48,7 +45,7 @@ public class splash extends AppCompatActivity {
         // Insert sample data
 
         // insert several players
-        /*Player player = new Player();
+        Player player = new Player();
 
         player.setPlayerID(1);
         player.setName("Mike");
@@ -128,7 +125,7 @@ public class splash extends AppCompatActivity {
         player.setPhone("123-123");
         player.setTotal(0);
         player.setDeck("T");
-        playerRepo.insert(player);*/
+        playerRepo.insert(player);
 
         // insert several matches
        /* Match match = new Match();

@@ -107,10 +107,17 @@ public class AddPlayer extends AppCompatActivity implements android.view.View.On
             ArrayList items2 = playerRepo.getPlayerUsernames();
 
 
-            if (items2.contains(editTextUsername.getText().toString())) {
-                editTextUsername.setError("Username already exists!");
-
+            if (editTextName.getText().toString().trim().length() == 0){
+                editTextName.setError("Please enter a value for name!");
             }
+            else if (editTextUsername.getText().toString().trim().length() == 0){
+                editTextUsername.setError("Please enter a value for username!");
+            }
+            else if (items2.contains(editTextUsername.getText().toString())) {
+                editTextUsername.setError("Username already exists!");
+            }
+
+
             else {
                 // get player properties from UI
                 //player.setPlayerID(Integer.parseInt(editTextId.getText().toString()));
