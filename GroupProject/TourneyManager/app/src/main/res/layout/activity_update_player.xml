@@ -25,7 +25,8 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/editTextUsername"
-        android:hint="Username" />
+        android:hint="Username"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"/>
 
     <EditText
         android:layout_width="match_parent"
