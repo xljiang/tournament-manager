@@ -155,7 +155,8 @@ public class MatchRepo {
                 //match.put("player1name", cursor.getString(cursor.getColumnIndex(Match.KEY_Player1ID)));// store id now
                 //match.put("player2name", cursor.getString(cursor.getColumnIndex(Match.KEY_Player2ID)));// store id now
                 match.put("round", cursor.getString(cursor.getColumnIndex(Match.KEY_Round)));
-                match.put("winnerName", cursor.getString(cursor.getColumnIndex(Match.KEY_WinnerID)));// store id now
+                //match.put("winnerName", cursor.getString(cursor.getColumnIndex(Match.KEY_WinnerID)));// store id now
+                match.put("winnerName", getNameByID(cursor.getString(cursor.getColumnIndex(Match.KEY_WinnerID))));
                 match.put("status", cursor.getString(cursor.getColumnIndex(Match.KEY_Status)));
 
                 matchList.add(match);
