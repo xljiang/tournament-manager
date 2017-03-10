@@ -230,7 +230,7 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
 
                 } else { // start the tournament
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setMessage("Clear form?")
+                    builder.setMessage("Start Tournament?")
                             .setTitle("Woodruff Lounge")
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
