@@ -46,7 +46,7 @@ All of the integration level and system level tests are shown below. Individual 
 |:-----------:|:------------------:|:------------:|:------------------:|:---------------:|:------:|:----:|:----:|
 | I1          | Verify Manager can add a player to and remove a player from the system  | JUnit test| be able to add/remove a player from the system | Able to add/remove a player from the system | Pass | KK | Cannot assign deck choice |
 | I2          | Verify Manager can manage matches  | manual test | can (1) add match, return Match (2) end a match |Able to add a ready match,end a match based on the match status,STATUS_READY.STATUS_FINISHED |Pass |V | separate tests are excecuted for add,end match|
-| I3.1        | Verify Manager can manage tournaments (1) start a tournament | JUnit test | return an ongoing tournament | | | | |
+| I3.1        | Verify Manager can manage tournaments (1) start a tournament | JUnit test | return an ongoing tournament |enter valid housecut,entry prize values and click on starttournament button | pass|v| |
 | I3.2        | Verify Manager can manage tournaments (2) end a tournament | JUnit test | an ongoing tournament is terminated, also label this tournament is completed or not correctly | | | | |
 | I3.3        | Verify Manager can manage tournaments (3) issue refund | JUnit tests | give correct amount of money back to a not completed but already terminated tournament, also refund to this tournament players | | | | |
 | I4          | Verify Manager can display current prizes | JUnit test (query database) | (1) successfully access to the database (2) return correct prizes | | | | |
