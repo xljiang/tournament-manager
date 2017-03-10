@@ -3,6 +3,7 @@ package edu.gatech.seclass.tourneymanager;
 import android.widget.Toast;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -38,6 +39,23 @@ public class Starttournament_unittests {
         houseProfit = entry * num_player * houseCut / 100;
 
         assert ("the house profit is displayed", 1);
+    }
+
+    public void testNotNull_validrange_case()
+    {
+        Assert.assertNotNull("house cut value needs to be entered",editTextHouseCut);
+        Assert.assertNotNull("entry value must be entered",editTextEntryPrice);
+        if (editTextHouseCut < 0 || editTextHouseCut > 100) {
+            Assert.assertNotNull("Invalid house cut percentage",editTextHouseCut);
+        }
+        if (editTextEntryPrice <= 0) {
+            Assert.assertNotNull("Invalid entry price",editTextEntryPrice);
+        }
+    }
+
+    public void teststarttourbutton()
+    {
+
     }
 
 }
