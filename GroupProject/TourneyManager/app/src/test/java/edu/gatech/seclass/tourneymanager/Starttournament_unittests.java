@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import edu.gatech.seclass.tourneymanager.activity.StartTournament;
 
+import static edu.gatech.seclass.tourneymanager.R.id.btnStartTour;
 import static edu.gatech.seclass.tourneymanager.R.id.editTextEntryPrice;
 import static edu.gatech.seclass.tourneymanager.R.id.editTextHouseCut;
 
@@ -55,7 +56,12 @@ public class Starttournament_unittests {
 
     public void teststarttourbutton()
     {
+      if  (editTextHouseCut > 0 && editTextHouseCut <100 ) && (editTextEntryPrice >= 0){
+        Assert.assertTrue("click on start button",btnStartTour);
+        
 
+
+    }
     }
 
 }
