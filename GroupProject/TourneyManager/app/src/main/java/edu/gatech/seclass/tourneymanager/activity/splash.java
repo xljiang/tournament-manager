@@ -20,7 +20,7 @@ public class splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        insertSampleData();
+        //insertSampleData();
 
     }
 
