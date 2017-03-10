@@ -30,14 +30,14 @@ import edu.gatech.seclass.tourneymanager.controller.TournamentRepo;
  */
 public class StartTournament extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnCheckEntry, btnStartTour;
+    Button btnCheckEntry, btnClear, btnStartTour;
 
     private EditText editTextHouseCut;
     private EditText editTextEntryPrice;
     private TextView textPlayerList;
     private TextView textCurrentProfit;
     private TextView textCurrentTotalPrizeAmount;
-    private TextView textSelectionInstruction;
+
     Integer num_player = 8;
     String playerText = "";
     Integer num_players_selected = 0;
@@ -59,9 +59,11 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
 
         btnCheckEntry = (Button) findViewById(R.id.btnCheckEntry);
         btnStartTour = (Button) findViewById(R.id.btnStartTour);
+        btnClear = (Button) findViewById(R.id.btnClear);
 
         btnCheckEntry.setOnClickListener(this);
         btnStartTour.setOnClickListener(this);
+        btnClear.setOnClickListener(this);
 
         editTextHouseCut = (EditText) findViewById(R.id.editTextHouseCut);
         editTextEntryPrice = (EditText) findViewById(R.id.editTextEntryPrice);
@@ -228,7 +230,7 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
 
                 } else { // start the tournament
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setMessage("Start Tournament?")
+                    builder.setMessage("Clear form?")
                             .setTitle("Woodruff Lounge")
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
@@ -244,10 +246,13 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
                 }
             }
         }
+        if (view == findViewById(R.id.btnClear)) {
+            Intent refresh = new Intent(this, StartTournament.class);
+            startActivity(refresh);
+            this.finish();
+        }
     }
-    public void startTourney(){
 
-    }
 
 
     public void buttonReturn(View view){
