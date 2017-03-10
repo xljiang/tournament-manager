@@ -27,6 +27,7 @@ public class ManagerMode_UnitTests {
       @Test
         public void testAddPlayerbutton() {
           assert managerMode.buttonAddPlayer();
+
       }
 
          @Test
