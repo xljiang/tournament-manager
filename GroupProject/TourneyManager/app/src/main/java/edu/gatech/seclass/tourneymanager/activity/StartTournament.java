@@ -233,7 +233,7 @@ public class StartTournament extends AppCompatActivity implements View.OnClickLi
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     manager.startTournament(tournamentRepo, matchRepo, houseProfit, totalPrizeAmount, selectedPlayers);
-                                    Intent intent = new Intent(StartTournament.this, ManagerMode.class);
+                                    Intent intent = new Intent(StartTournament.this, MatchList4ManagerMode.class);
                                     startActivity(intent);
                                 }
 
