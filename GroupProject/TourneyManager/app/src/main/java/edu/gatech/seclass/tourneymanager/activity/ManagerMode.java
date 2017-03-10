@@ -31,12 +31,6 @@ public class ManagerMode extends AppCompatActivity {
 
     }
 
-    public void buttonMatchList (View view){
-        Intent intent = new Intent(ManagerMode.this, MatchList4ManagerMode.class);
-        startActivity(intent);
-
-    }
-
     public void buttonAddPlayer (View view){
         Intent intent = new Intent(ManagerMode.this, PlayerList4ManagerMode.class);
         startActivity(intent);
