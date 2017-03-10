@@ -28,7 +28,13 @@ public class ModeSelector extends AppCompatActivity {
 
     }
     public void buttonManagerMode(View view){
-        Intent intent = new Intent(ModeSelector.this, ManagerMode.class);
+        Manager manager = new Manager();
+        Intent intent = new Intent();
+        if (manager.hasOngoingTournament(this)) {
+            intent = new Intent(ModeSelector.this, MatchList4ManagerMode.class);
+        } else {
+            intent = new Intent(ModeSelector.this, ManagerMode.class);
+        }
         startActivity(intent);
 
     }

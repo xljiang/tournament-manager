@@ -50,7 +50,7 @@ public class MatchList4ManagerMode extends ListActivity implements View.OnClickL
         showList();
     }
     public void buttonReturn(View view){
-        Intent intent = new Intent(MatchList4ManagerMode.this, ManagerMode.class);
+        Intent intent = new Intent(MatchList4ManagerMode.this, ModeSelector.class);
         startActivity(intent);
 
     }
