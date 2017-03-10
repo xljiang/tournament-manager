@@ -53,8 +53,8 @@ public class MatchDetailNotReady extends AppCompatActivity implements android.vi
         //textViewWinner = (TextView) findViewById(R.id.match_detail_winner);
 
         textViewRound.setText(String.valueOf(match.getRound()));
-        textViewPlayer1.setText(String.valueOf(match.getPlayer1ID()));
-        textViewPlayer2.setText(String.valueOf(match.getPlayer2ID()));
+        textViewPlayer1.setText(matchRepo.getNameByID(String.valueOf(match.getPlayer1ID())));
+        textViewPlayer2.setText(matchRepo.getNameByID(String.valueOf(match.getPlayer2ID())));
         textViewStatus.setText("Not Ready");
         //textViewWinner.setText(String.valueOf(match.getWinnerID()));
     }
