@@ -52,7 +52,7 @@ All of the integration level and system level tests are shown below. Individual 
 | I4          | Verify Manager can display current prizes | JUnit test (query database) | (1) successfully access to the database (2) return correct prizes | | | | |
 | I5          | Verify Manager can display current profit  | JUnit test | calculate and display correct profit |able to calculates the house profits |pass |v |the calculated profits values are displayed correctly |
 | I6          | Verify Manager can view past house profits  | JUnit test | calculate and display correct house profit |Able to calculate the house profit using houseCut,Num_player,entry|pass |v |the test works for num_player=8 |
-| I7          | Verify Manager and Player can view player lists sorted by total  | JUnit test | return player list, the list should be listed sorted by total amount of money, from high to low | | | | |
+| I7          | Verify Manager and Player can view player lists sorted by total  | Manual test | return player list, the list should be listed sorted by total prize amount |able to view the player list as player name, total prizes won by each player | pass|v| |
 | I8          | Verify Manager and Player can view match lists  | JUnit test | return a match list |Able to view the match lists with the following attributes: Round,Player1,Player2,Status,Winner |Pass |v | match list is displayed in both manager and player modes|
 | I9          | Verify Manager can view a single player's prizes  | JUnit test, given the player's username | return prizes catagory and amount that the player has |able to see a particular player's prizes by specifying the username | pass |v | |
 
