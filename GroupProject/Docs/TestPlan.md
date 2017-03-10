@@ -50,7 +50,7 @@ All of the integration level and system level tests are shown below. Individual 
 | I3.2        | Verify Manager can manage tournaments (2) end a tournament | JUnit test | an ongoing tournament is terminated, also label this tournament is completed or not correctly | | | | |
 | I3.3        | Verify Manager can manage tournaments (3) issue refund | JUnit tests | give correct amount of money back to a not completed but already terminated tournament, also refund to this tournament players | | | | |
 | I4          | Verify Manager can display current prizes | JUnit test (query database) | (1) successfully access to the database (2) return correct prizes | | | | |
-| I5          | Verify Manager can display current profit  | JUnit test | calculate and display correct profit | | | | |
+| I5          | Verify Manager can display current profit  | JUnit test | calculate and display correct profit |able to calculates the house profits |pass |v |the calculated profits values are displayed correctly |
 | I6          | Verify Manager can view past house profits  | JUnit test | calculate and display correct house profit |Able to calculate the house profit using houseCut,Num_player,entry|pass |v |the test works for num_player=8 |
 | I7          | Verify Manager and Player can view player lists sorted by total  | JUnit test | return player list, the list should be listed sorted by total amount of money, from high to low | | | | |
 | I8          | Verify Manager and Player can view match lists  | JUnit test | return a match list |Able to view the match lists with the following attributes: Round,Player1,Player2,Status,Winner |Pass |v | match list is displayed in both manager and player modes|
