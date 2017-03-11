@@ -14,33 +14,43 @@ Woodruff Lounge	is a mobile application that runs on Android 4.4 (Kit Kit) or la
 
 ## 2 How to Use Woodruff Lounge Tournament Manager
 
-The Woodruff Lounge Tournament Manager has two mode, the **Manager Mode** and the **Player Mode**. The **Manager Mode** allows a user to start and manager a tournament.  The **Player Mode** allows a user to see the list of player, as well as the list of matches for an ongoing tournament.  
+The Woodruff Lounge Tournament Manager has two mode, the **Manager Mode** and the **Player Mode**. The **Manager Mode** allows a user to add players to the system, as well as to start and manage a tournament.  The **Player Mode** allows a user to see a list of player (when there is no ongoing tournament), as well as a list of matches when there is tournament in progress.  
 
 ### 2.1 Starting the application
 
-On startup, a user is presented with a splash screen. Please touch or tap the button in the middle of the screen to choose the mode.  
+On startup, a user is presented with a splash screen. Please touch or tap the button in the middle of the screen to begin using the application.  
 
 ![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/splash.jpg)
 
 ### 2.1 Manager Mode
 
-Manager Mode allows tournament manager to view and edit the list of matches, the list of players, view the profit history for all tournaments, and to start a tournament if one is not in progress.
+Manager Mode allows tournament manager to view and edit the list of matches (if there is an ongoing tournament), the list of players, view the profit history for all tournaments, and to start a tournament if one is not in progress.
 
 ![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/manager_mode.jpg)
 
 #### 2.1.1 Match List
 
-Match list shows tournament manager the list of matches for the ongoing tournament and allows to start a match.
+When a tournament is in progress, Manager Mode opens a Match List, which shows the tournament manager the list of matches for the ongoing tournament and allows to start a match, if both players have been determined. Initially, only the matches for the first round (quarterfinal, i.e., 1/4, or "round of 8" in an 8-player tournament or 1/8th round, or "round of 16" in a 16-player tournament) are ready. Once both matches from the previous round a completed, the next round match is ready to play.
 
 ![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/match_list.jpg)
 
 > **Note:** When there is no ongoing tournament, no matches are shown, as none are played or pending.
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/match_list_no_tourney.jpg)
+When a tournament is ongoing, the Manager can start a match by tapping on the match in the Match list and then tapping the Start button. The status of the match will change to ongoing.
+
+![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/start_match.jpg)
+
+When the match is completed, the Manager can end it by specifying the winner, either Player 1 or Player 2.
+
+![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/end_match.jpg)
+
+Once all matches are played and marked completed in the system, the Manager can end the tournament. 
+
+> **Note:** If a tournament is ended before all matches are played, the funds are refunded and the record of the tournament is removed from the profit history.
 
 #### 2.1.2 Player List
 
-Player list allows manager to see a list of all players in the system, as well as to update a player's profile.
+Player list allows manager to see the status of all matches if there is an ongoing tournament, or, if there is none, the list of all players in the system.
 
 ![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/player_list.jpg)
 
@@ -54,7 +64,9 @@ Profit History screen allows tournament manager to view a history of house profi
 
 Start Tournament screen allows tournament manager to start a tournament if one is not already in progress.
 
-In order to start a tournament, tournament manager must enter the house cut (as a percentage) and the entry fee (per player), as well as the number of player (**8 or 16**). The application will then populate the list of players for the tournament from the list of available players and calculate  the house profit, as well as 1st, 2nd, and 3rd prizes.
+In order to start a tournament, tournament manager must enter the house cut (as a percentage) and the entry fee (per player), as well as the number of players (**8 or 16**). The application will then populate the list of players for the tournament from the list of available players and calculate  the house profit, as well as 1st, 2nd, and 3rd prizes.
+
+> **Note:** If there are fewer than 8 players in the system, the Start Tournament screen won't show. Instead, the user will be presented with the suggestion to add more users.  If there are fewer than 16 but more than 8 players in the system, only the option to start an 8-person tournament will be available.
 
 The house profit is calculated using the following formula:
 
@@ -88,9 +100,7 @@ Third place prize is calculated as the remaining pot, or 20% of the pot after th
 
 ### 2.2 Player Mode
 
-Player mode has two options, Match List and Player List.
-
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/player_mode.jpg)
+Player mode has two options, Match List and Player List. Match List is shown when the tournament is ongoing, while Player List is shown when there is no tournament (and thus no matches).
 
 #### 2.2.1 Match List 
 
@@ -98,9 +108,6 @@ Through the Player Mode, Match List option allows the player to see (but not edi
 
 ![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/match_list_player.jpg)
 
-> **Note:** Similarly to the Manager mode, when there is no ongoing tournament, no matches are shown.
-
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/match_list_player_no_tourney.jpg)
 
 #### 2.2.2 Player List
 
@@ -110,4 +117,4 @@ Through the Player Mode, Player List option allows the player to see (though not
 
 ### 3 How to get support
 
-We hope you enjoy the application. Should you experience any problems, please submit an issue in the team github repository.
+We hope you enjoy the application. Should you experience any problems, please submit an issue in the team github repository: https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/issues 
