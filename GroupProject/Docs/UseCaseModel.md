@@ -13,16 +13,16 @@
 
 ***Use case 1 : Manage Tournament dates***
 
-***Use case description*:** This use case describes how the manager manages the tournaments , by date schedule. Tournaments are categorized as ongoing and completed.
-***Actors*** : Manager
-***Preconditions:*** Manager announces the start date of Tournament.Manager enters the house cut,entry price , players usernames
-***Post conditions:*** When the tournament ends , that tournament is included in the list of completed tournaments
-*Scenarios*
-***Normal course:*** The tournament is started as per a planned schedule.
-***Alternate course:*** The tournament dates may have to be altered
-***Exceptional course*:** The tournament may be cancelled.
-***Stakeholders:***   Players
-***Trigger condition*:**  enter housecut,entry price, players usernames and click on start tournament.
+***Use case description*:** This use case describes how the manager manages the tournaments , by date schedule. Tournaments are categorized as ongoing and completed.  
+***Actors*** : Manager  
+***Preconditions:*** Manager announces the start date of Tournament.Manager enters the house cut,entry price , players usernames  
+***Post conditions:*** When the tournament ends , that tournament is included in the list of completed tournaments  
+*Scenarios*  
+***Normal course:*** The tournament is started as per a planned schedule.  
+***Alternate course:*** The tournament dates may have to be altered  
+***Exceptional course*:** The tournament may be cancelled.  
+***Stakeholders:***   Players  
+***Trigger condition*:**  enter housecut,entry price, players usernames and click on start tournament.  
 
 ***Use case 2 : Organize Match dates***
 
