@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import edu.gatech.seclass.tourneymanager.R;
 import edu.gatech.seclass.tourneymanager.controller.MatchRepo;
@@ -17,13 +16,14 @@ import edu.gatech.seclass.tourneymanager.model.Match;
  * @author Xiaolu Jiang
  */
 
-public class MatchDetailFinished extends AppCompatActivity {
+public class MatchDetailFinished extends AppCompatActivity implements android.view.View.OnClickListener {
 
     TextView textViewRound;
     TextView textViewPlayer1;
     TextView textViewPlayer2;
     TextView textViewStatus;
     TextView textViewWinner;
+    Button btnBack;
 
     private int match_Id;
 
@@ -31,6 +31,10 @@ public class MatchDetailFinished extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_detail_finished);
+
+        btnBack = (Button) findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(this);
 
         // get match
         Intent intent = getIntent();
@@ -52,6 +56,12 @@ public class MatchDetailFinished extends AppCompatActivity {
         textViewPlayer2.setText(matchRepo.getNameByID(String.valueOf(match.getPlayer2ID())));
         textViewStatus.setText(String.valueOf(match.getStatus()));
         textViewWinner.setText(matchRepo.getNameByID(String.valueOf(match.getWinnerID())));
+    }
+    public void onClick(View view) {
+        if (view == findViewById(R.id.btnBack)) {
+            Intent intent = new Intent(MatchDetailFinished.this, MatchList4ManagerMode.class);
+            startActivity(intent);
+        }
     }
 
 }
