@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textPlayerList"
         android:layout_weight="0.77"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <Button
         android:text="Check entry"

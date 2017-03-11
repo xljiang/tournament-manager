@@ -135,7 +135,12 @@ public class UpdatePlayer extends AppCompatActivity implements View.OnClickListe
 
             if ((items2.contains(editTextUsername.getText().toString()))) {
                 editTextUsername.setError("Username already exists!");
-
+            }
+            if (editTextName.getText().toString().trim().length() == 0){
+                editTextName.setError("Please enter a value for name!");
+            }
+            if (editTextUsername.getText().toString().trim().length() == 0){
+                editTextUsername.setError("Please enter a value for username!");
             }
             else {
                 player.setUsername(editTextUsername.getText().toString());
