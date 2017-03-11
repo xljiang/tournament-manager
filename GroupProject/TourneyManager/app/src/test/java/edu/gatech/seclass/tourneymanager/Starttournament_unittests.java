@@ -57,7 +57,7 @@ import static edu.gatech.seclass.tourneymanager.R.id.editTextHouseCut;
 
         Assert.assertTrue("the house profit is displayed", true);
     }
-
+    @Test
     public void testNotNull_validrange_case() {
         Assert.assertNotNull("house cut value needs to be entered", editTextHouseCut);
         Assert.assertNotNull("entry value must be entered", editTextEntryPrice);

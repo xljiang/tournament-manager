@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import junit.framework.Assert;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,17 +20,6 @@ import edu.gatech.seclass.tourneymanager.activity.PlayerMode;
 public class PlayerMode_UnitTests extends PlayerMode {
     private PlayerMode playerMode;
 
-    @Before
-    public void setUp() {
-        playerMode = new PlayerMode();
-    }
-
-    @After
-    public void teardown() {
-        playerMode = null;
-    }
-
-    @Test
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.activity_player_mode);
@@ -43,5 +34,20 @@ public class PlayerMode_UnitTests extends PlayerMode {
         });
 
 
+    }
+
+    @Before
+    public void setUp() {
+        playerMode = new PlayerMode();
+    }
+
+    @After
+    public void teardown() {
+        playerMode = null;
+    }
+
+    @Test
+    public void testButtonclear() {
+        Assert.assertTrue("clear button is clicked",true);
     }
 }
