@@ -2,7 +2,7 @@
 
 version 1.0
 
-**Author**: Team 50
+**Author**: XJ and VK
 
 ## 1 Testing Strategy
 
