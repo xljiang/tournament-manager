@@ -20,29 +20,29 @@ The Woodruff Lounge Tournament Manager has two mode, the **Manager Mode** and th
 
 On startup, a user is presented with a splash screen. Please touch or tap the button in the middle of the screen to begin using the application.  
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/splash.jpg)
+![](Screenshots/splash.jpg)
 
 ### 2.1 Manager Mode
 
 Manager Mode allows tournament manager to view and edit the list of matches (if there is an ongoing tournament), the list of players, view the profit history for all tournaments, and to start a tournament if one is not in progress.
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/manager_mode.jpg)
+![](Screenshots/manager_mode.jpg)
 
 #### 2.1.1 Match List
 
 When a tournament is in progress, Manager Mode opens a Match List, which shows the tournament manager the list of matches for the ongoing tournament and allows to start a match, if both players have been determined. Initially, only the matches for the first round (quarterfinal, i.e., 1/4, or "round of 8" in an 8-player tournament or 1/8th round, or "round of 16" in a 16-player tournament) are ready. Once both matches from the previous round a completed, the next round match is ready to play.
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/match_list.jpg)
+![](Screenshots/match_list.jpg)
 
 > **Note:** When there is no ongoing tournament, no matches are shown, as none are played or pending.
 
 When a tournament is ongoing, the Manager can start a match by tapping on the match in the Match list and then tapping the Start button. The status of the match will change to ongoing.
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/start_match.jpg)
+![](Screenshots/start_match.jpg)
 
 When the match is completed, the Manager can end it by specifying the winner, either Player 1 or Player 2.
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/end_match.jpg)
+![](Screenshots/end_match.jpg)
 
 Once all matches are played and marked completed in the system, the Manager can end the tournament. 
 
@@ -52,13 +52,13 @@ Once all matches are played and marked completed in the system, the Manager can 
 
 Player list allows manager to see the status of all matches if there is an ongoing tournament, or, if there is none, the list of all players in the system.
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/player_list.jpg)
+![](Screenshots/player_list.jpg)
 
 #### 2.1.3 Profit History
 
 Profit History screen allows tournament manager to view a history of house profits for all completed tournaments.
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/profit_history.jpg)
+![](Screenshots/profit_history.jpg)
 
 #### 2.1.4 Start Tournament
 
@@ -96,7 +96,7 @@ Third place prize is calculated as the remaining pot, or 20% of the pot after th
 3rd place = 8 * $100 * 0.8 * 0.2 = $128.
 ```
  
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/start_tournament.jpg)
+![](Screenshots/start_tournament.jpg)
 
 ### 2.2 Player Mode
 
@@ -106,15 +106,15 @@ Player mode has two options, Match List and Player List. Match List is shown whe
 
 Through the Player Mode, Match List option allows the player to see (but not edit), the list of all matches for the current tournament, as well as their status.
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/match_list_player.jpg)
+![](Screenshots/match_list_player.jpg)
 
 
 #### 2.2.2 Player List
 
 Through the Player Mode, Player List option allows the player to see (though not edit) the list of all players in the system.
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Screenshots/player_list_player.jpg)
+![](Screenshots/player_list_player.jpg)
 
 ### 3 How to get support
 
-We hope you enjoy the application. Should you experience any problems, please submit an issue in the team github repository: https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/issues 
+We hope you enjoy the application. Should you experience any problems, please submit an issue.
