@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.gatech.seclass.tourneymanager">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Tourney Manager"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.ModeSelector">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.ManagerMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.PlayerMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.PlayerList4ManagerMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.StartTournament">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.PlayerList4PlayerMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchList4PlayerMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.AddPlayer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.UpdatePlayer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchList4ManagerMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.ProfitHistory">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.PlayerPrizeList">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchDetailReady">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchDetailOngoing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchDetailFinished">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="edu.gatech.seclass.tourneymanager.activity.MatchDetailNotReady">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

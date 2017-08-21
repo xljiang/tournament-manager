@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonMgrHome"
+        android:onClick="buttonReturn" />
+
+    <TextView
+        android:text=" "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView14"
+        android:layout_weight="0.08" />
+
+    <TextView
+        android:text=" "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView15"
+        android:layout_weight="0.10" />
+
+    <Button
+        android:text="Match List"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonOngoingTournament"
+        android:onClick="buttonOngoingTournament" />
+
+    <TextView
+        android:text=" "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16"
+        android:layout_weight="0.10" />
+
+    <Button
+        android:text="Player List"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonPlayerList"
+        android:onClick="buttonPlayerList" />
+</LinearLayout>
