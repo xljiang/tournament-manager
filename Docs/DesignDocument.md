@@ -22,7 +22,7 @@
 
 ### 2.1 Component Diagram
 
-![] (https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/Component_diagram.png)
+![](Diagrams/Component_diagram.png)
 
 ### 2.2 Deployment Diagram
 
@@ -32,28 +32,28 @@
 
 ### 3.1 Class Diagram
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Design-Team/team.jpg)
+![](/Design/team.jpg)
 
 ### 3.2 Other Diagrams
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/Sequence_diagram.png)
+![](Diagrams/Sequence_diagram.png)
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/State_diagram.png)
+![](Diagrams/State_diagram.png)
 
 ## 4 User Interface Design
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/user_interface_1.png)
+![](Diagrams/user_interface_1.png)
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/user_interface_2.png)
+![](Diagrams/user_interface_2.png)
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/user_interface_3.png)
+![](Diagrams/user_interface_3.png)
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/user_interface_4.png)
+![](Diagrams/user_interface_4.png)
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/user_interface_5.png)
+![](Diagrams/user_interface_5.png)
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/user_interface_6.png)
+![](Diagrams/user_interface_6.png)
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/user_interface_7.png)
+![](Diagrams/user_interface_7.png)
 
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/Diagrams/user_interface_8.png)
+![](Diagrams/user_interface_8.png)
