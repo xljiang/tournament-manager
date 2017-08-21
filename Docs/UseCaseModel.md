@@ -4,7 +4,7 @@
   
 ## 1 Use Case Diagram
   
-![](https://github.gatech.edu/gt-omscs-se-2017spring/6300Spring17Team50/blob/master/GroupProject/Docs/usecasediagram_team50%20.png)
+![](usecasediagram_team50%20.png)
   
 ## 2 Use Case Descriptions
   
